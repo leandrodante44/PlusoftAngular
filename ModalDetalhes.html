@@ -1,43 +1,97 @@
 <html>
+  <head>
+    <title>Plusoft Front-end Angular</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="library/theme/BootStrapOmni.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
 
-<head>
-  <title>Plusoft Front-end Angular</title>
-  <link rel="stylesheet" type="text/css" href="library/theme/BootStrapOmni.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</head>
+  <body>
+    <div class="container">
+      <h2>Modal Example</h2>
+      <!-- Button to Open the Modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#modalDetalhes"
+      >
+        Open modal
+      </button>
 
-<body>
+      <style>
+        .modal-content {
+          background-color: #f7f9fa;
+          border: 5px solid #3d5879;
+          border-radius: 3px;
+        }
+        .modal-header {
+          border-bottom: 3px solid #3d5879;
+        }
 
-  <div class="container">
-    <h2>Modal Example</h2>
-    <!-- Button to Open the Modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetalhes">
-      Open modal
-    </button>
-
-    <!-- The Modal -->
-    <div class="modal fade" id="modalDetalhes">
-      <div class="modal-dialog modal-lg border border-primary rounded">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header border-primary">
-            <div class="d-flex mx-auto">
-              <div class="p-2 swatch-300 mx-3 border border-primary rounded" style="width: 154px; height: 72px;">
-                <p class="text-center">674<br>Amigos</p>
-              </div>
-              <div class="p-2 swatch-300 mx-3 border border-primary rounded" style="width: 154px; height: 72px;">
-                <p class="text-center">1798<br>Seguidores</p>
-              </div>
-              <div class="p-2 swatch-300 mx-3 border border-primary rounded" style="width: 154px; height: 72px;">
-                <p class="text-center">345<br>Post</p>
+        /* CUSTOM CLASS */
+        .KPIInfo {
+          width: 154px;
+          height: 72px;
+          border-radius: 5px;
+          color: #1d3451;
+          padding-top: 10px !important;
+        }
+        .headerKPI{
+          width: 100%;
+          margin-left: 0px;
+        }
+        .close{
+          color: #3D5879;
+          font-size: 36px;
+          margin-top: 50%;
+        }
+      </style>
+      <!-- The Modal -->
+      <div class="modal fade" id="modalDetalhes">
+        <div class="modal-dialog modal-lg border border-primary">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header border-primary">
+              <div class="row headerKPI">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                  <center>
+                  <div class="d-flex mx-auto justify-content-around">
+                    <div
+                      class="p-2 swatch-300 border border-primary KPIInfo"
+                    >
+                      <p class="text-center">674<br />Amigos</p>
+                    </div>
+                    <div
+                      class="p-2 swatch-300 border border-primary KPIInfo"
+                    >
+                      <p class="text-center">1798<br />Seguidores</p>
+                    </div>
+                    <div
+                      class="p-2 swatch-300  border border-primary KPIInfo"
+                    >
+                      <p class="text-center">345<br />Post</p>
+                    </div>
+                  </div>
+                </center>
+                </div>
+                <div class="col-sm-1 justify-content-center">
+                  <button
+                    type="button"
+                    class="close float-right mx-3"
+                    data-dismiss="modal"
+                  >
+                    &times;
+                  </button>
+                </div>
               </div>
             </div>
-
-            <button type="button" class="close float-right mx-3" data-dismiss="modal">&times;</button>
-          </div>
 
           <!-- Modal body -->
           <div class="modal-body">
@@ -45,48 +99,47 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col text-center">
-
-                    <button type="button" class="btn btn-danger">Deixar de seguir</button>
-
                     <div class="row">
-
-                      <div class="col-4 col-sm-5 text-left">
-
-                        <div class="form-group">
-                          <label for="usr">Name:</label>
-                          <input type="text" class="form-control rounded-0" id="usr">
-                        </div>
-
-                        <div class="form-group">
-                          <label for="pwd">Password:</label>
-                          <input type="password" class="form-control rounded-0" id="pwd">
-                        </div>
-                        <div class="form-group">
-                          <label for="pwd">Password:</label>
-                          <input type="password" class="form-control rounded-0" id="pwd">
-                        </div>
-
-
+                      <div class="col-sm-4"></div>
+                      <div class="col-sm-4">
+                      <div class="alert alert-danger" role="alert">
+                        Deixar de seguir</div>
                       </div>
-                      <div class="col-6 col-sm-5 text-left">
+                    </div>
+                    <!-- alert -->  
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-5 text-left">
+                          <div class="form-group">
+                            <label for="usr">Bio:</label>
+                            <input type="text" class="form-control" id="usr" />
+                          </div>
 
-                        <div class="form-group">
-                          <label for="usr">Bio:</label>
-                          <input type="text" class="form-control rounded-0" id="usr">
+                          <div class="form-group">
+                            <label for="pwd">ID da Midia:</label>
+                            <input type="text" class="form-control" id="pwd" />
+                          </div>
+                          <div class="form-group">
+                            <label for="pwd">Local:</label>
+                            <input type="text" class="form-control" id="pwd" />
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <label for="pwd">Password:</label>
-                          <input type="password" class="form-control rounded-0" id="pwd">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-5 text-left">
+                          <div class="form-group">
+                            <label for="usr">Telefone:</label>
+                            <input type="phone" class="form-control" id="usr" />
+                          </div>
+                          <div class="form-group">
+                            <label for="pwd">Celular:</label>
+                            <input type="phone" class="form-control" id="pwd" />
+                          </div>
+                          <div class="form-group">
+                            <label for="pwd">E-mail:</label>
+                            <input type="email" class="form-control" id="pwd" />
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <label for="pwd">Password:</label>
-                          <input type="password" class="form-control rounded-0" id="pwd">
-                        </div>
-
-
                       </div>
-
-
                     </div>
                   </div>
                 </div>
@@ -94,15 +147,21 @@
             </div>
 
             <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
+            <div class="modal-footer justify-content-center">
+              <div class="row" style="width: 100%;">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                  <div class="d-flex mx-auto justify-content-around">
+                    
+                      <button class="btn btn-outline-primary">Cancelar</button>
+                   
+                    <button class="btn btn-success">Salvar</button>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
-
     </div>
-</body>
-
+  </body>
 </html>
