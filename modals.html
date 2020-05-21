@@ -1,0 +1,336 @@
+<html>
+
+<head>
+    <title>Plusoft Front-end Angular</title>
+    <link rel="stylesheet" type="text/css" href="library/theme/BootStrapOmni.css" />
+    <link rel="stylesheet" type="text/css" href="library/icons/css/material-design-iconic-font.css" />
+    <link rel="stylesheet" type="text/css" href="library/theme/themeModals.css" />
+    <link rel="stylesheet" type="text/css" href="library/theme/themeExtra.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Modals</h2>
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetalhes">
+            Modal de Detalhes
+        </button>
+        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalPost">
+            Modal de Posts do Autor
+        </button>
+        <style>
+
+        </style>
+        <!-- MODAL DETALHES -->
+        <div class="modal fade" id="modalDetalhes">
+            <div class="modal-dialog modal-lg border border-primary">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header border-primary modal-header-bb">
+                        <div class="row headerKPI">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <div class="d-flex mx-auto justify-content-around">
+                                    <div class="border border-primary KPIInfo">
+                                        <p class="p-2 text-center">674<br />Amigos</p>
+                                    </div>
+                                    <div class="border border-primary KPIInfo">
+                                        <p class="p-2 text-center">1798<br />Seguidores</p>
+                                    </div>
+                                    <div class="border border-primary KPIInfo">
+                                        <p class="p-2 text-center">345<br />Post</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="row justify-content-end">
+                                    <button type="button" class="close p-3" data-dismiss="modal">
+                                        &times;
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <div class="row">
+                                            <div class="col-sm-4"></div>
+                                            <div class="col-sm-4">
+                                                <div class="alert alert-danger" role="alert">
+                                                    Deixar de seguir</div>
+                                            </div>
+                                        </div>
+                                        <!-- alert -->
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-5 text-left">
+                                                    <div class="form-group">
+                                                        <label for="bio">Bio:</label>
+                                                        <input type="text" class="form-control" id="bio" />
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="mda">ID da Midia:</label>
+                                                        <input type="text" class="form-control" id="mda" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="loc">Local:</label>
+                                                        <input type="text" class="form-control" id="loc" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2"></div>
+                                                <div class="col-sm-5 text-left">
+                                                    <div class="form-group">
+                                                        <label for="tel">Telefone:</label>
+                                                        <input type="phone" class="form-control" id="tel" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="cel">Celular:</label>
+                                                        <input type="phone" class="form-control" id="cel" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="eml">E-mail:</label>
+                                                        <input type="email" class="form-control" id="eml" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer justify-content-center">
+                            <div class="row" style="width: 100%;">
+                                <div class="col">
+                                    <div class="d-flex mx-auto justify-content-end">
+                                        <button class="btn btn-outline-primary">Cancelar</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex mx-auto justify-content-start">
+                                        <button class="btn btn-success">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Save -->
+            <div class="alert alert-success fade show border-success text-primary col-md-6 mx-auto" role="alert">
+
+                <i class="zmdi zmdi-check-square zmdi-hc-3x align-middle mr-2 text-success"></i>
+
+                <strong>Parabéns!</strong> Seus dados foram salvos com sucesso.
+
+                <button type="button" class="close text-success pt-2" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- MODAL POST DO AUTOR -->
+        <div class="modal fade" id="modalPost">
+            <div class="modal-dialog modal-lg border border-primary">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <p class="text-center h5">Posts do Autor</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="row justify-content-end">
+                                        <button type="button" class="close p-3" data-dismiss="modal">&times;</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="card border-primary rounded animate__animated animate__fadeIn">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="media mr-3 ml-2">
+                                                <img class="mr-1 picPerson"
+                                                    src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                                                    alt="">
+                                                <i class="zmdi zmdi-check-circle checkicon "></i>
+                                                <div class="media-body">
+                                                    <h5 class="mt-0">
+                                                        <span class="zmdi-hc-stack mr-2 ">
+                                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x tticon"></i>
+                                                            <i
+                                                                class="zmdi zmdi-twitter zmdi-hc-stack-1x zmdi-hc-inverse zmdi-hc-flip-horizontal "></i>
+                                                        </span>
+                                                        <span class="text-primary">Martin Mercedes</span>
+                                                    </h5>
+                                                    <p class="card-text">Especialista fala sobre o Corona Vírus: <a
+                                                            href="#">https://t.co/8c8Yi5DtGm</a></p>
+                                                    <!--Tags-->
+                                                    <span class="badge btn badge-outline-primary shadow-sm ">Termo <a><i
+                                                                class="zmdi zmdi-close badge-close"></i></a>
+                                                    </span>
+                                                    <span class="badge btn badge-outline-primary shadow-sm ">Termo <a><i
+                                                                class="zmdi zmdi-close badge-close"></i></a>
+                                                    </span>
+                                                    <span class="badge btn badge-outline-primary shadow-sm ">Termo <a><i
+                                                                class="zmdi zmdi-close badge-close"></i></a>
+                                                    </span>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                                                        <label class="custom-control-label" for="customCheck">Check this custom checkbox</label>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-muted div-post border-primary">
+                                        <div class="row">
+                                            <div class="media mr-3 ml-2">
+                                                <div class="mr-3 picPerson space-footer"></div>
+                                                <div class="media-body">
+                                                    <img class="icon-footer mr-3 shakeIcon ml-3"
+                                                        src="library/icons/sgv/Smile.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Idle.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Sad.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Sick.svg"></img>
+                                                    <img class="icon-footer mr-5 shakeIcon"
+                                                        src="library/icons/sgv/Denied.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon ml-5"
+                                                        src="library/icons/sgv/Book.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Letter.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Star.svg"></img>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </i>
+                                </div>
+                                <br>
+                                <div class="card border-primary rounded animate__animated animate__fadeIn">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="media mr-3">
+                                                <img class="mr-1 picPerson"
+                                                    src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                                                    alt="">
+                                                <i class="zmdi zmdi-check-circle checkicon "></i>
+                                                <div class="media-body">
+                                                    <h5 class="mt-0">
+                                                        <span class="zmdi-hc-stack mr-2 ">
+                                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x tticon"></i>
+                                                            <i
+                                                                class="zmdi zmdi-twitter zmdi-hc-stack-1x zmdi-hc-inverse zmdi-hc-flip-horizontal "></i>
+                                                        </span>
+                                                        <span class="text-primary">Martin Mercedes</span>
+                                                    </h5>
+                                                    <p class="card-text">Especialista fala sobre o Corona Vírus: <a
+                                                            href="#">https://t.co/8c8Yi5DtGm</a></p>
+                                                    <!--Tags-->
+                                                    <span class="badge btn badge-outline-primary shadow-sm ">Termo <a><i
+                                                                class="zmdi zmdi-close badge-close"></i></a>
+                                                    </span>
+                                                    <span class="badge btn badge-outline-primary shadow-sm ">Termo <a><i
+                                                                class="zmdi zmdi-close badge-close"></i></a>
+                                                    </span>
+                                                    <span class="badge btn badge-outline-primary shadow-sm ">Termo <a><i
+                                                                class="zmdi zmdi-close badge-close"></i></a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-muted div-post border-primary">
+                                        <div class="row">
+                                            <div class="media mr-3">
+                                                <div class="mr-3 picPerson space-footer"></div>
+                                                <div class="media-body">
+                                                    <img class="icon-footer mr-3 shakeIcon ml-3"
+                                                        src="library/icons/sgv/Smile.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Idle.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Sad.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Sick.svg"></img>
+                                                    <img class="icon-footer mr-5 shakeIcon"
+                                                        src="library/icons/sgv/Denied.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon ml-5"
+                                                        src="library/icons/sgv/Book.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Letter.svg"></img>
+                                                    <img class="icon-footer mr-3 shakeIcon"
+                                                        src="library/icons/sgv/Star.svg"></img>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </i>
+                                </div>
+                                <div class="row justify-content-center my-3">
+                                    <img class="shakeIcon"
+                                                        src="library/icons/sgv/History.svg"></img>
+                                    </div>
+
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer justify-content-center">
+                                <div class="row" style="width: 100%;">
+                                    <div class="col">
+                                        <div class="d-flex mx-auto justify-content-end">
+                                            <button class="btn btn-outline-primary">Cancelar</button>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex mx-auto justify-content-start">
+                                            <button class="btn btn-success">Salvar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    $('.shakeIcon')
+        .mouseover(function () {
+            $(this).addClass('animate__animated animate__swing');
+        })
+        .mouseout(function () {
+            $(this).removeClass('animate__animated animate__swing');
+        });
+</script>
+
+</html>
