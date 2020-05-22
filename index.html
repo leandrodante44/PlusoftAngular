@@ -1,9 +1,27 @@
 <html>
-    <head>
-        <title>Plusoft Front-end Angular</title>
-        <link  rel="stylesheet" type="text/css" href="library/theme/BootStrapOmni.css" />
-        <link  rel="stylesheet" type="text/css" href="library/icons/css/material-design-iconic-font.css" />
-    </head>
-    <body>
-    </body>    
+
+<head>
+    <title>Plusoft Front-end Angular</title>
+    <link rel="stylesheet" type="text/css" href="library/theme/BootStrapOmni.css" />
+    <link rel="stylesheet" type="text/css" href="library/icons/css/material-design-iconic-font.css" />
+    <link rel="stylesheet" type="text/css" href="library/theme/themeModals.css" />
+    <link rel="stylesheet" type="text/css" href="library/theme/themeExtra.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <script src="library/scripts/angular.min.js"></script>
+</head>
+
+<body>
+    <form ng-app="" name="myForm" ng-init="myText = 'post@myweb.com'">
+        Email:
+        <input type="email" name="myAddress" ng-model="myText" required>
+        <h1>Status</h1>
+        {{myForm.myAddress.$valid}}
+        {{myForm.myAddress.$dirty}}
+        {{myForm.myAddress.$touched}}
+      </form>
+</body>
+
 </html>
