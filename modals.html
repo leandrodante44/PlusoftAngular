@@ -23,12 +23,15 @@
         <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalPost">
             Modal de Posts do Autor
         </button>
+        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalAtribuir">
+            Modal de Atribuir
+        </button>
         <style>
 
         </style>
         <!-- MODAL DETALHES -->
         <div class="modal fade" id="modalDetalhes">
-            <div class="modal-dialog modal-lg border border-primary">
+            <div class="modal-dialog modal-lg border border-primary rounded">
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header border-primary modal-header-bb">
@@ -129,7 +132,7 @@
                 </div>
             </div>
 
-            <!-- Alert Save -->
+            <!-- ALERT SAVE -->
             <div class="alert alert-success fade show border-success text-primary col-md-6 mx-auto" role="alert">
 
                 <i class="zmdi zmdi-check-square zmdi-hc-3x align-middle mr-2 text-success"></i>
@@ -168,14 +171,17 @@
                     <div class="modal-body">
                         <div class="modal-body">
                             <div class="container-fluid">
+                                <!-- CARD POST -->
                                 <div class="card border-primary rounded animate__animated animate__fadeIn">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="media mr-3 ml-2">
+                                                <!-- Picture person  -->
                                                 <img class="mr-1 picPerson"
                                                     src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
                                                     alt="">
                                                 <i class="zmdi zmdi-check-circle checkicon "></i>
+                                                <!-- Icon social and Name person -->
                                                 <div class="media-body">
                                                     <h5 class="mt-0">
                                                         <span class="zmdi-hc-stack mr-2 ">
@@ -197,14 +203,11 @@
                                                     <span class="badge btn badge-outline-primary shadow-sm ">Termo <a><i
                                                                 class="zmdi zmdi-close badge-close"></i></a>
                                                     </span>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-                                                        <label class="custom-control-label" for="customCheck">Check this custom checkbox</label>
-                                                      </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Emojis -->
                                     <div class="card-body text-muted div-post border-primary">
                                         <div class="row">
                                             <div class="media mr-3 ml-2">
@@ -233,14 +236,17 @@
                                     </i>
                                 </div>
                                 <br>
+                                <!-- CARD POST -->
                                 <div class="card border-primary rounded animate__animated animate__fadeIn">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="media mr-3">
+                                            <div class="media mr-3 ml-2">
+                                                <!-- Picture person  -->
                                                 <img class="mr-1 picPerson"
                                                     src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
                                                     alt="">
                                                 <i class="zmdi zmdi-check-circle checkicon "></i>
+                                                <!-- Icon social and Name person -->
                                                 <div class="media-body">
                                                     <h5 class="mt-0">
                                                         <span class="zmdi-hc-stack mr-2 ">
@@ -266,9 +272,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Emojis -->
                                     <div class="card-body text-muted div-post border-primary">
                                         <div class="row">
-                                            <div class="media mr-3">
+                                            <div class="media mr-3 ml-2">
                                                 <div class="mr-3 picPerson space-footer"></div>
                                                 <div class="media-body">
                                                     <img class="icon-footer mr-3 shakeIcon ml-3"
@@ -294,9 +301,8 @@
                                     </i>
                                 </div>
                                 <div class="row justify-content-center my-3">
-                                    <img class="shakeIcon"
-                                                        src="library/icons/sgv/History.svg"></img>
-                                    </div>
+                                    <img class="shakeIcon" src="library/icons/sgv/History.svg"></img>
+                                </div>
 
                             </div>
 
@@ -320,8 +326,161 @@
                 </div>
             </div>
         </div>
+
+        <!-- MODAL ATRIBUIR -->
+        <div class="modal fade" id="modalAtribuir">
+            <div class="modal-dialog modal-lg border border-primary">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <p class="text-center h5">Atribuição</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="row justify-content-end">
+                                        <button type="button" class="close p-3" data-dismiss="modal">&times;</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <!-- Card options -->
+                                <div class="card border-primary rounded animate__animated animate__fadeIn">
+                                    <div class="card-body text-primary">
+                                        <div class="row mt-3">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-10 modalForm">
+                                                <!-- roll 1 -->
+                                                <div class="row ">
+                                                    <div class="form-group ">
+                                                        <label class="font-weight-bold">Status</label>
+                                                        <br>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Em Andamento
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Atribuido
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Concluido
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- roll 2 -->
+                                                <div class="row">
+                                                    <div class="dropdown">
+                                                        <label class="font-weight-bold">Atribuir</label>
+                                                        <br>
+                                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                            id="dropdownMenuButton" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
+                                                            Atribuir
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item" href="#">Action</a>
+                                                            <a class="dropdown-item" href="#">Another action</a>
+                                                            <a class="dropdown-item" href="#">Something else here</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 <br>
+                                                <!-- roll 3 -->
+                                                <div class="row">
+                                                    <div class="form-group ">
+                                                        <label class="font-weight-bold">Sentimenot de entrada</label>
+                                                        <br>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Satisfeito
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Insatisfeito
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Indiferente
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- roll 4 -->
+                                                <div class="row">
+                                                    <div class="form-group ">
+                                                        <label class="font-weight-bold">Sentimenot de saída</label>
+                                                        <br>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Satisfeito
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Insatisfeito
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline mr-5">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" name="">
+                                                                Indiferente
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </i>
+                            </div>
+                            <br>
+                        </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer justify-content-center">
+                                <div class="row" style="width: 100%;">
+                                    <div class="col">
+                                        <div class="d-flex mx-auto justify-content-end">
+                                            <button class="btn btn-outline-primary">Cancelar</button>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex mx-auto justify-content-start">
+                                            <button class="btn btn-success">Salvar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
+</div>
 </body>
 <script>
     $('.shakeIcon')
