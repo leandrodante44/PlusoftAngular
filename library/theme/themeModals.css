@@ -67,10 +67,34 @@ a{
     border-width: 2px;
 }
 
+
+
 .space-footer{
     height: 20px;
 }
 
 .modalForm{
     font-size: 18px;
+}
+
+/* CARD HOME */
+
+.card-home{
+    border-width: 1px;
+}
+.notch-card{
+    border: 1px solid;
+    width: 100%;
+}
+.influencer{
+    font-weight: normal;
+}
+.icons-notch-header{
+    float: right;
+}
+.badge-card{
+    background-color: #4976FF;
+}
+.timestamp-card{
+    float: right;
 }
