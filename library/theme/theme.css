@@ -1,0 +1,190 @@
+.modal-content {
+    background-color: #f7f9fa;
+    border: 5px solid #3d5879;
+    border-radius: 3px;
+}
+
+.modal-header-bb {
+    border-bottom: 3px solid #3d5879;
+}
+
+/* CUSTOM CLASS */
+.KPIInfo {
+    width: 132px;
+    height: 64px;
+    border-radius: 5px;
+    color: #1d3451;
+    background: rgba(61, 88, 121, 0.1);
+}
+
+.headerKPI {
+    width: 100%;
+    margin-left: 0px;
+}
+
+.close {
+    color: #3D5879;
+    font-size: 36px;
+}
+
+.tticon {
+    color: #55ACEE; 
+}
+.checkicon{
+    color: #55ACEE; 
+    margin-left: -18px;
+    margin-right: 18px;
+    background-color: #fff;
+    border-radius: 100%;
+}
+.picPerson{
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+}
+
+a{
+    color:#4976ef;
+    font-weight: bold;
+}
+
+.badge-outline-primary{
+    color: #3D5879;
+    border: #3D5879 solid 1px 
+}
+
+
+.badge-close{
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.div-post{
+    border-top: 2px solid;
+}
+
+.card{
+    border-width: 2px;
+}
+
+
+
+.space-footer{
+    height: 20px;
+}
+
+.modalForm{
+    font-size: 18px;
+}
+
+/* CARD HOME */
+
+.card-home{
+    border-width: 1px;
+}
+.notch-card{
+    border: 1px solid;
+    width: 100%;
+}
+.influencer{
+    font-weight: normal;
+}
+.icons-notch-header{
+    float: right;
+}
+.badge-card{
+    background-color: #4976FF;
+}
+.timestamp-card{
+    float: right;
+}
+
+
+/* CUSTOM CLASS */
+.PersonInfo {
+    width: 180px;
+    height: 90px;
+    border-radius: 6px;
+    color: #1d3451;
+    background: rgba(61, 88, 121, 0.1);
+    border: 1px solid rgba(61, 88, 121, 0.5);
+    letter-spacing: 0.01em;
+}
+
+.PersonInfoFont1 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.PersonInfoFont2 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.PersonInfoFont3 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.picPerson {
+    width: 104px;
+    height: 104px;
+    border-radius: 100%;
+}
+
+.miniPicPerson {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+}
+
+.dropButton {
+    width: 100%;
+    height: 39px;
+
+    background: #3B5FCF;
+    border: 1px solid rgba(44, 61, 106, 0.15);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(44, 61, 106, 0.2);
+    border-radius: 8px;
+}
+.AutorInfoButtons {
+    width: 100%;
+    background: #5F7896;
+}
+.searchInput {
+    position: relative;
+}
+
+.searchInput i {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+}
+
+.searchInput input {
+    height: 32px;
+}
+
+.historyMsn img {
+    width: 40px;
+    height: 40px;
+}
+
+.chatAlert{
+    background: rgba(61, 88, 121, 0.1);
+}
+
+.historyCnt{
+    color:#0D386D !important; 
+}
+
+.card-chat{
+    background-color: #F7F9FA;
+}
+.border-right{
+    border-right: 1px solid;
+}
