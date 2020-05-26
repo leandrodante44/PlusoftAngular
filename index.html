@@ -4,7 +4,7 @@
     <title>Plusoft Front-end Angular</title>
     <link rel="stylesheet" type="text/css" href="library/theme/BootStrapOmni.css" />
     <link rel="stylesheet" type="text/css" href="library/icons/css/material-design-iconic-font.css" />
-    <link rel="stylesheet" type="text/css" href="library/theme/themeModals.css" />
+    <link rel="stylesheet" type="text/css" href="library/theme/theme.css" />
     <link rel="stylesheet" type="text/css" href="library/theme/themeExtra.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -13,30 +13,141 @@
     <script src="library/scripts/angular.min.js"></script>
 </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-10">
+<body class="body-home">
+    <div class="">
+        <div class="row mt-3">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+                <div class="col-sm-11 menu-filter border border-primary shadow-lg text-primary">
+                    <div class="d-flex flex-column">
+                        <div class="p-5 text-center"><img class="icon-filter mr-3 shakeIcon ml-3"
+                                src="library/icons/sgv/format_align_left.svg"></img> <b>Filtros</b></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 opacity"
+                                src="library/icons/sgv/supervised_user_circle.svg"></img> Atendimento</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/attach_file.svg"></img> Anexos</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/account_circle.svg"></img> Autor</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/phonelink.svg"></img> Canais</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/sim_card.svg"></img> Chamados</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/done_all.svg"></img> Classificação</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/star_border.svg"></img> Favoritos</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/settings_ethernet.svg"></img> Paginação</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/forum.svg"></img> Privados</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/art_track.svg"></img> Posts</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 opacity"
+                                src="library/icons/sgv/Tag.svg"></img> Tags</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
+                                src="library/icons/sgv/all_inbox.svg"></img> Tipos</div>
+                        <div class="p-5 text-center"><input type="button"
+                                class=" w-75 btn btn-outline-primary shadow full" value="Filtrar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <!-- FILTERS TOP MENU -->
+                <div class="card border-primary rounded card-home">
+                    <div class="card-body p-2 pl-4 text-primary">
+                        <div class="row">
+                            <div class="d-flex w-100">
+                                <div class="p-2 border-right col-sm-1"><img class="icon-footer mr-3 shakeIcon"
+                                        src="library/icons/sgv/sort_24px.svg"></img> <i
+                                        class="zmdi zmdi-chevron-down mr-2 zmdi-hc-lg"></i></div>
+                                <div class="p-2 ml-3">
+                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/mood.svg"></img>
+                                        <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                    </span>
+                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <img class="icon-footer mr-1 shakeIcon"
+                                            src="library/icons/sgv/move_to_inbox.svg"></img>
+                                        <i class="zmdi zmdi-chevron-down zmdi-hc-lg zmdi-hc-lg"></i>
+                                    </span>
+                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/tagv2.svg"></img>
+                                        <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                    </span>
+                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/phone.svg"></img>
+                                        <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                    </span>
+                                </div>
+                                <div class="p-2 ml-auto mr-3"><span
+                                        class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <img class="icon-footer mr-1 shakeIcon"
+                                            src="library/icons/sgv/search.svg"></img>
+                                        <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                    </span>
+                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/today.svg"></img>
+                                        <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                    </span>
+                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <i class="zmdi zmdi-swap-vertical zmdi-hc-lg shakeIcon"
+                                            style="width: 24; text-align: center;"></i>
+                                        <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                    </span>
+                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <img class="icon-footer mr-1 shakeIcon"
+                                            src="library/icons/sgv/refresh.svg"></img>
+                                        <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                    </span></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-primary rounded card-home mt-4">
+                    <div class="card-body p-2 pl-4 text-primary">
+                        <div class="row">
+                            <div class="d-flex w-100 justify-content-between">
+                                <div class="p-2 border-right col-sm-1">Periodo</div>
+                                <div class="p-2 ml-3">
+                                    Inicio: 16/03/2020 00:00
+                                </div>
+                                <div class="p-2  mr-3">
+                                    Fim: 16/03/2020 23:59
+                                </div>
+                                <div class="p-2 mr-5">
+                                    <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/live_help.svg"></img>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                 <!-- CARD POST -->
-                <div class="card border-primary rounded animate__animated animate__fadeIn card-home">
+                <div class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4">
                     <div class="card-body">
                         <div class="row">
-                            <div class="media mr-3 ml-2 col-sm-12">
+                            <div class="media mr-4  col-sm-12">
                                 <!-- Picture person  -->
-                                <img class="mr-1 picPerson"
-                                    src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
-                                    alt="">
-                                <i class="zmdi zmdi-check-circle checkicon "></i>
+                                <div class="form-check form-check-inline input-lg">
+                                    <label class="custom-control fill-checkbox">
+                                        <input type="checkbox" class="fill-control-input">
+                                        <span class="fill-control-indicator lg-check"></span>
+                                        <span class="fill-control-description ml-4"><img class="mr-1 picPerson"
+                                                src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                                                alt=""></span>
+                                    </label>
+                                </div>
+
                                 <!-- Icon social and Name person -->
-                                <div class="media-body">
+                                <div class="media-body ml-2">
                                     <h5 class="mt-0 border-primary notch-card rounded">
                                         <span class="zmdi-hc-stack mr-2 ">
                                             <i class="zmdi zmdi-circle zmdi-hc-stack-2x tticon"></i>
                                             <i
                                                 class="zmdi zmdi-twitter zmdi-hc-stack-1x zmdi-hc-inverse zmdi-hc-flip-horizontal "></i>
                                         </span>
-                                        <span class="text-primary">Martin Mercedes</span>
+                                        <span class="text-primary">Cristiano Ronaldo dos Santos</span>
                                         <a href="#" class="influencer ml-3">Influencer - Hater</a>
                                         <span class="icons-notch-header mt-2 mr-3">
                                             <img class="icon-footer shakeIcon mr-1"
@@ -56,15 +167,9 @@
                                     </p>
 
                                     <!--Tags-->
-                                    <span class="badge btn badge-primary badge-card shadow-sm ">Termo <a><i
-                                                class="zmdi zmdi-close badge-close"></i></a>
-                                    </span>
-                                    <span class="badge btn badge-primary badge-card shadow-sm ">Termo <a><i
-                                                class="zmdi zmdi-close badge-close"></i></a>
-                                    </span>
-                                    <span class="badge btn badge-primary badge-card shadow-sm ">Termo <a><i
-                                                class="zmdi zmdi-close badge-close"></i></a>
-                                    </span>
+                                    <h4><span class="badge btn badge-primary badge-card shadow-sm badge-pill">Termo
+                                            <a><i class="zmdi zmdi-close badge-close"></i></a>
+                                        </span></h4>
                                 </div>
                             </div>
                         </div>
@@ -72,31 +177,306 @@
                     <!-- Emojis -->
                     <div class="card-body text-muted">
                         <div class="row">
-                            <div class=" notch-card rounded ml-3 mr-3 p-2">
-                                <img class="icon-footer mr-3 shakeIcon ml-3" src="library/icons/sgv/Book.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Letter.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Star.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon ml-3" src="library/icons/sgv/Smile.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Idle.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Sad.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Sick.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Denied.svg"></img>
-                                <img class="icon-footer mr-5 shakeIcon" src="library/icons/sgv/Ballon.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/ThreeP.svg"></img>
-                                <a>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Tag.svg"></img>
-                            </a>
-                            <a>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Reply.svg"></img>
-                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Launch.svg"></img>
-                                
+                            <div class=" notch-card rounded ml-3 mr-3 p-2 text-primary">
+                                <center>
+                                    <img class="icon-footer mr-4 shakeIcon ml-3" src="library/icons/sgv/Book.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Letter.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Star.svg"></img>|
+                                    <img class="icon-footer mr-4 shakeIcon ml-4"
+                                        src="library/icons/sgv/Smile.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Idle.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Sad.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Sick.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Denied.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Ballon.svg"></img>|
+                                    <img class="icon-footer mr-4 shakeIcon ml-4"
+                                        src="library/icons/sgv/ThreeP.svg"></img>
+                                    <a class="text-primary mr-4">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Tag.svg"></img>
+                                        Tagueamento
+                                    </a>
+                                    <a class="text-primary mr-4">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Reply.svg"></img>
+                                        Responder
+                                    </a>
+                                    <a class="text-primary mr-2">
+                                        <img class="icon-footer mr-2 shakeIcon"
+                                            src="library/icons/sgv/Launch.svg"></img>
+                                        Atribuir
+                                    </a>
+                                </center>
                             </div>
                         </div>
-                        </i>
+                    </div>
+                </div>
+                <!-- CARD POST -->
+                <div class="card border-primary rounded animate__animated animate__fadeIn card-home mt-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="media mr-4  col-sm-12">
+                                <!-- Picture person  -->
+                                <div class="form-check form-check-inline input-lg">
+                                    <label class="custom-control fill-checkbox">
+                                        <input type="checkbox" class="fill-control-input">
+                                        <span class="fill-control-indicator lg-check"></span>
+                                        <span class="fill-control-description ml-4"><img class="mr-1 picPerson"
+                                                src="https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg"
+                                                alt=""></span>
+                                    </label>
+                                </div>
+
+                                <!-- Icon social and Name person -->
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0 border-primary notch-card rounded">
+                                        <span class="zmdi-hc-stack mr-2 ">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x tticon"></i>
+                                            <i
+                                                class="zmdi zmdi-twitter zmdi-hc-stack-1x zmdi-hc-inverse zmdi-hc-flip-horizontal "></i>
+                                        </span>
+                                        <span class="text-primary">Gabriel Barbosa</span>
+                                        <a href="#" class="influencer ml-3">Influencer - Lover</a>
+                                        <span class="icons-notch-header mt-2 mr-3">
+                                            <img class="icon-footer shakeIcon mr-1"
+                                                src="library/icons/sgv/Like.svg"></img>
+                                            <label class="primary small mr-1">15</label>
+                                            <img class="icon-footer  shakeIcon mr-1"
+                                                src="library/icons/sgv/Rtt.svg"></img>
+                                            <label class="primary small mr-1">5</label>
+                                            <img class="icon-footer shakeIcon mr-1"
+                                                src="library/icons/sgv/Comment.svg"></img>
+                                            <label class="primary small mr-1">2</label>
+                                        </span>
+                                    </h5>
+                                    <p class="card-text">Especialista fala sobre o Corona Vírus: <a
+                                            href="#">https://t.co/8c8Yi5DtGm</a>
+                                        <span class="primary small timestamp-card mr-2">16/03/2020 10:40</span>
+                                    </p>
+
+                                    <!--Tags-->
+                                    <h4><span class="badge btn badge-primary badge-card shadow-sm badge-pill">Termo
+                                            <a><i class="zmdi zmdi-close badge-close"></i></a>
+                                        </span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Emojis -->
+                    <div class="card-body text-muted">
+                        <div class="row">
+                            <div class=" notch-card rounded ml-3 mr-3 p-2 text-primary">
+                                <center>
+                                    <img class="icon-footer mr-4 shakeIcon ml-3" src="library/icons/sgv/Book.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Letter.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Star.svg"></img>|
+                                    <img class="icon-footer mr-4 shakeIcon ml-4"
+                                        src="library/icons/sgv/Smile.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Idle.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Sad.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Sick.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Denied.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Ballon.svg"></img>|
+                                    <img class="icon-footer mr-4 shakeIcon ml-4"
+                                        src="library/icons/sgv/ThreeP.svg"></img>
+                                    <a class="text-primary mr-4">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Tag.svg"></img>
+                                        Tagueamento
+                                    </a>
+                                    <a class="text-primary mr-4">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Reply.svg"></img>
+                                        Responder
+                                    </a>
+                                    <a class="text-primary mr-2">
+                                        <img class="icon-footer mr-2 shakeIcon"
+                                            src="library/icons/sgv/Launch.svg"></img>
+                                        Atribuir
+                                    </a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD POST -->
+                <div class="card border-primary rounded animate__animated animate__fadeIn card-home mt-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="media mr-4  col-sm-12">
+                                <!-- Picture person  -->
+                                <div class="form-check form-check-inline input-lg">
+                                    <label class="custom-control fill-checkbox">
+                                        <input type="checkbox" class="fill-control-input">
+                                        <span class="fill-control-indicator lg-check"></span>
+                                        <span class="fill-control-description ml-4"><img class="mr-1 picPerson"
+                                                src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg"
+                                                alt=""></span>
+                                    </label>
+                                </div>
+
+                                <!-- Icon social and Name person -->
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0 border-primary notch-card rounded">
+                                        <span class="zmdi-hc-stack mr-2 ">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x tticon"></i>
+                                            <i
+                                                class="zmdi zmdi-twitter zmdi-hc-stack-1x zmdi-hc-inverse zmdi-hc-flip-horizontal "></i>
+                                        </span>
+                                        <span class="text-primary">Neymar Júnior</span>
+                                        <a href="#" class="influencer ml-3">Influencer - Hater</a>
+                                        <span class="icons-notch-header mt-2 mr-3">
+                                            <img class="icon-footer shakeIcon mr-1"
+                                                src="library/icons/sgv/Like.svg"></img>
+                                            <label class="primary small mr-1">15</label>
+                                            <img class="icon-footer  shakeIcon mr-1"
+                                                src="library/icons/sgv/Rtt.svg"></img>
+                                            <label class="primary small mr-1">5</label>
+                                            <img class="icon-footer shakeIcon mr-1"
+                                                src="library/icons/sgv/Comment.svg"></img>
+                                            <label class="primary small mr-1">2</label>
+                                        </span>
+                                    </h5>
+                                    <p class="card-text">Especialista fala sobre o Corona Vírus: <a
+                                            href="#">https://t.co/8c8Yi5DtGm</a>
+                                        <span class="primary small timestamp-card mr-2">16/03/2020 10:40</span>
+                                    </p>
+
+                                    <!--Tags-->
+                                    <h4><span class="badge btn badge-primary badge-card shadow-sm badge-pill">Termo
+                                        <a><i class="zmdi zmdi-close badge-close"></i></a>
+                                    </span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Emojis -->
+                    <div class="card-body text-muted">
+                        <div class="row">
+                            <div class=" notch-card rounded ml-3 mr-3 p-2 text-primary">
+                                <center>
+                                    <img class="icon-footer mr-4 shakeIcon ml-3" src="library/icons/sgv/Book.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Letter.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Star.svg"></img>|
+                                    <img class="icon-footer mr-4 shakeIcon ml-4"
+                                        src="library/icons/sgv/Smile.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Idle.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Sad.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Sick.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Denied.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Ballon.svg"></img>|
+                                    <img class="icon-footer mr-4 shakeIcon ml-4"
+                                        src="library/icons/sgv/ThreeP.svg"></img>
+                                    <a class="text-primary mr-4">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Tag.svg"></img>
+                                        Tagueamento
+                                    </a>
+                                    <a class="text-primary mr-4">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Reply.svg"></img>
+                                        Responder
+                                    </a>
+                                    <a class="text-primary mr-2">
+                                        <img class="icon-footer mr-2 shakeIcon"
+                                            src="library/icons/sgv/Launch.svg"></img>
+                                        Atribuir
+                                    </a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-primary rounded animate__animated animate__fadeIn card-home mt-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="media mr-4  col-sm-12">
+                                <!-- Picture person  -->
+                                <div class="form-check form-check-inline input-lg">
+                                    <label class="custom-control fill-checkbox">
+                                        <input type="checkbox" class="fill-control-input">
+                                        <span class="fill-control-indicator lg-check"></span>
+                                        <span class="fill-control-description ml-4"><img class="mr-1 picPerson"
+                                                src="https://s2.glbimg.com/STCIMSu1Vvn-Bs6GiEfbeuOZ96w=/620x0/top/s.glbimg.com/jo/eg/f/original/2016/09/02/13827314_643041619198037_1536118892_n.jpg"
+                                                alt=""></span>
+                                    </label>
+                                </div>
+
+                                <!-- Icon social and Name person -->
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0 border-primary notch-card rounded">
+                                        <span class="zmdi-hc-stack mr-2 ">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x tticon"></i>
+                                            <i
+                                                class="zmdi zmdi-twitter zmdi-hc-stack-1x zmdi-hc-inverse zmdi-hc-flip-horizontal "></i>
+                                        </span>
+                                        <span class="text-primary">Bruna Marquezine</span>
+                                        <a href="#" class="influencer ml-3">Influencer - Hater</a>
+                                        <span class="icons-notch-header mt-2 mr-3">
+                                            <img class="icon-footer shakeIcon mr-1"
+                                                src="library/icons/sgv/Like.svg"></img>
+                                            <label class="primary small mr-1">15</label>
+                                            <img class="icon-footer  shakeIcon mr-1"
+                                                src="library/icons/sgv/Rtt.svg"></img>
+                                            <label class="primary small mr-1">5</label>
+                                            <img class="icon-footer shakeIcon mr-1"
+                                                src="library/icons/sgv/Comment.svg"></img>
+                                            <label class="primary small mr-1">2</label>
+                                        </span>
+                                    </h5>
+                                    <p class="card-text">Especialista fala sobre o Corona Vírus: <a
+                                            href="#">https://t.co/8c8Yi5DtGm</a>
+                                        <span class="primary small timestamp-card mr-2">16/03/2020 10:40</span>
+                                    </p>
+
+                                    <!--Tags-->
+                                    <h4><span class="badge btn badge-primary badge-card shadow-sm badge-pill">Termo
+                                        <a><i class="zmdi zmdi-close badge-close"></i></a>
+                                    </span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Emojis -->
+                    <div class="card-body text-muted">
+                        <div class="row">
+                            <div class=" notch-card rounded ml-3 mr-3 p-2 text-primary">
+                                <center>
+                                    <img class="icon-footer mr-4 shakeIcon ml-3" src="library/icons/sgv/Book.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Letter.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Star.svg"></img>|
+                                    <img class="icon-footer mr-4 shakeIcon ml-4"
+                                        src="library/icons/sgv/Smile.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Idle.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Sad.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Sick.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Denied.svg"></img>
+                                    <img class="icon-footer mr-4 shakeIcon" src="library/icons/sgv/Ballon.svg"></img>|
+                                    <img class="icon-footer mr-4 shakeIcon ml-4"
+                                        src="library/icons/sgv/ThreeP.svg"></img>
+                                    <a class="text-primary mr-4">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Tag.svg"></img>
+                                        Tagueamento
+                                    </a>
+                                    <a class="text-primary mr-4">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Reply.svg"></img>
+                                        Responder
+                                    </a>
+                                    <a class="text-primary mr-2">
+                                        <img class="icon-footer mr-2 shakeIcon"
+                                            src="library/icons/sgv/Launch.svg"></img>
+                                        Atribuir
+                                    </a>
+                                </center>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            $('.shakeIcon')
+                .mouseover(function () {
+                    $(this).addClass('animate__animated animate__swing');
+                })
+                .mouseout(function () {
+                    $(this).removeClass('animate__animated animate__swing');
+                });
+        </script>
 </body>
 
 </html>

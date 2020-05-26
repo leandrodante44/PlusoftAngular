@@ -98,7 +98,33 @@ a{
 .timestamp-card{
     float: right;
 }
-
+.menu-filter{
+    border-top-right-radius: 55px;
+    border-bottom-right-radius: 55px;
+    background-color: #FFFFFF;
+    padding: 0px;
+}
+.link-filter:hover{
+   background-color:  rgba(73, 118, 239, 0.15);
+   border-left: 2px solid #4976EF;
+   color: #4976EF;;
+}
+.link-filter:hover>img{
+    filter: saturate(60) brightness(0.9);
+}
+.icon-filter{ 
+    
+}
+.lg-check{
+    width: 25px !important;
+    height: 25px !important;
+}
+.opacity{
+    filter: opacity(0.5);
+}
+body{
+    background-color: #f7f9fa;
+}
 
 /* CHAT*/
 .PersonInfo {
