@@ -14,25 +14,31 @@
 </head>
 
 <body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Launch demo modal
+    </button>
+
+
     <div class="container card-chat border border-primary rounded mt-5">
-        <div class="row    " >
+        <div class="row    ">
             <!-- Column 1 -->
             <div class="col-sm-3 text-center pt-3 border-right border-primary ">
                 <div>
                     <center>
-                    <!-- Picture person  -->
-                    <img class="picPerson mt-4"
-                        src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
-                        alt="">
+                        <!-- Picture person  -->
+                        <img class="picPerson mt-4"
+                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            alt="">
 
-                    <div class="PersonInfo text-primary mt-2">
-                        <span class="PersonInfoFont1">Martin Merces</span>
-                        <br>
-                        <span class="PersonInfoFont2">Influencer - Hater</span>
-                        <br>
-                        <span class="PersonInfoFont3 text-primary">38,8M<br />Seguidores</span>
-                    </div>
-                </center>
+                        <div class="PersonInfo text-primary mt-2">
+                            <span class="PersonInfoFont1">Martin Merces</span>
+                            <br>
+                            <span class="PersonInfoFont2">Influencer - Hater</span>
+                            <br>
+                            <span class="PersonInfoFont3 text-primary">38,8M<br />Seguidores</span>
+                        </div>
+                    </center>
                 </div>
 
                 <div>
@@ -47,46 +53,100 @@
                     <span>───&nbsp;&nbsp; Ultimo atendente &nbsp;&nbsp;───</span>
                     <br>
                     <div class="mt-3">
-                    <img class="miniPicPerson "
-                        src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
-                        alt="">
-                    <span class="PersonInfoFont1">Jane Doe</span>
-                </div>
+                        <img class="miniPicPerson "
+                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            alt="">
+                        <span class="PersonInfoFont1">Jane Doe</span>
+                    </div>
                     <label class="PersonInfoFont2 mt-3">Último contato</label>
                     <label class="PersonInfoFont2">19/03/2019 17:25 GMT-3</label>
                 </div>
 
 
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle dropButton mt-3" type="button" id="dropdownMenuButton"
+                    <button class="btn btn-primary  dropButton mt-3" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chamados
                     </button>
-                    <button class="btn btn-primary dropdown-toggle dropButton mt-3" type="button" id="dropdownMenuButton"
+                    <button class="btn btn-primary  dropButton mt-3" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Atribuir Para
                     </button>
-                    <button class="btn btn-primary dropdown-toggle dropButton mt-3" type="button" id="dropdownMenuButton"
+                    <button class="btn btn-primary  dropButton mt-3" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Status
                     </button>
                 </div>
-
+                <br>
             </div>
 
 
             <!-- Column 2 -->
-            <div class="col-sm-7 text-center pt-3 border-right border-primary   ">
+            <div class="col-sm-7 text-center pt-3 border-right border-primary ">
+
+                <!-- Alert -->
                 <div class="alert alert-secondary fade show border-primary text-primary mx-auto chatAlert" role="alert">
                     Chamado atual #285443015
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <br>
 
+                <!-- Chat Messages -->
+                <div class="text-primary w-100">
+
+                    <!-- Chat bubbles -->
+                    <div class="media">
+                        <img class="mr-1 chatPerson"
+                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            alt="">
+                        <div class="media-body">
+                            <div class="bubble me">Hello there!
+                                <br>
+                                <span class="float-right small">16:30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chat bubbles -->
+                    <div class="media">
+                        <div class="media-body">
+                            <div class="bubble you"><span></span>Hi. I'm an expandeable chat box with box shadow. How
+                                are you? I
+                                expand
+                                horizontally and vertically, as you can see here.
+                                <br>
+                                <span class="float-right small">16:30</span></div>
+                        </div>
+                        <img class="mr-1 chatPerson"
+                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            alt="">
+                    </div>
+                    <!-- Chat bubbles -->
+                    <div class="media">
+                        <img class="mr-1 chatPerson"
+                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            alt="">
+                        <div class="media-body">
+                            <div class="bubble me">Awesome.
+                                <br>
+                                <span class="float-right small">16:30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chat bubbles -->
+                    <div class="media">
+                        <div class="media-body">
+                            <div class="bubble you"><span></span>Yea!
+                                <br>
+                                <span class="float-right small">16:30</span></div>
+                        </div>
+                        <img class="mr-1 chatPerson"
+                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            alt="">
+                    </div>
+                </div>
             </div>
-
-
 
             <!-- Column 3 -->
             <div class="col-sm-2 pt-3">
@@ -144,19 +204,58 @@
         </div>
 
         <!-- Footer -->
-        <div class="row">
+        <div class="row border border-top border-primary pb-3">
+            <div class="col-sm-3 text-center"> </div>
 
-            <div class="col-sm-3 border border-primary text-center">
-
+            <div class="col-sm-7 p-0">
+                <div class="row py-2 ">
+                    <div class="col">
+                        <!-- Toolbar -->
+                        <div class="btn-toolbar justify-content-between" role="toolbar">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-flat"><i
+                                        class="zmdi zmdi-format-size zmdi-hc-2x text-secondary"></i></button>
+                                <button type="button" class="btn btn-flat"><i
+                                        class="zmdi zmdi-format-bold zmdi-hc-2x text-secondary"></i></button>
+                                <button type="button" class="btn btn-flat"><i
+                                        class="zmdi zmdi-format-italic zmdi-hc-2x text-secondary"></i></button>
+                                <button type="button" class="btn btn-flat"><i
+                                        class="zmdi zmdi-format-underlined zmdi-hc-2x text-secondary"></i></button>
+                                <button type="button" class="btn btn-flat"><i
+                                        class="zmdi zmdi-border-color zmdi-hc-2x text-secondary"></i></button>
+                                <button type="button" class="btn btn-flat"><i
+                                        class="zmdi zmdi-format-color-text zmdi-hc-2x text-secondary"></i></button>
+                                <button type="button" class="btn btn-flat"><img class="icon-footer"
+                                        src="library/icons/sgv/Clips.svg"></img></button>
+                                <button type="button" class="btn btn-flat"><img class="icon-footer"
+                                        src="library/icons/sgv/Emoji.svg"></img></button>
+                            </div>
+                            <div class="col-sm-4 ml-auto pr-0">
+                                <!-- Send button -->
+                                <button type="button" class="btn btn-primary  dropButton ">Enviar como</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <!-- Message input -->
+                        <input class="form-control py-4 rounded" placeholder="Digite uma mensagem" />
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-7 border border-primary">
-
-            </div>
-            <div class="col-sm-2 border border-primary">
-
+            <div class="col-sm-2">
+                <div class="d-flex align-items-center flex-column h-100">
+                    <div class="mt-auto pb-3">
+                        <!-- Save button -->
+                        <button class="btn btn-success chatSaveButton">Salvar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    </div>
+
 </body>
 
 </html>
