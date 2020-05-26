@@ -226,6 +226,7 @@ a{
 }
 
 .me {
+    text-align: left;
     float: left;   
     margin: 5px 45px 5px 20px;         
 }
@@ -239,6 +240,7 @@ a{
     top: 0px           
 }
 .you {
+    text-align: right;
     float: right;    
     margin: 5px 20px 5px 45px;         
 }
