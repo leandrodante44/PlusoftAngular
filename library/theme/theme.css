@@ -1,304 +1,306 @@
 .modal-content {
-    background-color: #f7f9fa;
-    border: 5px solid #3d5879;
-    border-radius: 3px;
+  background-color: #f7f9fa;
+  border: 5px solid #3d5879;
+  border-radius: 3px;
 }
 
 .modal-header-bb {
-    border-bottom: 3px solid #3d5879;
+  border-bottom: 3px solid #3d5879;
 }
 
 /* CUSTOM CLASS */
 .KPIInfo {
-    width: 132px;
-    height: 64px;
-    border-radius: 5px;
-    color: #1d3451;
-    background: rgba(61, 88, 121, 0.1);
+  width: 132px;
+  height: 64px;
+  border-radius: 5px;
+  color: #1d3451;
+  background: rgba(61, 88, 121, 0.1);
 }
 
 .headerKPI {
-    width: 100%;
-    margin-left: 0px;
+  width: 100%;
+  margin-left: 0px;
 }
 
 .close {
-    color: #3D5879;
-    font-size: 36px;
+  color: #3d5879;
+  font-size: 36px;
 }
 
 .tticon {
-    color: #55ACEE; 
+  color: #55acee;
 }
-.checkicon{
-    color: #55ACEE; 
-    margin-left: -18px;
-    margin-right: 18px;
-    background-color: #fff;
-    border-radius: 100%;
+.checkicon {
+  color: #55acee;
+  margin-left: -18px;
+  margin-right: 18px;
+  background-color: #fff;
+  border-radius: 100%;
 }
-.picPerson{
-    width: 64px;
-    height: 64px;
-    border-radius: 100%;
-}
-
-a{
-    color:#4976ef;
-    font-weight: bold;
+.picPerson {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
 }
 
-.badge-outline-primary{
-    color: #3D5879;
-    border: #3D5879 solid 1px 
+a {
+  color: #4976ef;
+  font-weight: bold;
 }
 
-
-.badge-close{
-    font-weight: bold;
-    margin-left: 5px;
+.badge-outline-primary {
+  color: #3d5879;
+  border: #3d5879 solid 1px;
 }
 
-.div-post{
-    border-top: 2px solid;
+.badge-close {
+  font-weight: bold;
+  margin-left: 5px;
 }
 
-.card{
-    border-width: 2px;
+.div-post {
+  border-top: 2px solid;
 }
 
-
-
-.space-footer{
-    height: 20px;
+.card {
+  border-width: 2px;
 }
 
-.modalForm{
-    font-size: 18px;
+.space-footer {
+  height: 20px;
+}
+
+.modalForm {
+  font-size: 18px;
 }
 
 /* CARD HOME */
 
-.card-home{
-    border-width: 1px;
+.card-home {
+  border-width: 1px;
 }
-.notch-card{
-    border: 1px solid;
-    width: 100%;
+.notch-card {
+  border: 1px solid;
+  width: 100%;
 }
-.influencer{
-    font-weight: normal;
+.influencer {
+  font-weight: normal;
 }
-.icons-notch-header{
-    float: right;
+.icons-notch-header {
+  float: right;
 }
-.badge-card{
-    background-color: #4976FF;
+.badge-card {
+  background-color: #4976ff;
 }
-.timestamp-card{
-    float: right;
+.timestamp-card {
+  float: right;
 }
-.menu-filter{
-    border-top-right-radius: 55px;
-    border-bottom-right-radius: 55px;
-    background-color: #FFFFFF;
-    padding: 0px;
+.menu-filter {
+  border-top-right-radius: 55px;
+  border-bottom-right-radius: 55px;
+  background-color: #ffffff;
+  padding: 0px;
 }
-.link-filter:hover{
-   background-color:  rgba(73, 118, 239, 0.15);
-   border-left: 2px solid #4976EF;
-   color: #4976EF;;
+.link-filter:hover {
+  background-color: rgba(73, 118, 239, 0.15);
+  border-left: 2px solid #4976ef;
+  color: #4976ef;
 }
-.link-filter:hover>img{
-    filter: saturate(60) brightness(0.9);
+.link-filter:hover > img {
+  filter: saturate(60) brightness(0.9);
 }
-.icon-filter{ 
-    
+.icon-filter {
 }
-.lg-check{
-    width: 25px !important;
-    height: 25px !important;
+.lg-check {
+  width: 25px !important;
+  height: 25px !important;
 }
-.opacity{
-    filter: opacity(0.5);
+.opacity {
+  filter: opacity(0.5);
 }
-body{
-    background-color: #f7f9fa;
+body {
+  background-color: #f7f9fa;
 }
 
 /* CHAT*/
 .PersonInfo {
-    width: 180px;
-    height: 90px;
-    border-radius: 6px;
-    color: #1d3451;
-    background: rgba(61, 88, 121, 0.1);
-    border: 1px solid rgba(61, 88, 121, 0.5);
-    letter-spacing: 0.01em;
+  padding-bottom: 5px;
+  width: 180px;
+  height: auto;
+  border-radius: 6px;
+  color: #1d3451;
+  background: rgba(61, 88, 121, 0.1);
+  border: 1px solid rgba(61, 88, 121, 0.5);
+  letter-spacing: 0.01em;
 }
 
 .PersonInfoFont1 {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 27px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
 }
 
 .PersonInfoFont2 {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .PersonInfoFont3 {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .picPerson {
-    width: 104px;
-    height: 104px;
-    border-radius: 100%;
+  width: 104px;
+  height: 104px;
+  border-radius: 100%;
 }
 
 .miniPicPerson {
-    width: 32px;
-    height: 32px;
-    border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
 }
 
 .dropButton {
-    width: 100%;
-    height: 39px;
+  width: 100%;
+  height: 39px;
 
-    background: #3B5FCF;
-    border: 1px solid rgba(44, 61, 106, 0.15);
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(44, 61, 106, 0.2);
-    border-radius: 8px;
+  background: #3b5fcf;
+  border: 1px solid rgba(44, 61, 106, 0.15);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(44, 61, 106, 0.2);
+  border-radius: 8px;
 }
 .dropButton i {
-    position: relative;
-    top: -5px;
+  position: relative;
+  top: -5px;
 }
 
 .dropButtonCount {
-    background: #F7685B;
-    border: 1px solid #FFF;
-    color: #FFF;
+  background: #f7685b;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .AutorInfoButtons {
-    height: 51px;
-    width: 100%;
-    background: #5F7896;
+  height: 51px;
+  width: 100%;
+  background: #5f7896;
 }
 .searchInput {
-    position: relative;
+  position: relative;
 }
 
 .searchInput i {
-    position: absolute;
-    right: 0px;
-    padding: 10px 12px;
+  position: absolute;
+  right: 0px;
+  padding: 10px 12px;
 }
 
 .searchInput input {
-    height: 32px;
+  height: 32px;
 }
-
+.not-bold {
+  font-weight: 500 !important;
+}
 .historyMsn img {
-    width: 40px;
-    height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
-.chatAlert{
-    background: rgba(61, 88, 121, 0.1);
+.chatAlert {
+  background: rgba(61, 88, 121, 0.1);
 }
 
-.historyCnt{
-    color:#0D386D !important; 
+.historyCnt {
+  color: #0d386d !important;
 }
 
-.card-chat{
-    background-color: #F7F9FA;
+.card-chat {
+  background-color: #f7f9fa;
 }
-.border-right{
-    border-right: 1px solid;
+.border-right {
+  border-right: 1px solid;
+}
+.border-top {
+  border-top: 1px solid;
 }
 
-
-.bubble{
-    max-width: 50%;
-    background-color: #FFF;
-    border-radius: 2px;
-    border: 1px solid #3D5879;
-    box-shadow: 0px 4px 4px rgba(61, 88, 121, 0.2);
-    display: inline-block;
-    padding: 10px 18px;
-    position: relative;
-    vertical-align: top;
+.bubble {
+  max-width: 50%;
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid #3d5879;
+  box-shadow: 0px 4px 4px rgba(61, 88, 121, 0.2);
+  display: inline-block;
+  padding: 10px 18px;
+  position: relative;
+  vertical-align: top;
 }
 
 .bubble::before {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 20px 20px 0 20px;
-    border-color: #3D5879 transparent transparent transparent;
-    content: "\00a0";
-    display: block;
-    position: absolute;
-    top: -1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #3d5879 transparent transparent transparent;
+  content: "\00a0";
+  display: block;
+  position: absolute;
+  top: -1px;
 }
 .bubble::after {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 20px 20px 0 20px;
-    border-color: #fff transparent transparent transparent;
-    content: "\00a0";
-    display: block;
-    position: absolute;
-    top: -1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #fff transparent transparent transparent;
+  content: "\00a0";
+  display: block;
+  position: absolute;
+  top: -1px;
 }
 
 .me {
-    text-align: left;
-    float: left;   
-    margin: 5px 45px 5px 20px;         
+  text-align: left;
+  float: left;
+  margin: 5px 45px 5px 20px;
 }
 
 .me::before {
-    left: -20px;           
+  left: -20px;
 }
 
 .me::after {
-    left: -18px;  
-    top: 0px           
+  left: -18px;
+  top: 0px;
 }
 .you {
-    text-align: right;
-    float: right;    
-    margin: 5px 20px 5px 45px;         
+  text-align: right;
+  float: right;
+  margin: 5px 20px 5px 45px;
 }
 
 .you::before {
-    right: -20px;    
+  right: -20px;
 }
 .you::after {
-    right: -18px; 
-    top: 0px  
+  right: -18px;
+  top: 0px;
 }
 
-.chatPerson{
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
+.chatPerson {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
 }
 
 .chatSaveButton {
-    width: 140px;
+  width: 140px;
 }
-
-  
+.edit-text {
+  color: #0d386d;
+}
