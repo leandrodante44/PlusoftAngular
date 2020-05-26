@@ -15,9 +15,22 @@
 
 <body>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chat">
         Launch demo modal
     </button>
+
+    <div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+           
+            <div class="modal-body">
+          
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
 
 
     <div class="container card-chat border border-primary rounded mt-5">
@@ -28,11 +41,11 @@
                     <center>
                         <!-- Picture person  -->
                         <img class="picPerson mt-4"
-                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg"
                             alt="">
 
                         <div class="PersonInfo text-primary mt-2">
-                            <span class="PersonInfoFont1">Martin Merces</span>
+                            <span class="PersonInfoFont1">Neymar da Silva Santos Júnior</span>
                             <br>
                             <span class="PersonInfoFont2">Influencer - Hater</span>
                             <br>
@@ -41,7 +54,7 @@
                     </center>
                 </div>
 
-                <div>
+                <div class="px-2">
                     <br>
                     <button type="button" class="btn btn-primary AutorInfoButtons mt-5">Detalhes</button>
                     <br>
@@ -49,32 +62,37 @@
                     <br>
                 </div>
 
-                <div class="mt-4 text-primary">
-                    <span>───&nbsp;&nbsp; Ultimo atendente &nbsp;&nbsp;───</span>
+                <div class="mt-5 text-primary">
+                    <label>───&nbsp;&nbsp; Ultimo atendente &nbsp;&nbsp;───</label>
                     <br>
                     <div class="mt-3">
-                        <img class="miniPicPerson "
+                        <img class="miniPicPerson"
                             src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
                             alt="">
-                        <span class="PersonInfoFont1">Jane Doe</span>
+                        <span class="PersonInfoFont1 ml-1">Cristiano Ronaldo</span>
                     </div>
                     <label class="PersonInfoFont2 mt-3">Último contato</label>
+                    <br>
                     <label class="PersonInfoFont2">19/03/2019 17:25 GMT-3</label>
                 </div>
 
 
-                <div class="dropdown">
+                <div class="dropdown mt-3">
                     <button class="btn btn-primary  dropButton mt-3" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chamados
+                        <span class="badge badge-pill ml-2 dropButtonCount">3</span>
+                        <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                     </button>
-                    <button class="btn btn-primary  dropButton mt-3" type="button" id="dropdownMenuButton"
+                    <button class="btn btn-primary dropButton mt-3" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Atribuir Para
+                        <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                     </button>
                     <button class="btn btn-primary  dropButton mt-3" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Status
+                        <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                     </button>
                 </div>
                 <br>
@@ -97,9 +115,9 @@
                 <div class="text-primary w-100">
 
                     <!-- Chat bubbles -->
-                    <div class="media">
+                    <div class="media  mt-2">
                         <img class="mr-1 chatPerson"
-                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg"
                             alt="">
                         <div class="media-body">
                             <div class="bubble me">Lorem ipsum dolor
@@ -109,20 +127,20 @@
                         </div>
                     </div>
                     <!-- Chat bubbles -->
-                    <div class="media">
+                    <div class="media mt-2">
                         <div class="media-body">
                             <div class="bubble you"><span></span>sit amet, consectetur adipiscing elit. Vestibulum
                                 <br>
                                 <span class="float-right small">16:29</span></div>
                         </div>
                         <img class="mr-1 chatPerson"
-                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
-                            alt="">
+                        src="https://s2.glbimg.com/STCIMSu1Vvn-Bs6GiEfbeuOZ96w=/620x0/top/s.glbimg.com/jo/eg/f/original/2016/09/02/13827314_643041619198037_1536118892_n.jpg"
+                        alt="">
                     </div>
                     <!-- Chat bubbles -->
-                    <div class="media">
+                    <div class="media mt-2">
                         <img class="mr-1 chatPerson"
-                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
+                            src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg"
                             alt="">
                         <div class="media-body">
                             <div class="bubble me">quis quam non urna laoreet condimentum. Phasellus lobortis vulputate dolor sed ullamcorper. Duis iaculis massa nec bibendum efficitur.
@@ -132,15 +150,15 @@
                         </div>
                     </div>
                     <!-- Chat bubbles -->
-                    <div class="media">
+                    <div class="media mt-2">
                         <div class="media-body">
                             <div class="bubble you"><span></span>Nulla sed
                                 <br>
                                 <span class="float-right small">16:30</span></div>
                         </div>
                         <img class="mr-1 chatPerson"
-                            src="https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg"
-                            alt="">
+                        src="https://s2.glbimg.com/STCIMSu1Vvn-Bs6GiEfbeuOZ96w=/620x0/top/s.glbimg.com/jo/eg/f/original/2016/09/02/13827314_643041619198037_1536118892_n.jpg"
+                        alt="">
                     </div>
                 </div>
             </div>
@@ -148,16 +166,43 @@
             <!-- Column 3 -->
             <div class="col-sm-2 pt-3">
                 <div class="searchInput">
-                    <i class="zmdi zmdi-search"></i>
-                    <input type="search" class="form-control" placeholder="Buscar" />
+                    <i class="zmdi zmdi-search text-secondary"></i>
+                    <input type="search" class="form-control rounded" placeholder="Buscar" />
                 </div>
 
                 <div class="historyCnt mt-3">
                     <div class="media historyMsn">
-                        <img src="library/icons/sgv/Wechat.svg "></img>
+                        <img src="library/icons/sgv/Twitter.svg "></img>
                         <div class="media-body ml-2">
-                            <span><b>Mercedes</b></span>
-                            <p class="text-right small">17:25 </p>
+                            <span><b>Loren ipson</b></span>
+                            <p class="text-right small">17:25</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="historyCnt mt-3">
+                    <div class="media historyMsn">
+                        <img src="library/icons/sgv/Mail.svg "></img>
+                        <div class="media-body ml-2">
+                            <span><b>Loren ipson</b></span>
+                            <p class="text-right small">18/02/2020</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="historyCnt mt-3">
+                    <div class="media historyMsn">
+                        <img src="library/icons/sgv/WhatsApp.svg "></img>
+                        <div class="media-body ml-2">
+                            <span><b>Loren ipson</b></span>
+                            <p class="text-right small">20/12/2019</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="historyCnt mt-3">
+                    <div class="media historyMsn">
+                        <img src="library/icons/sgv/Facebook.svg "></img>
+                        <div class="media-body ml-2">
+                            <span><b>Loren ipson</b></span>
+                            <p class="text-right small">12/10/2019</p>
                         </div>
                     </div>
                 </div>
@@ -165,8 +210,17 @@
                     <div class="media historyMsn">
                         <img src="library/icons/sgv/Wechat.svg "></img>
                         <div class="media-body ml-2">
-                            <span><b>Mercedes</b></span>
-                            <p class="text-right small">17:25 </p>
+                            <span><b>Loren ipson</b></span>
+                            <p class="text-right small">15/06/2019</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="historyCnt mt-3">
+                    <div class="media historyMsn">
+                        <img src="library/icons/sgv/Instagram.svg "></img>
+                        <div class="media-body ml-2">
+                            <span><b>Loren ipson</b></span>
+                            <p class="text-right small">18/02/2018</p>
                         </div>
                     </div>
                 </div>
@@ -174,26 +228,17 @@
                     <div class="media historyMsn">
                         <img src="library/icons/sgv/Wechat.svg "></img>
                         <div class="media-body ml-2">
-                            <span><b>Mercedes</b></span>
-                            <p class="text-right small">17:25 </p>
+                            <span><b>Loren ipson</b></span>
+                            <p class="text-right small">15/06/2019</p>
                         </div>
                     </div>
                 </div>
                 <div class="historyCnt mt-3">
                     <div class="media historyMsn">
-                        <img src="library/icons/sgv/Wechat.svg "></img>
+                        <img src="library/icons/sgv/Instagram.svg "></img>
                         <div class="media-body ml-2">
-                            <span><b>Mercedes</b></span>
-                            <p class="text-right small">17:25 </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="historyCnt mt-3">
-                    <div class="media historyMsn">
-                        <img src="library/icons/sgv/Wechat.svg "></img>
-                        <div class="media-body ml-2">
-                            <span><b>Mercedes</b></span>
-                            <p class="text-right small">17:25 </p>
+                            <span><b>Loren ipson</b></span>
+                            <p class="text-right small">18/02/2018</p>
                         </div>
                     </div>
                 </div>
@@ -219,7 +264,9 @@
                                 <button type="button" class="btn btn-flat"><i
                                         class="zmdi zmdi-format-underlined zmdi-hc-2x text-secondary"></i></button>
                                 <button type="button" class="btn btn-flat"><i
-                                        class="zmdi zmdi-border-color zmdi-hc-2x text-secondary"></i></button>
+                                        class="zmdi zmdi-border-color zmdi-hc-2x text-secondary"></i>
+                                    
+                                    </button>
                                 <button type="button" class="btn btn-flat"><i
                                         class="zmdi zmdi-format-color-text zmdi-hc-2x text-secondary"></i></button>
                                 <button type="button" class="btn btn-flat"><img class="icon-footer"
@@ -229,7 +276,10 @@
                             </div>
                             <div class="col-sm-4 ml-auto pr-0">
                                 <!-- Send button -->
-                                <button type="button" class="btn btn-primary  dropButton ">Enviar como</button>
+                                <button type="button" class="btn btn-primary  dropButton ">
+                                    Enviar como
+                                    <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
