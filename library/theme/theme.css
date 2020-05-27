@@ -85,6 +85,7 @@ a {
 }
 .influencer {
   font-weight: normal;
+  color: #4976EF;
 }
 .icons-notch-header {
   float: right;
@@ -303,4 +304,8 @@ body {
 }
 .edit-text {
   color: #0d386d;
+}
+.icon28 {
+  width: 28px;
+  height: 28px;
 }
