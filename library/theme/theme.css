@@ -73,7 +73,11 @@ a {
 .modalForm {
   font-size: 18px;
 }
-
+.bg-pop-up{
+  background-color: rgba(255, 255, 255, 1);
+  height: 100%;
+  padding: 0;
+}
 /* CARD HOME */
 
 .card-home {
@@ -156,6 +160,12 @@ body {
 .picPerson {
   width: 104px;
   height: 104px;
+  border-radius: 100%;
+}
+
+.picPersonFeed{
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
 }
 
