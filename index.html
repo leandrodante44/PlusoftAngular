@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <script src="library/scripts/angular.min.js"></script>
+    <script src="controllers/app.controller.js"></script>
     <script src="controllers/index.controller.js"></script>
 </head>
 
@@ -125,7 +126,8 @@
                     </div>
                 </div>
                 <!-- CARD POST -->
-                <div ng-repeat="post in data" class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4">
+                <div ng-repeat="post in data"
+                    class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4">
                     <div class="card-body">
                         <div class="row">
                             <div class="media mr-4  col-sm-12">
@@ -135,8 +137,7 @@
                                         <input type="checkbox" class="fill-control-input">
                                         <span class="fill-control-indicator lg-check"></span>
                                         <span class="fill-control-description ml-4"><img class="mr-1 picPerson"
-                                                src="{{post.ds_urlavatarfrom}}"
-                                                alt=""></span>
+                                                src="{{post.ds_urlavatarfrom}}" alt=""></span>
                                     </label>
                                 </div>
 
@@ -145,8 +146,11 @@
                                     <h5 class="mt-0 border-primary notch-card rounded">
                                         <img class="icon28 ml-2 m-1" src="{{post.ds_smicon}}"></img>
                                         <span class="text-primary">{{post.ds_authorfrom}}</span>
-                                        <span class="influencer ml-3">{{(post.do_influencer === "Y") ? "Influencer - " : ""}} {{(post.do_loverhater === "L") ? "Lover" : (post.do_loverhater === "H") ? "Hater" : ""}} </span>
-                                        <span class="icons-notch-header mt-2 mr-3"> 
+                                        <span
+                                            class="influencer ml-3">{{(post.do_influencer === "Y") ? "Influencer - " : ""}}
+                                            {{(post.do_loverhater === "L") ? "Lover" : (post.do_loverhater === "H") ? "Hater" : ""}}
+                                        </span>
+                                        <span class="icons-notch-header mt-2 mr-3">
                                             <img class="icon-footer shakeIcon mr-1"
                                                 src="library/icons/sgv/Like.svg"></img>
                                             <label class="primary small mr-1">{{post.do_liked}}</label>
@@ -158,14 +162,14 @@
                                             <label class="primary small mr-1">2</label>
                                         </span>
                                     </h5>
-                                    <p class="card-text">{{post.ds_title}}<a
-                                            href="#"></a>
+                                    <p class="card-text">{{post.ds_title}}<a href="#"></a>
                                         <span class="primary small timestamp-card mr-2">{{post.dt_published}}</span>
                                     </p>
 
                                     <!--Tags-->
                                     <h4>
-                                        <span ng-repeat="tag in post.post_types" class="badge btn badge-primary badge-card shadow-sm badge-pill mr-2">{{tag.ds_typeicustomer}}
+                                        <span ng-repeat="tag in post.post_types"
+                                            class="badge btn badge-primary badge-card shadow-sm badge-pill mr-2">{{tag.ds_typeicustomer}}
                                             <a><i class="zmdi zmdi-close badge-close"></i></a>
                                         </span></h4>
                                 </div>
@@ -209,284 +213,7 @@
                 </div>
             </div>
         </div>
-        <!-- MODAL DE CHAT -->
-        <div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content pb-3 container card-chat border border-primary rounded mt-5">
-
-                    <div class="row">
-                        <!-- Column 1 -->
-                        <div class="col-sm-3 text-center pt-3 border-right border-primary ">
-                            <div>
-                                <center>
-                                    <!-- Picture person  -->
-                                    <img class="picPerson mt-4"
-                                        src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg" alt="">
-
-                                    <div class="PersonInfo text-primary mt-2">
-                                        <span class="PersonInfoFont1">Neymar Júnior</span>
-                                        <br>
-                                        <span class="PersonInfoFont2">Influencer - Hater</span>
-                                        <br>
-                                        <span class="PersonInfoFont3 text-primary">38,8M<br />Seguidores</span>
-                                    </div>
-                                </center>
-                            </div>
-
-                            <div class="px-2">
-                                <br>
-                                <button type="button" class="btn btn-primary AutorInfoButtons mt-5 not-bold"
-                                    data-toggle="modal" data-target="#modalDetalhes">Detalhes</button>
-                                <br>
-                                <button type="button" class="btn btn-primary AutorInfoButtons mt-5 not-bold"
-                                    data-toggle="modal" data-target="#modalPost">Post do Autor</button>
-                                <br>
-                            </div>
-
-                            <div class="mt-5 text-primary">
-                                <label>───&nbsp;&nbsp; Ultimo atendente &nbsp;&nbsp;───</label>
-                                <br>
-                                <div class="mt-3">
-                                    <img class="miniPicPerson"
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTe8SpXbnC7p-SEC0PovSsRMy4B4BOvIydaZ9ccpfuiN9zVT_O3&usqp=CAU"
-                                        alt="">
-                                    <span class="PersonInfoFont1 ml-1">Marina Ruy Barbosa</span>
-                                </div>
-                                <label class="PersonInfoFont2 mt-3">Último contato</label>
-                                <br>
-                                <label class="PersonInfoFont2">19/03/2019 17:25 GMT-3</label>
-                            </div>
-
-
-                            <div class="mt-3">
-                                <button class="btn btn-info  dropButton mt-3 not-bold" type="button"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Chamados
-                                    <span class="badge badge-pill ml-2 dropButtonCount ">3</span>
-                                    <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
-                                </button>
-                                <button class="btn btn-info dropButton mt-3 not-bold" type="button" aria-haspopup="true"
-                                    aria-expanded="false" data-toggle="modal" data-target="#modalAtribuir">
-                                    Atribuir Para
-                                    <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
-                                </button>
-                                <button class="btn btn-info  dropButton mt-3 not-bold" type="button"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Status
-                                    <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
-                                </button>
-                            </div>
-                            <br>
-                        </div>
-
-
-                        <!-- Column 2 -->
-                        <div class="col-sm-7 text-center pt-3 border-right border-primary ">
-
-                            <!-- Alert -->
-                            <div class="alert alert-secondary fade show border-primary text-primary mx-auto chatAlert"
-                                role="alert">
-
-                                Chamado atual #285443015
-                                <button type="button" class="close" style="margin-top:-5px;" data-dismiss="modal"
-                                    aria-label="Close">
-                                    <i class="zmdi zmdi-close  float-right"></i>
-                                </button>
-                            </div>
-                            <br>
-
-                            <!-- Chat Messages -->
-                            <div class="text-primary w-100">
-
-                                <!-- Chat bubbles -->
-                                <div class="media  mt-2">
-                                    <img class="mr-1 chatPerson"
-                                        src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg" alt="">
-                                    <div class="media-body">
-                                        <div class="bubble me">Lorem ipsum dolor
-                                            <br>
-                                            <span class="float-right small">16:28</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Chat bubbles -->
-                                <div class="media mt-4">
-                                    <div class="media-body">
-                                        <div class="bubble you"><span></span>sit amet, consectetur adipiscing elit.
-                                            Vestibulum
-                                            <br>
-                                            <span class="float-right small">16:29</span></div>
-                                    </div>
-                                    <img class="mr-1 chatPerson"
-                                        src="https://upload.wikimedia.org/wikipedia/commons/6/63/Paolla_Oliveira.png"
-                                        alt="">
-                                </div>
-                                <!-- Chat bubbles -->
-                                <div class="media mt-5">
-                                    <img class="mr-1 chatPerson"
-                                        src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg" alt="">
-                                    <div class="media-body">
-                                        <div class="bubble me">quis quam non urna laoreet condimentum. Phasellus
-                                            lobortis
-                                            vulputate dolor sed ullamcorper. Duis iaculis massa nec bibendum efficitur.
-                                            <br>
-                                            <span class="float-right small">16:30</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Chat bubbles -->
-                                <div class="media mt-4">
-                                    <div class="media-body">
-                                        <div class="bubble you"><span></span>Nulla sed
-                                            <br>
-                                            <span class="float-right small">16:30</span></div>
-                                    </div>
-                                    <img class="mr-1 chatPerson"
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTe8SpXbnC7p-SEC0PovSsRMy4B4BOvIydaZ9ccpfuiN9zVT_O3&usqp=CAU"
-                                        alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Column 3 -->
-                        <div class="col-sm-2 pt-3">
-                            <div class="searchInput">
-                                <i class="zmdi zmdi-search text-secondary"></i>
-                                <input type="search" class="form-control rounded" placeholder="Buscar" />
-                            </div>
-
-                            <div class="historyCnt mt-3">
-                                <div class="media historyMsn">
-                                    <img src="library/icons/sgv/Twitter.svg "></img>
-                                    <div class="media-body ml-2">
-                                        <span><b>Loren ipson</b></span>
-                                        <p class="text-right small">17:25</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="historyCnt mt-4">
-                                <div class="media historyMsn">
-                                    <img src="library/icons/sgv/Mail.svg "></img>
-                                    <div class="media-body ml-2">
-                                        <span><b>Loren ipson</b></span>
-                                        <p class="text-right small">18/02/2020</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="historyCnt mt-4">
-                                <div class="media historyMsn">
-                                    <img src="library/icons/sgv/WhatsApp.svg "></img>
-                                    <div class="media-body ml-2">
-                                        <span><b>Loren ipson</b></span>
-                                        <p class="text-right small">20/12/2019</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="historyCnt mt-4">
-                                <div class="media historyMsn">
-                                    <img src="library/icons/sgv/Facebook.svg "></img>
-                                    <div class="media-body ml-2">
-                                        <span><b>Loren ipson</b></span>
-                                        <p class="text-right small">12/10/2019</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="historyCnt mt-4">
-                                <div class="media historyMsn">
-                                    <img src="library/icons/sgv/Wechat.svg "></img>
-                                    <div class="media-body ml-2">
-                                        <span><b>Loren ipson</b></span>
-                                        <p class="text-right small">15/06/2019</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="historyCnt mt-4">
-                                <div class="media historyMsn">
-                                    <img src="library/icons/sgv/Instagram.svg "></img>
-                                    <div class="media-body ml-2">
-                                        <span><b>Loren ipson</b></span>
-                                        <p class="text-right small">18/02/2018</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="historyCnt mt-4">
-                                <div class="media historyMsn">
-                                    <img src="library/icons/sgv/Wechat.svg "></img>
-                                    <div class="media-body ml-2">
-                                        <span><b>Loren ipson</b></span>
-                                        <p class="text-right small">15/06/2019</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="historyCnt mt-4">
-                                <div class="media historyMsn">
-                                    <img src="library/icons/sgv/Instagram.svg "></img>
-                                    <div class="media-body ml-2">
-                                        <span><b>Loren ipson</b></span>
-                                        <p class="text-right small">18/02/2018</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer -->
-                    <div class="row border-top border-primary pb-3">
-                        <div class="col-sm-3 text-center"> </div>
-
-                        <div class="col-sm-7 p-0">
-                            <div class="row py-2 ">
-                                <div class="col">
-                                    <!-- Toolbar -->
-                                    <div class="btn-toolbar justify-content-between" role="toolbar">
-                                        <div class="btn-group edit-text" role="group">
-                                            <button type="button" class="btn btn-flat"><i
-                                                    class="zmdi zmdi-format-size zmdi-hc-lg text-primary"></i></button>
-                                            <button type="button" class="btn btn-flat"><i
-                                                    class="zmdi zmdi-format-bold zmdi-hc-lg text-primary"></i></button>
-                                            <button type="button" class="btn btn-flat"><i
-                                                    class="zmdi zmdi-format-italic zmdi-hc-lg text-primary"></i></button>
-                                            <button type="button" class="btn btn-flat"><i
-                                                    class="zmdi zmdi-format-underlined zmdi-hc-lg text-primary"></i></button>
-                                            <button type="button" class="btn btn-flat"><i
-                                                    class="zmdi zmdi-border-color zmdi-hc-lg text-primary"></i></button>
-                                            <button type="button" class="btn btn-flat"><i
-                                                    class="zmdi zmdi-format-color-text zmdi-hc-lg text-primary"></i></button>
-                                            <button type="button" class="btn btn-flat"><i
-                                                    class="zmdi zmdi-attachment-alt zmdi-hc-lg text-primary"></i></button>
-                                            <button type="button" class="btn btn-flat"><i
-                                                    class="zmdi zmdi-mood zmdi-hc-lg text-primary"></i></button>
-                                        </div>
-                                        <div class="col-sm-4 ml-auto pr-0">
-                                            <!-- Send button -->
-                                            <button type="button" class="btn btn-info  dropButton not-bold">
-                                                Enviar como
-                                                <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <!-- Message input -->
-                                    <textarea class="form-control py-4 rounded"
-                                        placeholder="Digite uma Mensagem"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
-                            <div class="d-flex align-items-center flex-column h-100">
-                                <div class="mt-auto pb-3">
-                                    <!-- Save button -->
-                                    <button class="btn btn-success chatSaveButton not-bold">Salvar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div ng-include="'chat.html'"></div>
         <!-- MODAL DETALHES -->
         <div class="modal fade" id="modalDetalhes">
             <div class="modal-dialog modal-xl border border-primary bg-pop-up rounded">
@@ -962,15 +689,16 @@
                 </div>
             </div>
         </div>
-        <script>
-            $('.shakeIcon')
-                .mouseover(function () {
-                    $(this).addClass('animate__animated animate__swing');
-                })
-                .mouseout(function () {
-                    $(this).removeClass('animate__animated animate__swing');
-                });
-        </script>
+    </div>
+    <script>
+        $('.shakeIcon')
+            .mouseover(function () {
+                $(this).addClass('animate__animated animate__swing');
+            })
+            .mouseout(function () {
+                $(this).removeClass('animate__animated animate__swing');
+            });
+    </script>
 </body>
 
 </html>

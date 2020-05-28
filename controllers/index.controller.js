@@ -1,4 +1,4 @@
-angular.module('myApp', []).controller('index.controller', function($scope) {
+app.controller('index.controller', function($scope) {
     $scope.data = [
         {
             "id_smpost" : 1234,
