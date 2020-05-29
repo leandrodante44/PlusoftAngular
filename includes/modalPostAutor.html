@@ -1,0 +1,107 @@
+<!-- MODAL POST DO AUTOR -->
+<div class="modal fade" id="modalPost">
+    <div class="modal-dialog modal-xl border border-primary bg-pop-up rounded">
+        <div class="modal-dialog modal-lg border border-primary">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <p class="text-center h5">Posts do Autor</p>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="row justify-content-end">
+                                    <button type="button" class="close p-3" data-dismiss="modal">&times;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <!-- CARD POST -->
+                            <div class="card border-primary rounded animate__animated animate__fadeIn mt-2"
+                                ng-repeat="post in selectedPost.do_chat.do_history">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="media mr-3 ml-2">
+                                            <!-- Picture person  -->
+                                            <img class="mr-1 picPerson" src="{{post.ds_urlavatarfrom}}" alt="">
+                                            <i class="zmdi zmdi-check-circle checkicon "></i>
+                                            <!-- Icon social and Name person -->
+                                            <div class="media-body">
+                                                <h5 class="mt-0">
+                                                    <img class="icon28 ml-2 m-1" src="{{post.ds_smicon}}"></img>
+                                                    <span class="text-primary">{{post.ds_authorfrom}}</span>
+                                                </h5>
+                                                <p class="card-text">{{post.ds_title}}</p>
+                                                <!--Tags-->
+                                                <h4>
+                                                    <span class="badge btn badge-outline-primary shadow-sm badge-pill mr-2"
+                                                        ng-repeat="tag in post.post_types">{{tag.ds_typeicustomer}}
+                                                        <a><i class="zmdi zmdi-close badge-close"></i></a>
+                                                    </span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Emojis -->
+                                <div class="card-body text-muted div-post border-primary">
+                                    <div class="row justify-content-center">
+                                        <div class="mr-3 ml-2">
+                                            <img class="icon-footer mr-3 shakeIcon ml-3"
+                                                src="library/icons/sgv/Smile.svg"></img>
+                                            <img class="icon-footer mr-3 shakeIcon"
+                                                src="library/icons/sgv/Idle.svg"></img>
+                                            <img class="icon-footer mr-3 shakeIcon"
+                                                src="library/icons/sgv/Sad.svg"></img>
+                                            <img class="icon-footer mr-3 shakeIcon"
+                                                src="library/icons/sgv/Angry.svg"></img>
+                                            <img class="icon-footer mr-3 shakeIcon"
+                                                src="library/icons/sgv/Sick.svg"></img>
+                                            <img class="icon-footer mr-5 shakeIcon"
+                                                src="library/icons/sgv/Denied.svg"></img>
+                                            <img class="icon-footer mr-3 shakeIcon ml-5"
+                                                src="library/icons/sgv/Book.svg"></img>
+                                            <img class="icon-footer mr-3 shakeIcon"
+                                                src="library/icons/sgv/Letter.svg"></img>
+                                            <img class="icon-footer mr-3 shakeIcon"
+                                                src="library/icons/sgv/Star.svg"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row justify-content-center my-3">
+                                <img class="shakeIcon" src="library/icons/sgv/History.svg"></img>
+                            </div>
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer justify-content-center">
+                            <div class="row" style="width: 100%;">
+                                <div class="col">
+                                    <div class="d-flex mx-auto justify-content-end">
+                                        <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="d-flex mx-auto justify-content-start">
+                                        <button class="btn btn-success" data-dismiss="modal">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

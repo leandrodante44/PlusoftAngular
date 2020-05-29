@@ -9,26 +9,28 @@
                     <div>
                         <center>
                             <!-- Picture person  -->
-                            <img class="picPerson mt-4"
-                                src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg" alt="">
+                            <img class="picPerson mt-4" src="{{selectedPost.ds_urlavatarfrom}}" alt="">
 
                             <div class="PersonInfo text-primary mt-2">
-                                <span class="PersonInfoFont1">Neymar Júnior</span>
+                                <span class="PersonInfoFont1">{{selectedPost.ds_authorfrom}}</span>
                                 <br>
-                                <span class="PersonInfoFont2">Influencer - Hater</span>
+                                <span
+                                    class="PersonInfoFont2">{{(selectedPost.do_influencer === "Y") ? "Influencer - " : ""}}
+                                    {{(selectedPost.do_loverhater === "L") ? "Lover" : (selectedPost.do_loverhater === "H") ? "Hater" : ""}}</span>
                                 <br>
-                                <span class="PersonInfoFont3 text-primary">38,8M<br />Seguidores</span>
+                                <span
+                                    class="PersonInfoFont3 text-primary">{{selectedPost.do_chat.dn_followers}}<br />Seguidores</span>
                             </div>
                         </center>
                     </div>
 
                     <div class="px-2">
                         <br>
-                        <button type="button" class="btn btn-primary AutorInfoButtons mt-5 not-bold"
-                            data-toggle="modal" data-target="#modalDetalhes">Detalhes</button>
+                        <button type="button" class="btn btn-primary AutorInfoButtons mt-5 not-bold" data-toggle="modal"
+                            data-target="#modalDetalhes">Detalhes</button>
                         <br>
-                        <button type="button" class="btn btn-primary AutorInfoButtons mt-5 not-bold"
-                            data-toggle="modal" data-target="#modalPost">Post do Autor</button>
+                        <button type="button" class="btn btn-primary AutorInfoButtons mt-5 not-bold" data-toggle="modal"
+                            data-target="#modalPost">Post do Autor</button>
                         <br>
                     </div>
 
@@ -36,20 +38,18 @@
                         <label>───&nbsp;&nbsp; Ultimo atendente &nbsp;&nbsp;───</label>
                         <br>
                         <div class="mt-3">
-                            <img class="miniPicPerson"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTe8SpXbnC7p-SEC0PovSsRMy4B4BOvIydaZ9ccpfuiN9zVT_O3&usqp=CAU"
-                                alt="">
-                            <span class="PersonInfoFont1 ml-1">Marina Ruy Barbosa</span>
+                            <img class="miniPicPerson" src="{{lastClerk.ds_urlavatarfrom}}" alt="">
+                            <span class="PersonInfoFont1 ml-1">{{lastClerk.ds_authorfrom}}</span>
                         </div>
                         <label class="PersonInfoFont2 mt-3">Último contato</label>
                         <br>
-                        <label class="PersonInfoFont2">19/03/2019 17:25 GMT-3</label>
+                        <label class="PersonInfoFont2">{{lastClerk.dt_contact}}</label>
                     </div>
 
 
                     <div class="mt-3">
-                        <button class="btn btn-info  dropButton mt-3 not-bold" type="button"
-                            aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-info  dropButton mt-3 not-bold" type="button" aria-haspopup="true"
+                            aria-expanded="false">
                             Chamados
                             <span class="badge badge-pill ml-2 dropButtonCount ">3</span>
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
@@ -59,8 +59,8 @@
                             Atribuir Para
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                         </button>
-                        <button class="btn btn-info  dropButton mt-3 not-bold" type="button"
-                            aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-info  dropButton mt-3 not-bold" type="button" aria-haspopup="true"
+                            aria-expanded="false">
                             Status
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                         </button>
@@ -76,7 +76,7 @@
                     <div class="alert alert-secondary fade show border-primary text-primary mx-auto chatAlert"
                         role="alert">
 
-                        Chamado atual #285443015
+                        Chamado atual #{{selectedPost.id_smpost}}
                         <button type="button" class="close" style="margin-top:-5px;" data-dismiss="modal"
                             aria-label="Close">
                             <i class="zmdi zmdi-close  float-right"></i>
@@ -87,53 +87,20 @@
                     <!-- Chat Messages -->
                     <div class="text-primary w-100">
 
-                        <!-- Chat bubbles -->
-                        <div class="media  mt-2">
-                            <img class="mr-1 chatPerson"
-                                src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg" alt="">
+                        <div class="media  mt-5" ng-repeat="contact in selectedPost.do_chat.do_contact">
+
+                            <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?true:false}}"
+                                src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
                             <div class="media-body">
-                                <div class="bubble me">Lorem ipsum dolor
+                                <div class="bubble {{(contact.ds_side === 0)?'me':'you'}}">{{contact.ds_content}}
                                     <br>
-                                    <span class="float-right small">16:28</span>
+                                    <span class="float-right small">{{contact.dt_contact}}</span>
                                 </div>
                             </div>
+                            <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?false:true}}"
+                                src="{{(contact.ds_side === 0)?'':contact.ds_urlavatarfrom}}" alt="">
                         </div>
-                        <!-- Chat bubbles -->
-                        <div class="media mt-4">
-                            <div class="media-body">
-                                <div class="bubble you"><span></span>sit amet, consectetur adipiscing elit.
-                                    Vestibulum
-                                    <br>
-                                    <span class="float-right small">16:29</span></div>
-                            </div>
-                            <img class="mr-1 chatPerson"
-                                src="https://upload.wikimedia.org/wikipedia/commons/6/63/Paolla_Oliveira.png"
-                                alt="">
-                        </div>
-                        <!-- Chat bubbles -->
-                        <div class="media mt-5">
-                            <img class="mr-1 chatPerson"
-                                src="https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg" alt="">
-                            <div class="media-body">
-                                <div class="bubble me">quis quam non urna laoreet condimentum. Phasellus
-                                    lobortis
-                                    vulputate dolor sed ullamcorper. Duis iaculis massa nec bibendum efficitur.
-                                    <br>
-                                    <span class="float-right small">16:30</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Chat bubbles -->
-                        <div class="media mt-4">
-                            <div class="media-body">
-                                <div class="bubble you"><span></span>Nulla sed
-                                    <br>
-                                    <span class="float-right small">16:30</span></div>
-                            </div>
-                            <img class="mr-1 chatPerson"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTe8SpXbnC7p-SEC0PovSsRMy4B4BOvIydaZ9ccpfuiN9zVT_O3&usqp=CAU"
-                                alt="">
-                        </div>
+
                     </div>
                 </div>
 
@@ -144,75 +111,12 @@
                         <input type="search" class="form-control rounded" placeholder="Buscar" />
                     </div>
 
-                    <div class="historyCnt mt-3">
+                    <div class="historyCnt mt-4" ng-repeat="history in selectedPost.do_chat.do_history">
                         <div class="media historyMsn">
-                            <img src="library/icons/sgv/Twitter.svg "></img>
+                            <img src="{{history.ds_smicon}}"></img>
                             <div class="media-body ml-2">
-                                <span><b>Loren ipson</b></span>
-                                <p class="text-right small">17:25</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="historyCnt mt-4">
-                        <div class="media historyMsn">
-                            <img src="library/icons/sgv/Mail.svg "></img>
-                            <div class="media-body ml-2">
-                                <span><b>Loren ipson</b></span>
-                                <p class="text-right small">18/02/2020</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="historyCnt mt-4">
-                        <div class="media historyMsn">
-                            <img src="library/icons/sgv/WhatsApp.svg "></img>
-                            <div class="media-body ml-2">
-                                <span><b>Loren ipson</b></span>
-                                <p class="text-right small">20/12/2019</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="historyCnt mt-4">
-                        <div class="media historyMsn">
-                            <img src="library/icons/sgv/Facebook.svg "></img>
-                            <div class="media-body ml-2">
-                                <span><b>Loren ipson</b></span>
-                                <p class="text-right small">12/10/2019</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="historyCnt mt-4">
-                        <div class="media historyMsn">
-                            <img src="library/icons/sgv/Wechat.svg "></img>
-                            <div class="media-body ml-2">
-                                <span><b>Loren ipson</b></span>
-                                <p class="text-right small">15/06/2019</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="historyCnt mt-4">
-                        <div class="media historyMsn">
-                            <img src="library/icons/sgv/Instagram.svg "></img>
-                            <div class="media-body ml-2">
-                                <span><b>Loren ipson</b></span>
-                                <p class="text-right small">18/02/2018</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="historyCnt mt-4">
-                        <div class="media historyMsn">
-                            <img src="library/icons/sgv/Wechat.svg "></img>
-                            <div class="media-body ml-2">
-                                <span><b>Loren ipson</b></span>
-                                <p class="text-right small">15/06/2019</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="historyCnt mt-4">
-                        <div class="media historyMsn">
-                            <img src="library/icons/sgv/Instagram.svg "></img>
-                            <div class="media-body ml-2">
-                                <span><b>Loren ipson</b></span>
-                                <p class="text-right small">18/02/2018</p>
+                                <span><b>{{history.ds_title}}</b></span>
+                                <p class="text-right small">{{history.dt_published}}</p>
                             </div>
                         </div>
                     </div>
@@ -254,13 +158,12 @@
                                     </button>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <!-- Message input -->
-                            <textarea class="form-control py-4 rounded"
-                                placeholder="Digite uma Mensagem"></textarea>
+                            <textarea class="form-control py-4 rounded" placeholder="Digite uma Mensagem"></textarea>
                         </div>
                     </div>
                 </div>
