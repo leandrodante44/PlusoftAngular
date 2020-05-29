@@ -319,3 +319,18 @@ body {
   width: 28px;
   height: 28px;
 }
+
+.searchInputButton:hover > .searchInputTopMenu{
+  width: 250px;
+  transition: width 0.2s linear;
+}
+
+.searchInputTopMenu{
+  width: 0;
+  transition: width 0.2s linear;
+}
+
+.searchInputTopMenu:focus{
+  width: 250px;
+  transition: width 0.2s linear;
+}

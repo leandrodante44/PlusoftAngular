@@ -24,7 +24,7 @@
                     <div class="d-flex flex-column">
                         <div class="p-5 text-center"><img class="icon-filter mr-3 shakeIcon ml-3"
                                 src="library/icons/sgv/format_align_left.svg"></img> <b>Filtros</b></div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 opacity"
+                        <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalAtendimento"><img class="icon-filter mr-3 shakeIcon ml-2 opacity"
                                 src="library/icons/sgv/supervised_user_circle.svg"></img> Atendimento</div>
                         <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
                                 src="library/icons/sgv/attach_file.svg"></img> Anexos</div>
@@ -63,7 +63,7 @@
                                         src="library/icons/sgv/sort_24px.svg"></img> <i
                                         class="zmdi zmdi-chevron-down mr-2 zmdi-hc-lg"></i></div>
                                 <div class="p-2 ml-3">
-                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                    <span class="icon-top-menu border rounded p-2 shadow-sm mr-3">
                                         <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/mood.svg"></img>
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                     </span>
@@ -81,10 +81,10 @@
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                     </span>
                                 </div>
-                                <div class="p-2 ml-auto mr-3"><span
-                                        class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
-                                        <img class="icon-footer mr-1 shakeIcon"
-                                            src="library/icons/sgv/search.svg"></img>
+                                <div class="p-2 ml-auto mr-3">
+                                    <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3 searchInputButton">
+                                        <input class="searchInputTopMenu border-0" type="text" name="" placeholder=" Buscar..." ng-model="searchTopMenu">
+                                        <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/search.svg"></img>
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                     </span>
                                     <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <!-- CARD POST -->
-                <div ng-repeat="post in data"
+                <div ng-repeat="post in data | filter:searchTopMenu"
                     class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4">
                     <div class="card-body">
                         <div class="row">
@@ -689,6 +689,90 @@
                 </div>
             </div>
         </div>
+
+        <!-- MODAL ATENDIMENTO -->
+        <div class="modal fade" id="modalAtendimento">
+            <div class="modal-dialog modal-xl border border-primary bg-pop-up rounded">
+                <div class="modal-dialog modal-lg border border-primary rounded">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="p-0 modal-header border-primary justify-content-center">
+                            <p class="pt-4">Atendimento</p>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <!-- alert -->
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-6 text-left">
+                                                        <div class="form-group">
+                                                            <label for="busRes">Busca nas Respostas</label>
+                                                            <input type="text" class="form-control" id="busRes" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="via">Via Bot</label>
+                                                            <input type="text" class="form-control" id="via" />
+                                                        </div>
+                                                      
+                                                    </div>
+                                                    <div class="col-sm-6 text-left">
+                                                        <div class="form-group">
+                                                            <label for="res">Respondidos</label>
+                                                            <input type="phone" class="form-control" id="res" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="ver">Verificados</label>
+                                                            <input type="phone" class="form-control" id="ver" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-3 text-left"></div>
+                                                    <div class="col-sm-6 text-left">
+                                                        <div class="form-group">
+                                                            <label for="ate">Atendentes</label>
+                                                            <div class="searchInput form-control p-1">
+                                                                <i class="zmdi zmdi-search text-secondary"></i>
+                                                                <input type="search" class="border-0 w-100"  placeholder="Buscar..."  id="ate"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer justify-content-center">
+                                <div class="row" style="width: 100%;">
+                                    <div class="col">
+                                        <div class="d-flex mx-auto justify-content-end">
+                                            <button class="btn btn-outline-primary"
+                                                data-dismiss="modal">Cancelar</button>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex mx-auto justify-content-start">
+                                            <button class="btn btn-success" data-dismiss="modal">Salvar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
     <script>
         $('.shakeIcon')
