@@ -134,6 +134,13 @@ a {
 body {
   background-color: #f7f9fa;
 }
+.txt-footer-card{
+  font-weight: 500;
+}
+.text-top-two-card{
+  font-weight: 500;
+  font-size: 18px;
+}
 
 /* CHAT*/
 .PersonInfo {
