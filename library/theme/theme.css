@@ -4,7 +4,7 @@
   border-radius: 3px;
 }
 
-.modal-header-bb {
+.modal-header {
   border-bottom: 3px solid #3d5879;
 }
 
@@ -341,4 +341,15 @@ body {
 .searchInputTopMenu:focus{
   width: 250px;
   transition: width 0.2s linear;
+}
+
+.modal-header-title {
+  font-size: 18px;
+  line-height: 29px;
+  color: #1D3451;
+}
+
+.modal-content {
+  min-height: 600px;
+  height:auto;
 }
