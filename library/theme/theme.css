@@ -216,17 +216,18 @@ body {
   width: 100%;
   background: #5f7896;
 }
-.searchInput {
+.iconInput {
   position: relative;
+  border-radius: 6px;
 }
 
-.searchInput i {
+.iconInput i {
   position: absolute;
   right: 0px;
   padding: 10px 12px;
 }
 
-.searchInput input {
+.iconInput input {
   height: 32px;
 }
 .not-bold {
@@ -359,4 +360,8 @@ body {
 .modal-content {
   min-height: 600px;
   height:auto;
+}
+.mid-row {
+  display: flex;
+  align-items: center;
 }
