@@ -96,6 +96,7 @@ a {
 }
 .badge-card {
   background-color: #4976ff;
+  font-weight: 400;
 }
 .timestamp-card {
   float: right;
@@ -114,7 +115,14 @@ a {
 .link-filter:hover > img {
   filter: saturate(60) brightness(0.9);
 }
+.link-filter > span{
+  position: absolute;
+    vertical-align: middle;
+    margin-top: 6px;
+}
 .icon-filter {
+  width: 35px;
+  height: 35px;
 }
 .lg-check {
   width: 25px !important;

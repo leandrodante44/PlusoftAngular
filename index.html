@@ -2,6 +2,7 @@
 
 <head>
     <title>Plusoft Front-end Angular</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="library/theme/BootStrapOmni.css" />
     <link rel="stylesheet" type="text/css" href="library/icons/css/material-design-iconic-font.css" />
     <link rel="stylesheet" type="text/css" href="library/theme/theme.css" />
@@ -24,35 +25,43 @@
                     <div class="d-flex flex-column">
                         <div class="p-5 text-center"><img class="icon-filter mr-3 shakeIcon ml-3"
                                 src="library/icons/sgv/format_align_left.svg"></img> <b>Filtros</b></div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 opacity"
-                                src="library/icons/sgv/supervised_user_circle.svg"></img> Atendimento</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/attach_file.svg"></img> Anexos</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/account_circle.svg"></img> Autor</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/phonelink.svg"></img> Canais</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/sim_card.svg"></img> Chamados</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/done_all.svg"></img> Classificação</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/star_border.svg"></img> Favoritos</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/settings_ethernet.svg"></img> Paginação</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/forum.svg"></img> Privados</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/art_track.svg"></img> Posts</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 opacity"
-                                src="library/icons/sgv/Tag.svg"></img> Tags</div>
-                        <div class="p-2 mt-2 pl-4 link-filter"><img class="icon-filter mr-3 shakeIcon ml-2 "
-                                src="library/icons/sgv/all_inbox.svg"></img> Tipos</div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object
+                                class="icon-filter mr-3 shakeIcon ml-2 init-opacity opacity"
+                                data="library/icons/sgv/supervised_user_circle.svg"></object> <span>Atendimento</span>
+                        </div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/attach_file.svg"
+                                type="image/svg+xml"></object><span>Anexos</span>
+                        </div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/account_circle.svg"></object> <span>Autor</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/phonelink.svg"></object> <span>Canais</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/sim_card.svg"></object> <span>Chamados</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/done_all.svg"></object> <span>Classificação</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/star_border.svg"></object> <span>Favoritos</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/settings_ethernet.svg"></object> <span>Paginação</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/forum.svg"></object> <span>Privados</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/art_track.svg"></object> <span>Posts</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter align-middle"><object
+                                class="icon-filter mr-3 shakeIcon ml-2  init-opacity opacity"
+                                data="library/icons/sgv/Tag.svg"></object> <span>Tags</span></div>
+                        <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                                data="library/icons/sgv/all_inbox.svg"></object> <span>Tipos</span></div>
                         <div class="p-5 text-center"><input type="button"
                                 class=" w-75 btn btn-outline-primary shadow full" value="Filtrar"></div>
                     </div>
                 </div>
             </div>
+            <script>
+
+            </script>
             <div class="col-sm-8">
                 <!-- FILTERS TOP MENU -->
                 <div class="card border-primary rounded card-home">
@@ -107,17 +116,17 @@
                     </div>
                 </div>
                 <div class="card border-primary rounded card-home mt-4">
-                    <div class="card-body p-2 pl-4 text-primary">
+                    <div class="card-body p-0 pl-4 text-primary">
                         <div class="row">
                             <div class="d-flex w-100 justify-content-between">
-                                <div class="p-2 border-right col-sm-1">Periodo</div>
-                                <div class="p-2 ml-3">
+                                <div class="p-3 border-right col-sm-1" style="padding-left: 0.5rem !important;">Periodo</div>
+                                <div class="p-3 ml-1">
                                     Inicio: 16/03/2020 00:00
                                 </div>
-                                <div class="p-2  mr-3">
+                                <div class="p-3  mr-3">
                                     Fim: 16/03/2020 23:59
                                 </div>
-                                <div class="p-2 mr-5">
+                                <div class="p-3 mr-5">
                                     <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/live_help.svg"></img>
                                 </div>
                             </div>
@@ -127,7 +136,7 @@
                 </div>
                 <!-- CARD POST -->
                 <div ng-repeat="(idx,post) in data"
-                    class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4" >
+                    class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4">
                     <div class="card-body">
                         <div class="row">
                             <div class="media mr-4  col-sm-12">
@@ -197,8 +206,9 @@
                                         <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Tag.svg"></img>
                                         Tagueamento
                                     </a>
-                                    <a class="text-primary mr-4" data-toggle="modal" data-target="#chat" ng-click="loadDataChat(idx)">
-                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Reply.svg" ></img>
+                                    <a class="text-primary mr-4" data-toggle="modal" data-target="#chat"
+                                        ng-click="loadDataChat(idx)">
+                                        <img class="icon-footer mr-2 shakeIcon" src="library/icons/sgv/Reply.svg"></img>
                                         Responder
                                     </a>
                                     <a class="text-primary mr-2">
@@ -219,13 +229,16 @@
         <div ng-include="'includes/modalAtribuir.html'"></div>
     </div>
     <script>
-        $('.shakeIcon')
-            .mouseover(function () {
-                $(this).addClass('animate__animated animate__swing');
-            })
-            .mouseout(function () {
-                $(this).removeClass('animate__animated animate__swing');
-            });
+        //$('.shakeIcon')
+        //    .mouseover(function () {
+        //        $(this).addClass('animate__animated animate__swing');
+        //    })
+        //    .mouseout(function () {
+        //        $(this).removeClass('animate__animated animate__swing');
+        //    });
+
+        //#4976ef
+        //#a4baf7
     </script>
 </body>
 

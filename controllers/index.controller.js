@@ -1,14 +1,74 @@
+$(function () {
+  $(".link-filter").hover(
+    function () {
+      try {
+        this.getElementsByTagName("object")[0]
+          .getSVGDocument()
+          .getElementsByTagName("svg")[0]
+          .getElementsByTagName("g")[0]
+          .getElementsByTagName("path")[0]
+          .setAttribute("fill-opacity", "1");
+      } catch (e) {
+        this.getElementsByTagName("object")[0]
+          .getSVGDocument()
+          .getElementsByTagName("svg")[0]
+          .getElementsByTagName("path")[0]
+          .setAttribute("fill-opacity", "1");
+      }
+    },
+    function () {
+      try {
+        this.getElementsByTagName("object")[0]
+          .getSVGDocument()
+          .getElementsByTagName("svg")[0]
+          .getElementsByTagName("g")[0]
+          .getElementsByTagName("path")[0]
+          .setAttribute("fill-opacity", "0.5");
+      } catch (e) {
+        this.getElementsByTagName("object")[0]
+          .getSVGDocument()
+          .getElementsByTagName("svg")[0]
+          .getElementsByTagName("path")[0]
+          .setAttribute("fill-opacity", "0.5");
+      }
+    }
+  );
+  setTimeout(function () {
+    $("object").removeClass("opacity");
+    var y = document.getElementsByClassName("init-opacity");
+    var i;
+    for (i = 0; i < y.length; i++) {
+      try {
+        y[i]
+          .getSVGDocument()
+          .getElementsByTagName("svg")[0]
+          .getElementsByTagName("g")[0]
+          .getElementsByTagName("path")[0]
+          .setAttribute("fill-opacity", "0.5");
+      } catch (e) {
+        y[i]
+          .getSVGDocument()
+          .getElementsByTagName("svg")[0]
+          .getElementsByTagName("path")[0]
+          .setAttribute("fill-opacity", "0.5");
+      }
+    }
+  }, 2000);
+});
 app.controller("index.controller", function ($scope) {
   $scope.loadDataChat = function (id_smpost) {
     $scope.selectedPost = $scope.data[id_smpost];
     $scope.lastClerk = $scope.selectedPost.do_chat.do_contact.reverse();
-    var find = true
-    var idx = 0
-    for(var i= 0; find; i++){
-      if($scope.lastClerk[i].ds_side == 1) {idx = i; find = false}
+    var find = true;
+    var idx = 0;
+    for (var i = 0; find; i++) {
+      if ($scope.lastClerk[i].ds_side == 1) {
+        idx = i;
+        find = false;
+      }
     }
-    $scope.lastClerk = $scope.lastClerk[idx]
-    debugger
+    $scope.lastClerk = $scope.lastClerk[idx];
+    debugger;
   };
   $scope.data = [
     {
@@ -61,20 +121,22 @@ app.controller("index.controller", function ($scope) {
             ds_side: 0,
             ds_urlavatarfrom:
               "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
-              ds_authorfrom: "Cristiano Ronaldo dos Santos",
+            ds_authorfrom: "Cristiano Ronaldo dos Santos",
           },
           {
             dt_contact: "16/03/2020 15:40",
             ds_content: "njadskjadsnk",
             ds_side: 1,
-            ds_urlavatarfrom: "https://upload.wikimedia.org/wikipedia/commons/6/63/Paolla_Oliveira.png",
+            ds_urlavatarfrom:
+              "https://upload.wikimedia.org/wikipedia/commons/6/63/Paolla_Oliveira.png",
             ds_authorfrom: "Paolla Oliveira",
           },
           {
             dt_contact: "16/03/2020 15:40",
             ds_content: "njadskjadsnk",
             ds_side: 0,
-            ds_urlavatarfrom: "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
+            ds_urlavatarfrom:
+              "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
             ds_authorfrom: "Cristiano Ronaldo dos Santos",
           },
         ],
