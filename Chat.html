@@ -70,7 +70,7 @@
 
 
                 <!-- Column 2 -->
-                <div class="col-sm-7 text-center pt-3 border-right border-primary ">
+                <div class="col-sm-7 text-center pt-3 border-right border-primary chat-colunm">
 
                     <!-- Alert -->
                     <div class="alert alert-secondary fade show border-primary text-primary mx-auto chatAlert"
@@ -87,12 +87,15 @@
                     <!-- Chat Messages -->
                     <div class="text-primary w-100">
 
-                        <div class="media  mt-5" ng-repeat="contact in selectedPost.do_chat.do_contact">
+                        <div class="media m-4" ng-repeat="contact in selectedPost.do_chat.do_contact">
 
                             <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?true:false}}"
                                 src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
                             <div class="media-body">
-                                <div class="bubble {{(contact.ds_side === 0)?'me':'you'}}">{{contact.ds_content}}
+                                <div class="bubble {{(contact.ds_side === 0)?'me':'you'}}" >
+                                    <span ng-bind-html="contact.ds_content" class="ballon-message">
+
+                                    </span>
                                     <br>
                                     <span class="float-right small">{{contact.dt_contact}}</span>
                                 </div>
@@ -105,7 +108,7 @@
                 </div>
 
                 <!-- Column 3 -->
-                <div class="col-sm-2 pt-3">
+                <div class="col-sm-2 pt-3 chat-colunm">
                     <div class="iconInput">
                         <i class="zmdi zmdi-search text-secondary"></i>
                         <input type="search" class="form-control rounded" placeholder="Buscar" />
@@ -132,7 +135,7 @@
                         <div class="col">
                             <!-- Toolbar -->
                             <div class="btn-toolbar justify-content-between" role="toolbar">
-                                <div class="btn-group edit-text wysihtml5-toolbar" role="group">
+                                <!---<div class="btn-group edit-text wysihtml5-toolbar" role="group">
                                     <button type="button" class="btn btn-flat"><i
                                             class="zmdi zmdi-format-size zmdi-hc-lg text-primary"></i></button>
                                     <a class="btn btn-default" data-wysihtml5-command="bold" title="CTRL+B"
@@ -150,10 +153,10 @@
                                             class="zmdi zmdi-attachment-alt zmdi-hc-lg text-primary"></i></button>
                                     <button type="button" class="btn btn-flat"><i
                                             class="zmdi zmdi-mood zmdi-hc-lg text-primary"></i></button>
-                                </div>
+                                </div>--->
                                 <div class="col-sm-4 ml-auto pr-0">
                                     <!-- Send button -->
-                                    <button type="button" class="btn btn-info  dropButton not-bold"
+                                    <button type="button" class="btn btn-info  dropButton not-bold btn-sendmessage"
                                         ng-click="sendMessage()">
                                         Enviar como
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
@@ -167,20 +170,10 @@
                             <!-- Message input -->
                             <textarea class="form-control py-4 rounded" placeholder="Digite uma Mensagem"
                                 ng-model="input.chat.message" id="editorArea"></textarea>
-                            <script type="text/javascript">
-                                //$('#editorArea').wysihtml5({
-                                //    toolbar: {
-                                //        "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
-                                //        "emphasis": true, //Italics, bold, etc. Default true
-                                //        "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
-                                //        "html": false, //Button which allows you to edit the generated HTML. Default false
-                                //        "link": true, //Button to insert a link. Default true
-                                //        "image": true, //Button to insert an image. Default true,
-                                //        "color": true, //Button to change color of font  
-                                //        "blockquote": true,
-                                //    }
-                                //});
-                            </script>
+                            <script type="text/javascript" src="controllers/chat.controller.js"></script>
+                            <style>
+                                
+                            </style>
                         </div>
                     </div>
                 </div>
