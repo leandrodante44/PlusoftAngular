@@ -55,6 +55,11 @@ $(function () {
     }
   }, 2000);
 });
+$(document).on('hidden.bs.modal', function (event) {
+  if ($('.modal:visible').length) {
+    $('body').addClass('modal-open');
+  }
+});
 app.controller("index.controller", function ($scope) {
   /* ON CLICK IN "RESPONDER" NO CARD-POST*/
   $scope.loadDataChat = function (id_smpost) {
@@ -77,17 +82,18 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.sendMessage = function () {
-    console.log($scope.input.chat.message);
+    debugger
+    console.log($('#editorArea').val());
     var message = {
       dt_contact: new Date().toLocaleString(),
-      ds_content: $scope.input.chat.message,
+      ds_content: $('#editorArea').val(),
       ds_side: 1,
       ds_urlavatarfrom: $scope.clerk.ds_urlavatarfrom,
       ds_authorfrom: $scope.clerk.name,
     };
     debugger
     $scope.selectedPost.do_chat.do_contact.push(message);
-    $scope.input.chat.message = "";
+    initEditor();
     $scope.getLastClerk();
   };
   $scope.clerk = {
