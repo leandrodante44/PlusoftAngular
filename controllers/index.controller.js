@@ -55,9 +55,9 @@ $(function () {
     }
   }, 2000);
 });
-$(document).on('hidden.bs.modal', function (event) {
-  if ($('.modal:visible').length) {
-    $('body').addClass('modal-open');
+$(document).on("hidden.bs.modal", function (event) {
+  if ($(".modal:visible").length) {
+    $("body").addClass("modal-open");
   }
 });
 app.controller("index.controller", function ($scope) {
@@ -65,46 +65,61 @@ app.controller("index.controller", function ($scope) {
   $scope.loadDataChat = function (id_smpost) {
     $scope.selectedPost = $scope.data[id_smpost];
     $scope.getLastClerk();
-    
+    $(".alert-success").hide();
   };
-  $scope.getLastClerk = function(){
-    $scope.lastClerk = $scope.selectedPost.do_chat.do_contact.reverse();
-    var find = true;
-    var idx = 0;
-    for (var i = 0; find; i++) {
-      if ($scope.lastClerk[i].ds_side == 1) {
-        idx = i;
-        find = false;
+  $scope.getLastClerk = function () {
+    try {
+      $scope.lastClerk = $scope.selectedPost.do_chat.do_contact.reverse();
+      var find = true;
+      var idx = 0;
+      for (var i = 0; find; i++) {
+        if ($scope.lastClerk[i].ds_side == 1) {
+          idx = i;
+          find = false;
+        }
       }
+      $scope.lastClerk = $scope.lastClerk[idx];
+      $scope.selectedPost.do_chat.do_contact.reverse();
+    } catch (ex) {
+      $scope.lastClerk = "";
     }
-    $scope.lastClerk = $scope.lastClerk[idx];
-    $scope.selectedPost.do_chat.do_contact.reverse();
   };
 
   $scope.sendMessage = function () {
-    debugger
-    console.log($('#editorArea').val());
+    debugger;
+    console.log($("#editorArea").val());
     var message = {
       dt_contact: new Date().toLocaleString(),
-      ds_content: $('#editorArea').val(),
+      ds_content: $("#editorArea").val(),
       ds_side: 1,
       ds_urlavatarfrom: $scope.clerk.ds_urlavatarfrom,
       ds_authorfrom: $scope.clerk.name,
     };
-    debugger
+    debugger;
     $scope.selectedPost.do_chat.do_contact.push(message);
     initEditor();
     $scope.getLastClerk();
   };
+  $scope.bkp_modal = {}
+  $scope.initModal = function () {
+    $scope.bkp_modal = angular.copy($scope.selectedPost)
+  };
+  $scope.cancelModal = function () {
+    debugger
+    $scope.selectedPost = angular.copy($scope.bkp_modal);
+  };
   $scope.clerk = {
-    name: 'Manu Gavassi',
-    ds_urlavatarfrom:"https://pbs.twimg.com/profile_images/1253524205578194946/OhPUF69-_400x400.jpg"
-  }
+    name: "Manu Gavassi",
+    ds_urlavatarfrom:
+      "https://pbs.twimg.com/profile_images/1253524205578194946/OhPUF69-_400x400.jpg",
+  };
+
   $scope.input = {
     chat: {
       message: "",
     },
   };
+
   $scope.data = [
     {
       id_smpost: 1234,
@@ -132,19 +147,37 @@ app.controller("index.controller", function ($scope) {
         },
       ],
       do_chat: {
-        dn_friends: "1",
-        dn_followers: "2",
-        dn_posts: "3",
-        ds_bio: "a",
-        ds_phone: "b",
-        ds_idmidia: "c",
-        ds_cphone: "d",
-        ds_local: "e",
-        ds_email: "f",
+        dn_friends: "500M",
+        dn_followers: "210M",
+        dn_posts: "956",
+        ds_bio: "The Player Soccer",
+        ds_phone: "+55879798877",
+        ds_idmidia: "@cristianoronaldo",
+        ds_cphone: "+55879798877",
+        ds_local: "Milão, Itália",
+        ds_email: "cr7@gmail.com",
+        do_assignment: {
+          ds_status: {
+            ds_inprogress: "",
+            ds_assigned: "",
+            ds_concluded: "",
+          },
+          ds_input: {
+            ds_pleased: "",
+            ds_dissatisfied: "",
+            ds_indifferent: "",
+          },
+          ds_exit: {
+            ds_pleased: "",
+            ds_dissatisfied: "",
+            ds_indifferent: "",
+          },
+          ds_assignment: "1",
+        },
         do_contact: [
           {
             dt_contact: "16/03/2020 15:40",
-            ds_content: "njadskjadsnk",
+            ds_content: "Boa Tarde Tudo Bem?",
             ds_side: 0,
             ds_urlavatarfrom:
               "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
@@ -152,7 +185,7 @@ app.controller("index.controller", function ($scope) {
           },
           {
             dt_contact: "16/03/2020 15:40",
-            ds_content: "njadskjadsnk",
+            ds_content: "Tenho um elogio para o seu produto!",
             ds_side: 0,
             ds_urlavatarfrom:
               "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
@@ -160,7 +193,7 @@ app.controller("index.controller", function ($scope) {
           },
           {
             dt_contact: "16/03/2020 15:40",
-            ds_content: "njadskjadsnk",
+            ds_content: "Boa Tarde Cris, mandae!",
             ds_side: 1,
             ds_urlavatarfrom:
               "https://upload.wikimedia.org/wikipedia/commons/6/63/Paolla_Oliveira.png",
@@ -168,7 +201,7 @@ app.controller("index.controller", function ($scope) {
           },
           {
             dt_contact: "16/03/2020 15:40",
-            ds_content: "njadskjadsnk",
+            ds_content: "Execelente Produto!",
             ds_side: 0,
             ds_urlavatarfrom:
               "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
@@ -180,7 +213,7 @@ app.controller("index.controller", function ($scope) {
             ds_smsocialmedia: "Facebook",
             ds_smicon: "library/icons/sgv/Facebook.svg",
             dt_published: "16/03/2020 15:40",
-            ds_title: "Teste 1",
+            ds_title: "Post 01",
             ds_authorfrom: "Cristiano Ronaldo dos Santos",
             ds_urlavatarfrom:
               "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
@@ -201,7 +234,7 @@ app.controller("index.controller", function ($scope) {
             ds_smsocialmedia: "WeChat",
             ds_smicon: "library/icons/sgv/Wechat.svg",
             dt_published: "16/03/2020 15:40",
-            ds_title: "Teste 1",
+            ds_title: "Post 02",
             ds_authorfrom: "Cristiano Ronaldo dos Santos",
             ds_urlavatarfrom:
               "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
@@ -222,7 +255,7 @@ app.controller("index.controller", function ($scope) {
             ds_smsocialmedia: "Instagram",
             ds_smicon: "library/icons/sgv/Instagram.svg",
             dt_published: "16/03/2020 15:40",
-            ds_title: "Teste 1",
+            ds_title: "Post 03",
             ds_authorfrom: "Cristiano Ronaldo dos Santos",
             ds_urlavatarfrom:
               "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
@@ -244,7 +277,90 @@ app.controller("index.controller", function ($scope) {
             ds_smicon: "library/icons/sgv/Facebook.svg",
             ds_urlavatarfrom:
               "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
-            ds_title: "Especialista fala sobre o Corona Vírus: ",
+            ds_title: "Post 04 ",
+            dt_published: "16/03/2020 15:40",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "Facebook",
+            ds_smicon: "library/icons/sgv/Facebook.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 01",
+            ds_authorfrom: "Cristiano Ronaldo dos Santos",
+            ds_urlavatarfrom:
+              "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "WeChat",
+            ds_smicon: "library/icons/sgv/Wechat.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 02",
+            ds_authorfrom: "Cristiano Ronaldo dos Santos",
+            ds_urlavatarfrom:
+              "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "Instagram",
+            ds_smicon: "library/icons/sgv/Instagram.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 03",
+            ds_authorfrom: "Cristiano Ronaldo dos Santos",
+            ds_urlavatarfrom:
+              "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "Facebook",
+            ds_smicon: "library/icons/sgv/Facebook.svg",
+            ds_urlavatarfrom:
+              "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
+            ds_title: "Post 04 ",
             dt_published: "16/03/2020 15:40",
             post_types: [
               {
@@ -283,6 +399,238 @@ app.controller("index.controller", function ($scope) {
           ds_typeicustomer: "Corona",
         },
       ],
+      do_chat: {
+        dn_friends: "600M",
+        dn_followers: "200M",
+        dn_posts: "777",
+        ds_bio: "The Player Soccer Pro",
+        ds_phone: "+55879798877",
+        ds_idmidia: "@gabigol",
+        ds_cphone: "+55879798877",
+        ds_local: "Ninho do Urubu, Mengo",
+        ds_email: "gabigol@gmail.com",
+        do_assignment: {
+          ds_status: {
+            ds_inprogress: "",
+            ds_assigned: "",
+            ds_concluded: "",
+          },
+          ds_input: {
+            ds_pleased: "",
+            ds_dissatisfied: "",
+            ds_indifferent: "",
+          },
+          ds_exit: {
+            ds_pleased: "",
+            ds_dissatisfied: "",
+            ds_indifferent: "",
+          },
+          ds_assignment: "1",
+        },
+        do_contact: [
+          {
+            dt_contact: "16/03/2020 15:40",
+            ds_content: "Olá, Tudo Bem?",
+            ds_side: 0,
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            ds_authorfrom: "Gabigol",
+          },
+          {
+            dt_contact: "16/03/2020 15:40",
+            ds_content: "Hoje tem gol do gabigol?",
+            ds_side: 0,
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            ds_authorfrom: "Gabigol",
+          },
+          {
+            dt_contact: "16/03/2020 15:40",
+            ds_content: "Tem sim!",
+            ds_side: 1,
+            ds_urlavatarfrom:
+              "https://upload.wikimedia.org/wikipedia/commons/6/63/Paolla_Oliveira.png",
+            ds_authorfrom: "Paolla Oliveira",
+          },
+          {
+            dt_contact: "16/03/2020 15:40",
+            ds_content: "Boa Tarde!",
+            ds_side: 0,
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            ds_authorfrom: "Gabigol",
+          },
+        ],
+        do_history: [
+          {
+            ds_smsocialmedia: "Facebook",
+            ds_smicon: "library/icons/sgv/Facebook.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 01",
+            ds_authorfrom: "Gabriel Barbosa",
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "WeChat",
+            ds_smicon: "library/icons/sgv/Wechat.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 02",
+            ds_authorfrom: "Gabriel Barbosa",
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "Instagram",
+            ds_smicon: "library/icons/sgv/Instagram.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 03",
+            ds_authorfrom: "Gabriel Barbosa",
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "Facebook",
+            ds_smicon: "library/icons/sgv/Facebook.svg",
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            ds_title: "Post 04 ",
+            dt_published: "16/03/2020 15:40",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "Facebook",
+            ds_smicon: "library/icons/sgv/Facebook.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 01",
+            ds_authorfrom: "Gabriel Barbosa",
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "WeChat",
+            ds_smicon: "library/icons/sgv/Wechat.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 02",
+            ds_authorfrom: "Gabriel Barbosa",
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "Instagram",
+            ds_smicon: "library/icons/sgv/Instagram.svg",
+            dt_published: "16/03/2020 15:40",
+            ds_title: "Post 03",
+            ds_authorfrom: "Gabriel Barbosa",
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+          {
+            ds_smsocialmedia: "Facebook",
+            ds_smicon: "library/icons/sgv/Facebook.svg",
+            ds_urlavatarfrom:
+              "https://esportes.estadao.com.br/blogs/crop/320x300/robson-morelli/wp-content/uploads/sites/37/2019/09/gabigol.jpg",
+            ds_title: "Post 04 ",
+            ds_authorfrom: "Gabriel Barbosa",
+            dt_published: "16/03/2020 15:40",
+            post_types: [
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Informação",
+              },
+              {
+                id: 1,
+                Do_manual: "Y",
+                ds_typeicustomer: "Curiosidade",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       id_smpost: 1236,

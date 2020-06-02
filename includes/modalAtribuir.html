@@ -36,7 +36,7 @@
                                                 <br>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_status.ds_inprogress">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Em
                                                             Andamento</span>
@@ -44,14 +44,14 @@
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_status.ds_assigned">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Atribuido</span>
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_status.ds_concluded">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Concluido</span>
                                                     </label>
@@ -63,15 +63,14 @@
                                             <div class="form-group">
                                                 <label class="font-weight-bold">Atribuir</label>
 
-                                                <select class="form-control">
-                                                    <option></option>
-                                                    <option>option1</option>
-                                                    <option>option1</option>
-                                                    <option>option1</option>
-                                                    <option>option1</option>
+                                                <select class="form-control" ng-model="selectedPost.do_chat.do_assignment.ds_assignment">
+                                                    <option value=""></option>
+                                                    <option value="1">Opção 01</option>
+                                                    <option value="2">Opção 02</option>
+                                                    <option value="3">Opção 03</option>
+                                                    <option value="4">Opção 04</option>
                                                 </select>
                                             </div>
-
                                         </div>
                                         <br>
                                         <!-- roll 3 -->
@@ -82,21 +81,21 @@
                                                 <br>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_input.ds_pleased">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Satisfeito</span>
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_input.ds_dissatisfied">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Insatisfeito</span>
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_input.ds_indifferent">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Indiferente</span>
                                                     </label>
@@ -110,21 +109,21 @@
                                                 <br>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_exit.ds_pleased">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Satisfeito</span>
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_exit.ds_dissatisfied">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Insatisfeito</span>
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <label class="custom-control fill-checkbox">
-                                                        <input type="checkbox" class="fill-control-input">
+                                                        <input type="checkbox" class="fill-control-input" ng-model="selectedPost.do_chat.do_assignment.ds_exit.ds_indifferent">
                                                         <span class="fill-control-indicator"></span>
                                                         <span class="fill-control-description">Indiferente</span>
                                                     </label>
@@ -144,12 +143,12 @@
                         <div class="row" style="width: 100%;">
                             <div class="col">
                                 <div class="d-flex mx-auto justify-content-end">
-                                    <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                                    <button class="btn btn-outline-primary" data-dismiss="modal" ng-click="cancelModal()">Cancelar</button>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="d-flex mx-auto justify-content-start">
-                                    <button class="btn btn-success" data-dismiss="modal">Salvar</button>
+                                    <button class="btn btn-success" data-dismiss="modal" onclick="showAlert()">Salvar</button>
                                 </div>
                             </div>
                         </div>

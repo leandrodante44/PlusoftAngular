@@ -84,21 +84,26 @@ a {
 .card-home {
   border-width: 1px;
 }
+
 .notch-card {
   border: 1px solid;
   width: 100%;
 }
+
 .influencer {
   font-weight: normal;
   color: #4976ef;
 }
+
 .icons-notch-header {
   float: right;
 }
+
 .badge-card {
   background-color: #4976ff;
   font-weight: 400;
 }
+
 .timestamp-card {
   float: right;
 }
@@ -386,12 +391,15 @@ body {
 .modal-footer .btn {
   width: 128px;
 }
+
 .modal-backdrop {
   visibility: hidden !important;
 }
+
 .modal.in {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .btn-group .btn-default,
 .current-color,
 .glyphicon,
@@ -400,16 +408,19 @@ body {
   font-weight: 400 !important;
   font-size: 14px;
 }
+
 .dropdown-menu li a {
   color: #0d386d !important;
   font-weight: 400;
   padding-left: 5px;
   font-size: 14px;
 }
+
 .bootstrap-wysihtml5-insert-image-modal .modal-dialog .modal-content {
   min-height: 200px;
   color: #0d386d;
 }
+
 .bootstrap-wysihtml5-insert-image-modal
   .modal-dialog
   .modal-content
@@ -417,10 +428,12 @@ body {
   a {
   display: none;
 }
+
 .bootstrap-wysihtml5-insert-link-modal .modal-dialog .modal-content {
   min-height: 200px;
   color: #0d386d;
 }
+
 .bootstrap-wysihtml5-insert-link-modal
   .modal-dialog
   .modal-content
@@ -428,6 +441,7 @@ body {
   a {
   display: none;
 }
+
 .wysihtml5-toolbar {
   /* text-shadow: 0 0 black; */
   background-color: #efefef;
@@ -438,26 +452,67 @@ body {
   margin-bottom: 10px !important;
   padding-top: 5px !important;
 }
+
 .wysihtml5-toolbar li {
   margin: 0 !important;
 }
+
 .btn-sendmessage {
   position: absolute;
   margin-left: -18px;
 }
+
 .ballon-message img {
   width: 90%;
 }
+
 .ballon-message {
   font-size: 16px;
+  text-align: left;
 }
+
 .ballon-message p {
   margin: 0 !important;
 }
+
 .chat-colunm {
-  height: 900px;
+  height: 845px;
   overflow-y: auto;
 }
+
 .bubble .small {
   font-size: 11px;
+}
+
+.wysihtml5-sandbox {
+  height: 85px !important;
+  padding: 10px !important;
+}
+
+.wysihtml5-sandbox:focus {
+  padding: 5px !important;
+}
+
+.icon-success:hover {
+  margin: -6px;
+  border: 6px solid rgba(18, 178, 133, 0.3);
+  border-radius: 100%;
+}
+
+.icon-warning:hover {
+  margin: -6px;
+  border: 6px solid rgba(236, 187, 67, 0.3);
+  border-radius: 100%;
+}
+
+.icon-danger:hover {
+  margin: -6px;
+  border: 6px solid rgba(255, 87, 125, 0.3);
+  border-radius: 100%;
+}
+
+.icon-medium:hover {
+  margin: -6px;
+  border: 6px solid rgba(255, 146, 30, 0.2);
+  border-radius: 100%;
 }

@@ -1,5 +1,6 @@
 <!-- MODAL DETALHES -->
 <div class="modal fade" id="modalDetalhes">
+    
     <div class="modal-dialog modal-lg border border-primary rounded">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -49,18 +50,18 @@
                                             <div class="form-group">
                                                 <label for="bio">Bio:</label>
                                                 <input type="text" class="form-control" id="bio"
-                                                    value="{{selectedPost.do_chat.ds_bio}}" />
+                                                    ng-model="selectedPost.do_chat.ds_bio" />
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="mda">ID da Midia:</label>
                                                 <input type="text" class="form-control" id="mda"
-                                                    value="{{selectedPost.do_chat.ds_idmidia}}" />
+                                                ng-model="selectedPost.do_chat.ds_idmidia" />
                                             </div>
                                             <div class="form-group">
                                                 <label for="loc">Local:</label>
                                                 <input type="text" class="form-control" id="loc"
-                                                    value="{{selectedPost.do_chat.ds_local}}" />
+                                                ng-model="selectedPost.do_chat.ds_local" />
                                             </div>
                                         </div>
                                         <div class="col-sm-2"></div>
@@ -68,17 +69,17 @@
                                             <div class="form-group">
                                                 <label for="tel">Telefone:</label>
                                                 <input type="phone" class="form-control" id="tel"
-                                                    value="{{selectedPost.do_chat.ds_phone}}" />
+                                                ng-model="selectedPost.do_chat.ds_phone" />
                                             </div>
                                             <div class="form-group">
                                                 <label for="cel">Celular:</label>
                                                 <input type="phone" class="form-control" id="cel"
-                                                    value="{{selectedPost.do_chat.ds_cphone}}" />
+                                                ng-model="selectedPost.do_chat.ds_cphone" />
                                             </div>
                                             <div class="form-group">
                                                 <label for="eml">E-mail:</label>
                                                 <input type="email" class="form-control" id="eml"
-                                                    value="{{selectedPost.do_chat.ds_email}}" />
+                                                ng-model="selectedPost.do_chat.ds_email" />
                                             </div>
                                         </div>
                                     </div>
@@ -93,12 +94,12 @@
                     <div class="row" style="width: 100%;">
                         <div class="col">
                             <div class="d-flex mx-auto justify-content-end">
-                                <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                                <button class="btn btn-outline-primary" data-dismiss="modal" ng-click="cancelModal()">Cancelar</button>
                             </div>
                         </div>
                         <div class="col">
                             <div class="d-flex mx-auto justify-content-start">
-                                <button class="btn btn-success" data-dismiss="modal">Salvar</button>
+                                <button class="btn btn-success" onclick="showAlert()" data-dismiss="modal">Salvar</button>
                             </div>
                         </div>
                     </div>
@@ -108,15 +109,4 @@
 
     </div>
 
-    <!-- ALERT SAVE -->
-    <div class="alert alert-success fade show border-success text-primary col-md-6 mx-auto" role="alert">
-
-        <i class="zmdi zmdi-check-square zmdi-hc-3x align-middle mr-2 text-success"></i>
-
-        <strong>Parabéns!</strong> Seus dados foram salvos com sucesso.
-
-        <button type="button" class="close text-success pt-2" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
 </div>

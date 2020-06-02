@@ -45,6 +45,7 @@ function initEditor() {
   $(".glyphicon-font").remove();
   $("#editorArea").show();
   $("#editorArea").val("");
+  
 }
 function getAllElementsWithAttribute(attribute) {
   var matchingElements = [];
@@ -56,6 +57,12 @@ function getAllElementsWithAttribute(attribute) {
     }
   }
   return matchingElements;
+}
+function showAlert() {
+  $(".alert-success").show();
+  setTimeout(function () {
+    $(".alert-success").hide();
+  }, 2000);
 }
 
 initEditor();
