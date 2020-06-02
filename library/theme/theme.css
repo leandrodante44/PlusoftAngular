@@ -1,14 +1,15 @@
+/* CUSTOM CLASS */
+
 .modal-content {
   background-color: #f7f9fa;
   border: 5px solid #3d5879;
   border-radius: 3px;
 }
 
-.modal-header-bb {
+.modal-header {
   border-bottom: 3px solid #3d5879;
 }
 
-/* CUSTOM CLASS */
 .KPIInfo {
   width: 132px;
   height: 64px;
@@ -216,17 +217,18 @@ body {
   width: 100%;
   background: #5f7896;
 }
-.searchInput {
+.iconInput {
   position: relative;
+  border-radius: 6px;
 }
 
-.searchInput i {
+.iconInput i {
   position: absolute;
   right: 0px;
   padding: 10px 12px;
 }
 
-.searchInput input {
+.iconInput input {
   height: 32px;
 }
 .not-bold {
@@ -348,4 +350,37 @@ body {
 .searchInputTopMenu:focus{
   width: 250px;
   transition: width 0.2s linear;
+}
+
+.modal-header-title {
+  font-size: 18px;
+  line-height: 29px;
+  color: #1D3451;
+}
+
+.modal-content {
+  min-height: 600px;
+  height:auto;
+}
+
+.filter-elements label {
+  font-family: Montserrat;
+  font-size: 18px;
+  color: #0D386D;
+}
+
+.filter-elements .mini-select {
+  height: 39px;
+  border: 1px solid #3D5879;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #0D386D;
+}
+
+.iconInput .zmdi-chevron-down{
+  padding: 0px 12px;
+}
+
+.modal-footer .btn {
+  width: 128px;
 }

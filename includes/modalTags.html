@@ -1,5 +1,5 @@
-<!-- MODAL ATENDIMENTO -->
-<div class="modal fade" id="modalAtendimento">
+<!-- MODAL TAGS -->
+<div class="modal fade" id="modalTags">
     <div class="modal-dialog modal-lg border border-primary rounded">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -8,82 +8,66 @@
                     <div class="row align-items-center">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <p class="text-center pt-4 modal-header-title">Atendimento</p>
+                            <p class="text-center pt-4 modal-header-title">Tags</p>
                         </div>
                         <div class="col-md-2">
                             <div class="row justify-content-end">
-                                <button type="button" class="close p-3" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close p-3"
+                                    data-dismiss="modal">&times;</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Modal body -->
-            <div class="modal-body">
+            <div class="modal-body justify-content-center">
                 <div class="modal-body">
-                    <div class="container-fluid">
+                    <div class="container-fluid filter-elements">
+                        <div class="row mt-5"></div>
                         <div class="row mt-5">
                             <div class="col text-center">
-                                <div class="form-group filter-elements text-left">
+                                <div class="form-group">
                                     <div class="row">
-                                        <div class="col-sm-6 pr-4">
+                                        <div class="col-sm-4 text-left">
                                             <div class="form-group">
-                                                <label for="busRes">Busca nas Respostas</label>
-                                                <div class="iconInput form-control p-1">
-                                                    <input type="text" class="form-control border-0 w-100"
-                                                        id="busRes" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group mt-4">
-                                                <label for="via">Via Bot</label>
-                                                <div class="iconInput form-control p-1">
-                                                    <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                                    <input type="text" class="form-control border-0 w-100" id="via" />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-sm-6 pl-4">
-                                            <div class="form-group">
-                                                <label for="res">Respondidos</label>
+                                                <label for="tag">Tagueados</label>
                                                 <div class="iconInput form-control p-1">
                                                     <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
                                                     <input type="tephonext" class="form-control border-0 w-100"
-                                                        id="res" />
+                                                        id="tag" />
                                                 </div>
                                             </div>
-                                            <div class="form-group mt-4">
-                                                <label for="ver">Verificados</label>
+                                        </div>
+                                        <div class="col-sm-4 text-left">
+                                            <div class="form-group">
+                                                <label for="auto">Automático</label>
                                                 <div class="iconInput form-control p-1">
                                                     <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                                    <input type="phone" class="form-control border-0 w-100" id="ver" />
+                                                    <input type="tephonext" class="form-control border-0 w-100"
+                                                        id="auto" />
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row mt-4">
-                                        <div class="col-sm-3"></div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4 text-left">
                                             <div class="form-group">
-                                                <label for="ate">Atendentes</label>
+                                                <label for="cli">Clientes</label>
                                                 <div class="iconInput form-control p-1">
-                                                    <i class="zmdi zmdi-search text-secondary"></i> <input type="search"
-                                                        class="border-0 w-100" placeholder="Buscar..." id="ate" />
+                                                    <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
+                                                    <input type="tephonext" class="form-control border-0 w-100"
+                                                        id="cli" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- Modal footer -->
             <div class="modal-footer justify-content-center">
-                <div class="row mb-5"  style="width: 100%;">
+                <div class="row mb-5 container-fluid">
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-end">
                             <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
@@ -94,7 +78,9 @@
                             <button class="btn btn-success" data-dismiss="modal">Salvar</button>
                         </div>
                     </div>
+                    <div class="row mb-4 container-fluid"></div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

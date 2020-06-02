@@ -32,36 +32,36 @@
                         <div class="d-flex flex-column">
                             <div class="p-5 text-center"><img class="icon-filter mr-3 shakeIcon ml-3"
                                     src="library/icons/sgv/format_align_left.svg"></img> <b>Filtros</b></div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalAtendimento"><object
                                     class="icon-filter mr-3 shakeIcon ml-2 init-opacity opacity"
                                     data="library/icons/sgv/supervised_user_circle.svg"></object>
                                 <span>Atendimento</span>
                             </div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalAnexos"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/attach_file.svg"
                                     type="image/svg+xml"></object><span>Anexos</span>
                             </div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalAutor"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/account_circle.svg"></object> <span>Autor</span></div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalCanais"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/phonelink.svg"></object> <span>Canais</span></div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalChamado"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/sim_card.svg"></object> <span>Chamados</span></div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalClassificacao"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/done_all.svg"></object> <span>Classificação</span></div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalFavoritos"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/star_border.svg"></object> <span>Favoritos</span></div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalPaginacao"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/settings_ethernet.svg"></object> <span>Paginação</span>
                             </div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalPrivados"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/forum.svg"></object> <span>Privados</span></div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalPosts"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/art_track.svg"></object> <span>Posts</span></div>
-                            <div class="p-2 mt-2 pl-4 link-filter align-middle"><object
+                            <div class="p-2 mt-2 pl-4 link-filter align-middle" data-toggle="modal" data-target="#modalTags"><object
                                     class="icon-filter mr-3 shakeIcon ml-2  init-opacity opacity"
                                     data="library/icons/sgv/Tag.svg"></object> <span>Tags</span></div>
-                            <div class="p-2 mt-2 pl-4 link-filter"><object class="icon-filter mr-3 shakeIcon ml-2 "
+                            <div class="p-2 mt-2 pl-4 link-filter" data-toggle="modal" data-target="#modalTipos"><object class="icon-filter mr-3 shakeIcon ml-2 "
                                     data="library/icons/sgv/all_inbox.svg"></object> <span>Tipos</span></div>
                             <div class="p-5 text-center"><input type="button"
                                     class=" w-75 btn btn-outline-primary shadow full" value="Filtrar"></div>
@@ -253,8 +253,19 @@
         <div ng-include="'includes/modalDetalhes.html'"></div>
         <div ng-include="'includes/modalPostAutor.html'"></div>
         <div ng-include="'includes/modalAtribuir.html'"></div>
+
         <div ng-include="'includes/modalAtendimento.html'"></div>
         <div ng-include="'includes/modalAnexos.html'"></div>
+        <div ng-include="'includes/modalAutor.html'"></div>
+        <div ng-include="'includes/modalCanais.html'"></div>
+        <div ng-include="'includes/modalChamado.html'"></div>
+        <div ng-include="'includes/modalClassificacao.html'"></div>
+        <div ng-include="'includes/modalFavoritos.html'"></div>
+        <div ng-include="'includes/modalPaginacao.html'"></div>
+        <div ng-include="'includes/modalPrivados.html'"></div>
+        <div ng-include="'includes/modalPosts.html'"></div>
+        <div ng-include="'includes/modalTags.html'"></div>
+        <div ng-include="'includes/modalTipos.html'"></div>
     </div>
     <script>
         //$('.shakeIcon')
