@@ -381,10 +381,26 @@ body {
   color: #0D386D;
 }
 
-.iconInput .zmdi-chevron-down{
+.iconInput .zmdi-chevron-down {
+  pointer-events: none;
   padding: 0px 12px;
+}
+.iconInput .zmdi-stop {
+  padding: 0px 5px;
+  top: -6px;
 }
 
 .modal-footer .btn {
   width: 128px;
+}
+
+.custon-select {
+  border: 1px solid #fff;
+  height: 32px;
+  color: #0D386D;
+  box-shadow: inset -20px 0px 0px 0px rgb(255, 255, 255);
+}
+
+.custon-select:hover {
+  box-shadow: inset -20px 0px 0px 0px rgb(255, 255, 255);
 }
