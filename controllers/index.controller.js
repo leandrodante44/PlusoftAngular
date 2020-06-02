@@ -56,8 +56,13 @@ $(function () {
   }, 2000);
 });
 app.controller("index.controller", function ($scope) {
+  /* ON CLICK IN "RESPONDER" NO CARD-POST*/
   $scope.loadDataChat = function (id_smpost) {
     $scope.selectedPost = $scope.data[id_smpost];
+    $scope.getLastClerk();
+    
+  };
+  $scope.getLastClerk = function(){
     $scope.lastClerk = $scope.selectedPost.do_chat.do_contact.reverse();
     var find = true;
     var idx = 0;
@@ -68,7 +73,31 @@ app.controller("index.controller", function ($scope) {
       }
     }
     $scope.lastClerk = $scope.lastClerk[idx];
-    debugger;
+    $scope.selectedPost.do_chat.do_contact.reverse();
+  };
+
+  $scope.sendMessage = function () {
+    console.log($scope.input.chat.message);
+    var message = {
+      dt_contact: new Date().toLocaleString(),
+      ds_content: $scope.input.chat.message,
+      ds_side: 1,
+      ds_urlavatarfrom: $scope.clerk.ds_urlavatarfrom,
+      ds_authorfrom: $scope.clerk.name,
+    };
+    debugger
+    $scope.selectedPost.do_chat.do_contact.push(message);
+    $scope.input.chat.message = "";
+    $scope.getLastClerk();
+  };
+  $scope.clerk = {
+    name: 'Manu Gavassi',
+    ds_urlavatarfrom:"https://pbs.twimg.com/profile_images/1253524205578194946/OhPUF69-_400x400.jpg"
+  }
+  $scope.input = {
+    chat: {
+      message: "",
+    },
   };
   $scope.data = [
     {

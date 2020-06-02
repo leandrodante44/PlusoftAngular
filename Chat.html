@@ -132,11 +132,12 @@
                         <div class="col">
                             <!-- Toolbar -->
                             <div class="btn-toolbar justify-content-between" role="toolbar">
-                                <div class="btn-group edit-text" role="group">
+                                <div class="btn-group edit-text wysihtml5-toolbar" role="group">
                                     <button type="button" class="btn btn-flat"><i
                                             class="zmdi zmdi-format-size zmdi-hc-lg text-primary"></i></button>
-                                    <button type="button" class="btn btn-flat"><i
-                                            class="zmdi zmdi-format-bold zmdi-hc-lg text-primary"></i></button>
+                                    <a class="btn btn-default" data-wysihtml5-command="bold" title="CTRL+B"
+                                        tabindex="-1" href="javascript:;" unselectable="on"><i
+                                            class="zmdi zmdi-format-bold zmdi-hc-lg text-primary"></i></a>
                                     <button type="button" class="btn btn-flat"><i
                                             class="zmdi zmdi-format-italic zmdi-hc-lg text-primary"></i></button>
                                     <button type="button" class="btn btn-flat"><i
@@ -152,7 +153,8 @@
                                 </div>
                                 <div class="col-sm-4 ml-auto pr-0">
                                     <!-- Send button -->
-                                    <button type="button" class="btn btn-info  dropButton not-bold">
+                                    <button type="button" class="btn btn-info  dropButton not-bold"
+                                        ng-click="sendMessage()">
                                         Enviar como
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                                     </button>
@@ -163,7 +165,22 @@
                     <div class="row">
                         <div class="col">
                             <!-- Message input -->
-                            <textarea class="form-control py-4 rounded" placeholder="Digite uma Mensagem"></textarea>
+                            <textarea class="form-control py-4 rounded" placeholder="Digite uma Mensagem"
+                                ng-model="input.chat.message" id="editorArea"></textarea>
+                            <script type="text/javascript">
+                                //$('#editorArea').wysihtml5({
+                                //    toolbar: {
+                                //        "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+                                //        "emphasis": true, //Italics, bold, etc. Default true
+                                //        "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+                                //        "html": false, //Button which allows you to edit the generated HTML. Default false
+                                //        "link": true, //Button to insert a link. Default true
+                                //        "image": true, //Button to insert an image. Default true,
+                                //        "color": true, //Button to change color of font  
+                                //        "blockquote": true,
+                                //    }
+                                //});
+                            </script>
                         </div>
                     </div>
                 </div>
