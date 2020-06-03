@@ -21,6 +21,8 @@
     <script src="library/scripts/bootstrap3-wysihtml5.min.js"></script>
     <script src="controllers/app.controller.js"></script>
     <script src="controllers/index.controller.js"></script>
+    <script src="controllers/utils.controller.js"></script>
+    <script src="controllers/model.bind.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
 
 </head>
@@ -73,9 +75,6 @@
                     </div>
                 </div>
             </div>
-            <script>
-
-            </script>
             <div class="col-sm-9 pr-5">
                 <div class="col-sm-12">
                     <!-- FILTERS TOP MENU -->
@@ -84,8 +83,7 @@
                             <div class="row">
                                 <div class="d-flex w-100">
                                     <div class="p-3 border-right col-sm-2"><img class="icon-footer mr-3 shakeIcon"
-                                            src="library/icons/sgv/sort_24px.svg"></img> <i
-                                            class="zmdi zmdi-chevron-down mr-2 zmdi-hc-lg"></i></div>
+                                            src="library/icons/sgv/sort_24px.svg"></img></div>
                                     <div class="p-3 ml-3">
                                         <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
                                             <img class="icon-footer mr-1 shakeIcon"
@@ -141,7 +139,7 @@
                         <div class="card-body p-0 pl-4 text-primary">
                             <div class="row">
                                 <div class="d-flex w-100 justify-content-between text-top-two-card">
-                                    <div class="p-3 border-right col-sm-2">Periodo</div>
+                                    <div class="p-3 border-right col-sm-2">Periodo {{grouping}}</div>
                                     <div class="p-3 ml-0">
                                         Inicio: 16/03/2020 00:00
                                     </div>
@@ -151,7 +149,7 @@
                                     <div class="col-sm-1"></div>
                                     <div class="p-3 mr-5">
                                         <img class="icon-footer mr-1 shakeIcon"
-                                            src="library/icons/sgv/live_help.svg"></img>
+                                            src="library/icons/sgv/live_help.svg"></img> {{input.post_check}}
                                     </div>
                                 </div>
 
@@ -167,7 +165,7 @@
                                     <!-- Picture person  -->
                                     <div class="form-check form-check-inline input-lg">
                                         <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input" ng-model="input.post_check[idx]" ng-change="addGroup(post.id_smpost,idx)">
                                             <span class="fill-control-indicator lg-check"></span>
                                             <span class="fill-control-description ml-4"><img class="mr-1 picPerson"
                                                     src="{{post.ds_urlavatarfrom}}" alt=""></span>
@@ -183,6 +181,7 @@
                                                 class="influencer ml-3">{{(post.do_influencer === "Y") ? "Influencer - " : ""}}
                                                 {{(post.do_loverhater === "L") ? "Lover" : (post.do_loverhater === "H") ? "Hater" : ""}}
                                             </span>
+                                            <button class="btn btn-info btn-sm btn-agrupar shadow" ng-click="applyGrouping()" ng-show="grouping.di_grouping[0] == post.id_smpost && grouping.di_grouping[1]">Agrupar</button>
                                             <span class="icons-notch-header mt-2 mr-3">
                                                 <img class="icon-footer shakeIcon mr-1"
                                                     src="library/icons/sgv/Like.svg"></img>

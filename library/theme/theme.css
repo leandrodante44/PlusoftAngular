@@ -409,7 +409,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.btn-group .btn-default,
+.btn-group .btn-defa ult,
 .current-color,
 .glyphicon,
 .current-font {
@@ -524,4 +524,12 @@ body {
   margin: -6px;
   border: 6px solid rgba(255, 146, 30, 0.2);
   border-radius: 100%;
+}
+
+.btn-agrupar{
+  background: rgba(0, 122, 255, 0.7);
+  font-weight: 300;
+  border: 0px;
+  margin-left: 30px;
+  width: 105px;
 }
