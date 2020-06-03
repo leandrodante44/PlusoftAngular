@@ -1,60 +1,3 @@
-$(function () {
-  $(".link-filter").hover(
-    function () {
-      try {
-        this.getElementsByTagName("object")[0]
-          .getSVGDocument()
-          .getElementsByTagName("svg")[0]
-          .getElementsByTagName("g")[0]
-          .getElementsByTagName("path")[0]
-          .setAttribute("fill-opacity", "1");
-      } catch (e) {
-        this.getElementsByTagName("object")[0]
-          .getSVGDocument()
-          .getElementsByTagName("svg")[0]
-          .getElementsByTagName("path")[0]
-          .setAttribute("fill-opacity", "1");
-      }
-    },
-    function () {
-      try {
-        this.getElementsByTagName("object")[0]
-          .getSVGDocument()
-          .getElementsByTagName("svg")[0]
-          .getElementsByTagName("g")[0]
-          .getElementsByTagName("path")[0]
-          .setAttribute("fill-opacity", "0.5");
-      } catch (e) {
-        this.getElementsByTagName("object")[0]
-          .getSVGDocument()
-          .getElementsByTagName("svg")[0]
-          .getElementsByTagName("path")[0]
-          .setAttribute("fill-opacity", "0.5");
-      }
-    }
-  );
-  setTimeout(function () {
-    $("object").removeClass("opacity");
-    var y = document.getElementsByClassName("init-opacity");
-    var i;
-    for (i = 0; i < y.length; i++) {
-      try {
-        y[i]
-          .getSVGDocument()
-          .getElementsByTagName("svg")[0]
-          .getElementsByTagName("g")[0]
-          .getElementsByTagName("path")[0]
-          .setAttribute("fill-opacity", "0.5");
-      } catch (e) {
-        y[i]
-          .getSVGDocument()
-          .getElementsByTagName("svg")[0]
-          .getElementsByTagName("path")[0]
-          .setAttribute("fill-opacity", "0.5");
-      }
-    }
-  }, 2000);
-});
 $(document).on("hidden.bs.modal", function (event) {
   if ($(".modal:visible").length) {
     $("body").addClass("modal-open");
@@ -100,39 +43,54 @@ app.controller("index.controller", function ($scope) {
     initEditor();
     $scope.getLastClerk();
   };
-  
+
   /*MODALS METHODS OF MODAL DYNAMICS*/
   $scope.initModal = function () {
-    $scope.bkp_modal = angular.copy($scope.selectedPost)
+    $scope.bkp_modal = angular.copy($scope.selectedPost);
   };
   $scope.cancelModal = function () {
-    debugger
+    debugger;
     $scope.selectedPost = angular.copy($scope.bkp_modal);
   };
 
   /*GROUPING METHODS OF GROUPING DYNAMICS*/
-  $scope.addGroup = function (post,idx){
-    if($scope.input.post_check[idx]){
+  $scope.addGroup = function (post, idx) {
+    if ($scope.input.post_check[idx]) {
       $scope.grouping.di_grouping.push(post);
-    }else{
-      $scope.grouping.di_grouping = arrayRemove($scope.grouping,post);
+    } else {
+      $scope.grouping.di_grouping = arrayRemove($scope.grouping, post);
     }
   };
-
-  $scope.applyGrouping = function (){
-    $scope.grouping.do_grouping.push(angular.copy($scope.grouping.di_grouping))
+  $scope.applyGrouping = function () {
+    $scope.grouping.do_grouping.push(angular.copy($scope.grouping.di_grouping));
     $scope.grouping.di_grouping = [];
-    for(var i=0; i < $scope.input.post_check.length; i++){
+    for (var i = 0; i < $scope.input.post_check.length; i++) {
       $scope.input.post_check[i] = false;
     }
+  };
+  $scope.verifyGrouping = function (post) {
+    for (var i = 0; i < $scope.grouping.do_grouping.length; i++) {
+      for (var j = 0; j < $scope.grouping.do_grouping[i].length; j++) {
+        if($scope.grouping.do_grouping[i][j] == post && j != 0 ) return false
+      }
+    }
+    return true;
+  };
+  $scope.isParentGrouping = function (post){
+    for (var i = 0; i < $scope.grouping.do_grouping.length; i++) {
+      for (var j = 0; j < $scope.grouping.do_grouping[i].length; j++) {
+        if($scope.grouping.do_grouping[i][j] == post && j == 0 ) return true
+      }
+    }
+    return false;
   }
 
   $scope.bkp_modal = {};
 
   $scope.grouping = {
     di_grouping: [],
-    do_grouping: []
-  }
+    do_grouping: [],
+  };
 
   $scope.clerk = {
     name: "Manu Gavassi",
@@ -144,9 +102,8 @@ app.controller("index.controller", function ($scope) {
     chat: {
       message: "",
     },
-    post_check: []
+    post_check: [],
   };
 
   $scope.data = getData();
-  
 });

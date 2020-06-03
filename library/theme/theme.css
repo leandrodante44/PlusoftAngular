@@ -376,22 +376,20 @@ body {
   color: #0d386d;
 }
 
- .filter-elements.size16 label {
+.filter-elements.size16 label {
   font-size: 16px;
 }
 
 .filter-elements .mini-select {
   height: 39px;
   border: 1px solid #3d5879;
-  box-sizing: border-box;
-  border-radius: 8px;
-  color: #0d386d;
 }
 
 .iconInput .zmdi-chevron-down {
   pointer-events: none;
   padding: 0px 12px;
 }
+
 .iconInput .zmdi-stop {
   padding: 0px 5px;
   top: -6px;
@@ -399,6 +397,17 @@ body {
 
 .modal-footer .btn {
   width: 128px;
+}
+
+.custon-select {
+  border: 1px solid #fff;
+  height: 32px;
+  color: #0D386D;
+  box-shadow: inset -20px 0px 0px 0px rgb(255, 255, 255);
+}
+
+.custon-select:hover {
+  box-shadow: inset -20px 0px 0px 0px rgb(255, 255, 255);
 }
 
 .modal-backdrop {
