@@ -5,39 +5,29 @@ function arrayRemove(arr, value) {
 }
 
 /* ICONS FILTER ONHOVER OPACITY CONTROL */
-function hoverFiltersIcons() {
+function hoverFiltersIcons(ctx) {
+  debugger;
   try {
-    this.getElementsByTagName("object")[0]
+    ctx
+      .getElementsByTagName("object")[0]
       .getSVGDocument()
       .getElementsByTagName("svg")[0]
       .getElementsByTagName("g")[0]
       .getElementsByTagName("path")[0]
       .setAttribute("fill-opacity", "1");
   } catch (e) {
-    this.getElementsByTagName("object")[0]
-      .getSVGDocument()
-      .getElementsByTagName("svg")[0]
-      .getElementsByTagName("path")[0]
-      .setAttribute("fill-opacity", "1");
+    try {
+      ctx
+        .getElementsByTagName("object")[0]
+        .getSVGDocument()
+        .getElementsByTagName("svg")[0]
+        .getElementsByTagName("path")[0]
+        .setAttribute("fill-opacity", "1");
+    } catch (e) {}
   }
 }
-function exitFilterIcons() {
-  try {
-    this.getElementsByTagName("object")[0]
-      .getSVGDocument()
-      .getElementsByTagName("svg")[0]
-      .getElementsByTagName("g")[0]
-      .getElementsByTagName("path")[0]
-      .setAttribute("fill-opacity", "0.5");
-  } catch (e) {
-    this.getElementsByTagName("object")[0]
-      .getSVGDocument()
-      .getElementsByTagName("svg")[0]
-      .getElementsByTagName("path")[0]
-      .setAttribute("fill-opacity", "0.5");
-  }
-}
-function initOpacityFiltersIcons() {
+function exitFilterIcons(ctx) {}
+function initOpacityFiltersIcons(ctx) {
   $("object").removeClass("opacity");
   var y = document.getElementsByClassName("init-opacity");
   var i;
@@ -59,8 +49,41 @@ function initOpacityFiltersIcons() {
   }
 }
 $(function () {
-  $(".link-filter").hover(hoverFiltersIcons(), exitFilterIcons());
-  setTimeout(initOpacityFiltersIcons(), 2000);
+  setTimeout(function () {
+    $(".link-filter").hover(
+      function () {
+        try {
+          this.getElementsByTagName("object")[0]
+            .getSVGDocument()
+            .getElementsByTagName("svg")[0]
+            .getElementsByTagName("g")[0]
+            .getElementsByTagName("path")[0]
+            .setAttribute("fill-opacity", "1");
+        } catch (e) {
+          this.getElementsByTagName("object")[0]
+            .getSVGDocument()
+            .getElementsByTagName("svg")[0]
+            .getElementsByTagName("path")[0]
+            .setAttribute("fill-opacity", "1");
+        }
+      },
+      function () {
+        try {
+          this.getElementsByTagName("object")[0]
+            .getSVGDocument()
+            .getElementsByTagName("svg")[0]
+            .getElementsByTagName("g")[0]
+            .getElementsByTagName("path")[0]
+            .setAttribute("fill-opacity", "0.5");
+        } catch (e) {
+          this.getElementsByTagName("object")[0]
+            .getSVGDocument()
+            .getElementsByTagName("svg")[0]
+            .getElementsByTagName("path")[0]
+            .setAttribute("fill-opacity", "0.5");
+        }
+      }
+    );
+    initOpacityFiltersIcons();
+  }, 1000);
 });
-
-
