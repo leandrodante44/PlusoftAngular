@@ -1,5 +1,5 @@
 <!-- MODAL TIPOS -->
-<div class="modal fade" id="modalTipos">
+<div class="modal fade" id="modalTipos" ng-controller="myCtrl">
     <div class="modal-dialog modal-lg border border-primary rounded">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -25,219 +25,44 @@
                         <div class="row mt-4">
                             <div class="col-md-3 p-0 text-left">
                                 <div class="form-group ">
-                                    <div class="form-check">
+                                    <div class="form-check" ng-checked="checkall" ng-repeat="x in getDataSlice(tipos, 4, 0)"> 
                                         <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" ng-checked="checkall" class="fill-control-input">
                                             <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Humano</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Bot</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Álbum</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Álbum - Foto</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Impulsionado</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Comentário</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Comentário Filho</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Vídeo</span>
+                                            <span class="fill-control-description  mt-1">{{x}}</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 p-0 text-left">
                                 <div class="form-group ">
-                                    <div class="form-check">
+                                    <div class="form-check" ng-repeat="x in getDataSlice(tipos, 4, 1)">
                                         <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" ng-checked="checkall" class="fill-control-input">
                                             <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Dark Post</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Avaliação</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Evento</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Fan Page</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">App do Facebook</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Marcação de Amigo</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Grupo</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-left">
-                                <div class="form-group ">
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Link</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Manual</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Menção</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Mensagem</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Oficial</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Foto</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Perfil</span>
+                                            <span class="fill-control-description  mt-1">{{x}}</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3 p-0 text-left">
                                 <div class="form-group ">
-                                    <div class="form-check">
+                                    <div class="form-check" ng-checked="checkall" ng-repeat="x in getDataSlice(tipos, 4, 2)"> 
                                         <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" ng-checked="checkall" class="fill-control-input">
                                             <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Enquete</span>
+                                            <span class="fill-control-description  mt-1">{{x}}</span>
                                         </label>
                                     </div>
-                                    <div class="form-check">
+                                </div>
+                            </div>
+                            <div class="col-md-3 p-0 text-left">
+                                <div class="form-group ">
+                                    <div class="form-check" ng-repeat="x in getDataSlice(tipos, 4, 3)">
                                         <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" ng-checked="checkall" class="fill-control-input">
                                             <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Review</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Marca</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Compartilhamento</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Status</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Flash</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Termo</span>
+                                            <span class="fill-control-description  mt-1">{{x}}</span>
                                         </label>
                                     </div>
                                 </div>
@@ -246,12 +71,12 @@
                         <div class="row mt-3">
                             <div class="col">
                                 <div class="d-flex mx-auto justify-content-end">
-                                    <button class="btn btn-outline-primary btn-sm mx-3">Selecionar todos</button>
+                                    <button class="btn btn-outline-primary btn-sm mx-3" ng-click="checkAll()">Selecionar todos</button>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="d-flex mx-auto justify-content-start">
-                                    <button class="btn btn-outline-primary btn-sm mx-3">Limpar seleção</button>
+                                    <button class="btn btn-outline-primary btn-sm mx-3" ng-click="uncheckAll()">Limpar seleção</button>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 <!-- MODAL CANAIS -->
-<div class="modal fade" id="modalCanais">
+<div class="modal fade" id="modalCanais" ng-controller="myCtrl">
     <div class="modal-dialog modal-lg border border-primary rounded">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -25,135 +25,37 @@
                         <div class="row mt-4">
                             <div class="col-md-1 text-left"></div>
                             <div class="col-md-6 text-left">
-                                <div class="form-group ">
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox ">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/Apple.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
+                                <div class="form-group">
+                                    <div class="form-check" ng-repeat="x in getDataSlice(canais, 2, 0)">
+                                        <label class="custom-control  mt-3 fill-checkbox">
+                                            <img class="icon28 mx-2" src={{x.icon}}></img>
+                                            <input type="checkbox" ng-checked="checkall" class="fill-control-input">
                                             <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">App Store</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/RSS.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Blog</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/Wechat.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Chat</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/Mail.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">E-mail</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/Facebook.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Facebook</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/FacebookApp.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Facobook App</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/GooglePlay.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Google Play</span>
+                                            <span class="fill-control-description  mt-1">{{x.name}}</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-5 text-left">
-                                <div class="form-group ">
-                                    <div class="form-check">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/Instagram.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Instagram</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/Linkedin.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Linkedin</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/ReclameAqui.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Reclame aqui</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/ReclameAqui.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Reclame aqui - E-mail</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/Twitter.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Twitter</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/YouTube.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Youtube</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-3">
-                                        <label class="custom-control fill-checkbox">
-                                            <img class="icon28 mx-2" src="library/icons/sgv/IcMessage.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
-                                            <span class="fill-control-indicator mt-1"></span>
-                                            <span class="fill-control-description  mt-1">Ic.Message</span>
-                                        </label>
-                                    </div>
+                                <div class="form-check" ng-repeat="x in getDataSlice(canais, 2, 1)">
+                                    <label class="custom-control  mt-3 fill-checkbox">
+                                        <img class="icon28 mx-2" src={{x.icon}}></img>
+                                        <input type="checkbox" ng-checked="checkall" class="fill-control-input">
+                                        <span class="fill-control-indicator mt-1"></span>
+                                        <span class="fill-control-description  mt-1">{{x.name}}</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
                                 <div class="d-flex mx-auto justify-content-end">
-                                    <button class="btn btn-outline-primary btn-sm mx-3">Selecionar todos</button>
+                                    <button class="btn btn-outline-primary btn-sm mx-3" ng-click="checkAll()">Selecionar todos</button>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="d-flex mx-auto justify-content-start">
-                                    <button class="btn btn-outline-primary btn-sm mx-3">Limpar seleção</button>
+                                    <button class="btn btn-outline-primary btn-sm mx-3" ng-click="uncheckAll()">Limpar seleção</button>
                                 </div>
                             </div>
                         </div>
