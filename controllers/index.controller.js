@@ -58,10 +58,15 @@ app.controller("index.controller", function ($scope) {
     if ($scope.input.post_check[idx]) {
       $scope.grouping.di_grouping.push(post);
     } else {
-      $scope.grouping.di_grouping = arrayRemove($scope.grouping, post);
+      $scope.grouping.di_grouping = arrayRemove($scope.grouping.di_grouping, post);
     }
   };
   $scope.applyGrouping = function () {
+    for(var j=0; j<$scope.grouping.di_grouping; j++){
+      if(!j){
+        var postParent = getPostById($scope.data,$scope.grouping.di_grouping[j])
+      }
+    } 
     $scope.grouping.do_grouping.push(angular.copy($scope.grouping.di_grouping));
     $scope.grouping.di_grouping = [];
     for (var i = 0; i < $scope.input.post_check.length; i++) {
