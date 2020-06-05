@@ -545,28 +545,55 @@ body {
 
 /* Modifying popover*/
 .custon-popover a{ 
-  color: #0d386d;
-  font-weight: 500;
+  color: rgba(61, 88, 121, 0.7);
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
   font-size: 16px;
 }
 .custon-popover a:hover{ 
-  color: #0d386d;
+  border-left: 3px solid #4976EF;
+  color: rgba(61, 88, 121, 0.7);
+  background:rgba(73, 118, 239, 0.3);
 }
 
-.popover {
-  border: 2px solid rgba(27, 162, 174);
-  padding: 0 ;
+.custon-popover a:focus{ 
+  color: rgba(61, 88, 121, 0.7);
+  border-left: 3px solid #4976EF;
+  background: rgba(73, 118, 239, 0.03);
+}
+
+.custon-popover{ 
+  position: relative;
+  width: 248px;
+  right: 100px; 
+  background: #fff;
+}
+
+.custon-popover .list-group-item{
+  border: 1px solid #CFD1DC;
+}
+
+.custon-popover .list-group-item:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.custon-popover .list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 .popover-body {
   padding: 0;
-}
-
-.popover.bs-popover-bottom .arrow::before, .popover.bs-popover-auto[x-placement^="bottom"] .arrow::before{
-  top: -13px;
-  border-bottom-color:  rgba(27, 162, 174);
+  border: 0px;
 }
 
 a.icon-top-menu, a.icon-top-menu:hover, a.icon-top-menu:focus {
   text-decoration: none;
+}
+.popover {
+  border: 0;
+  background-color: transparent;
 }
