@@ -108,6 +108,15 @@ app.controller("index.controller", function ($scope) {
   $scope.data = getData();
 });
 
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();   
+  
+  $('.popover-dismiss').popover({
+    trigger: 'focus'
+  })
+});
+
+
 
 //BTN ATRIBUIR
 //MODAL DE TAGUEAMENTO
