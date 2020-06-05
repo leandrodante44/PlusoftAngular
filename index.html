@@ -101,7 +101,7 @@
                                     <div class="p-3 border-right col-sm-2"><img class="icon-footer mr-3 shakeIcon"
                                             src="library/icons/sgv/sort_24px.svg"></img></div>
                                     <div class="p-3 ml-3">
-                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3" href="#" data-toggle="popover" data-trigger="focus" data-placement="auto" offset="30" data-html="true" data-content='
+                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3" href="#" data-toggle="popover" data-placement="auto" offset="30" data-html="true" data-content='
                                         <div class="list-group custon-popover">
                                             <a href="#" class="list-group-item list-group-item-action"> 
                                                 <!-- <img class=" mr-2" src="library/icons/sgv/mood.svg"></img>  -->
@@ -134,16 +134,13 @@
                                                 src="library/icons/sgv/move_to_inbox.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg zmdi-hc-lg"></i>
                                         </span>
-                                        <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                        <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"  data-toggle="modal"
+                                        data-target="#modalTagueamento">
                                             <img class="icon-footer mr-1 shakeIcon"
                                                 src="library/icons/sgv/tagv2.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </span>
-                                        <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
-                                            <img class="icon-footer mr-1 shakeIcon"
-                                                src="library/icons/sgv/phone.svg"></img>
-                                            <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
-                                        </span>
+                      
                                     </div>
                                     <div class="p-3 ml-auto mr-3">
                                         <span
@@ -307,7 +304,8 @@
                                             data="library/icons/sgv/Ballon.svg"></object>|
                                         <object class="icon-footer mr-3 shakeIcon ml-3"
                                             data="library/icons/sgv/ThreeP.svg"></object>
-                                        <a class="text-primary mr-3 txt-footer-card">
+                                        <a class="text-primary mr-3 txt-footer-card" data-toggle="modal"
+                                        data-target="#modalTagueamento">
                                             <object class="icon-footer mr-2 shakeIcon"
                                                 data="library/icons/sgv/Tag.svg"></object>
                                             Tagueamento
@@ -348,6 +346,7 @@
         <div ng-include="'includes/modalPosts.html'"></div>
         <div ng-include="'includes/modalTags.html'"></div>
         <div ng-include="'includes/modalTipos.html'"></div>
+        <div ng-include="'includes/modalTagueamento.html'"></div>
     </div>
     <script>
         //$('.shakeIcon')
