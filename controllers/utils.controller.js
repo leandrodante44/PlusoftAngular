@@ -5,28 +5,6 @@ function arrayRemove(arr, value) {
 }
 
 /* ICONS FILTER ONHOVER OPACITY CONTROL */
-function hoverFiltersIcons(ctx) {
-  debugger;
-  try {
-    ctx
-      .getElementsByTagName("object")[0]
-      .getSVGDocument()
-      .getElementsByTagName("svg")[0]
-      .getElementsByTagName("g")[0]
-      .getElementsByTagName("path")[0]
-      .setAttribute("fill-opacity", "1");
-  } catch (e) {
-    try {
-      ctx
-        .getElementsByTagName("object")[0]
-        .getSVGDocument()
-        .getElementsByTagName("svg")[0]
-        .getElementsByTagName("path")[0]
-        .setAttribute("fill-opacity", "1");
-    } catch (e) {}
-  }
-}
-function exitFilterIcons(ctx) {}
 function initOpacityFiltersIcons(ctx) {
   $("object").removeClass("opacity");
   var y = document.getElementsByClassName("init-opacity");
@@ -87,3 +65,8 @@ $(function () {
     initOpacityFiltersIcons();
   }, 1000);
 });
+function getPostById(data,id){
+  for(var i=0;i<data.length;i++){
+    if(data[i].id_smpost = id) return data[i]
+  }
+}
