@@ -101,7 +101,9 @@
                                     <div class="p-3 border-right col-sm-2"><img class="icon-footer mr-3 shakeIcon"
                                             src="library/icons/sgv/sort_24px.svg"></img></div>
                                     <div class="p-3 ml-3">
-                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3" href="#" data-toggle="popover" data-placement="auto" offset="30" data-html="true" data-content='
+                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                            href="#" data-toggle="popover" data-placement="auto" offset="30"
+                                            data-html="true" data-content='
                                         <div class="list-group custon-popover">
                                             <a href="#" class="list-group-item list-group-item-action"> 
                                                 <!-- <img class=" mr-2" src="library/icons/sgv/mood.svg"></img>  -->
@@ -134,13 +136,13 @@
                                                 src="library/icons/sgv/move_to_inbox.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg zmdi-hc-lg"></i>
                                         </span>
-                                        <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"  data-toggle="modal"
-                                        data-target="#modalTagueamento">
+                                        <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                            data-toggle="modal" data-target="#modalTagueamento">
                                             <img class="icon-footer mr-1 shakeIcon"
                                                 src="library/icons/sgv/tagv2.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </span>
-                      
+
                                     </div>
                                     <div class="p-3 ml-auto mr-3">
                                         <span
@@ -156,7 +158,9 @@
                                                 src="library/icons/sgv/today.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </span>
-                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3" href="#" data-toggle="popover" data-trigger="focus" data-placement="auto" offset="30" data-html="true" data-content='
+                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                            href="#" data-toggle="popover" data-trigger="focus" data-placement="auto"
+                                            offset="30" data-html="true" data-content='
                                         <div class="list-group custon-popover">
                                             <a href="#" class="list-group-item list-group-item-action"> 
                                                 Mais recentes
@@ -178,11 +182,13 @@
                                             </a>
                                           </div>
                                         '>
-                                        <i class="zmdi zmdi-swap-vertical zmdi-hc-lg shakeIcon"
-                                        style="width: 24; text-align: center;"></i>
+                                            <i class="zmdi zmdi-swap-vertical zmdi-hc-lg shakeIcon"
+                                                style="width: 24; text-align: center;"></i>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </a>
-                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3" href="#" data-toggle="popover" data-trigger="focus" data-placement="auto" offset="30" data-html="true" data-content='
+                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                            href="#" data-toggle="popover" data-trigger="focus" data-placement="auto"
+                                            offset="30" data-html="true" data-content='
                                         <div class="list-group custon-popover">
                                             <a href="#" class="list-group-item list-group-item-action"> 
                                                 Manual
@@ -205,7 +211,7 @@
                         <div class="card-body p-0 pl-4 text-primary">
                             <div class="row">
                                 <div class="d-flex w-100 justify-content-between text-top-two-card">
-                                    <div class="p-3 border-right col-sm-2">Periodo {{grouping}}</div>
+                                    <div class="p-3 border-right col-sm-2">Periodo</div>
                                     <div class="p-3 ml-0">
                                         Inicio: 16/03/2020 00:00
                                     </div>
@@ -215,7 +221,7 @@
                                     <div class="col-sm-1"></div>
                                     <div class="p-3 mr-5">
                                         <img class="icon-footer mr-1 shakeIcon"
-                                            src="library/icons/sgv/live_help.svg"></img> {{input.post_check}}
+                                            src="library/icons/sgv/live_help.svg"></img>
                                     </div>
                                 </div>
 
@@ -272,8 +278,9 @@
                                         <!--Tags-->
                                         <h4>
                                             <span ng-repeat="tag in post.post_types"
-                                                class="badge btn badge-primary badge-card shadow-sm badge-pill mr-2">{{tag.ds_typeicustomer}}
-                                                <a><i class="zmdi zmdi-close badge-close"></i></a>
+                                                class="badge btn {{(tag.Do_manual !='A')? 'badge-primary' : 'badge-danger'}} badge-card shadow-sm badge-pill mr-2">{{tag.ds_typeicustomer}}
+                                                <a ng-show="{{(tag.Do_manual !='A')?true:false}}"><i
+                                                        class="zmdi zmdi-close badge-close"></i></a>
                                             </span></h4>
                                     </div>
                                 </div>
@@ -284,42 +291,41 @@
                             <div class="row">
                                 <div class=" notch-card rounded ml-3 mr-3 p-2 text-primary justify-content-between">
                                     <center>
-                                        <object class="icon-footer mr-3 shakeIcon"
-                                            data="library/icons/sgv/Book.svg"></object>
-                                        <object class="icon-footer mr-3 shakeIcon"
-                                            data="library/icons/sgv/Letter.svg"></object>
-                                        <object class="icon-footer mr-3 shakeIcon"
-                                            data="library/icons/sgv/Star.svg"></object>|
-                                        <object class="icon-footer mr-3 shakeIcon ml-3 icon-success"
-                                            data="library/icons/sgv/Smile.svg"></object>
-                                        <object class="icon-footer mr-3 shakeIcon icon-warning"
-                                            data="library/icons/sgv/Idle.svg"></object>
-                                        <object class="icon-footer mr-3 shakeIcon icon-medium"
-                                            data="library/icons/sgv/Sad.svg"></object>
-                                        <object class="icon-footer mr-3 shakeIcon icon-danger"
-                                            data="library/icons/sgv/Sick.svg"></object>
-                                        <object class="icon-footer mr-3 shakeIcon icon-medium"
-                                            data="library/icons/sgv/Denied.svg"></object>
-                                        <object class="icon-footer mr-3 shakeIcon"
-                                            data="library/icons/sgv/Ballon.svg"></object>|
-                                        <object class="icon-footer mr-3 shakeIcon ml-3"
-                                            data="library/icons/sgv/ThreeP.svg"></object>
+                                        <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Book.svg"></img>
+                                        <img class="icon-footer mr-3 shakeIcon"
+                                            src="library/icons/sgv/Letter.svg"></img>
+                                        <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Star.svg"></img>|
+                                        <img class="icon-footer mr-3 shakeIcon ml-3 icon-success"
+                                            src="library/icons/sgv/Smile.svg"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-warning"
+                                            src="library/icons/sgv/Idle.svg"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-medium"
+                                            src="library/icons/sgv/Sad.svg"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-danger"
+                                            src="library/icons/sgv/Sick.svg"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-medium"
+                                            src="library/icons/sgv/Denied.svg"></img>
+                                        <img class="icon-footer mr-3 shakeIcon"
+                                            src="library/icons/sgv/Ballon.svg"></img>|
+                                        <img class="icon-footer mr-3 shakeIcon ml-3"
+                                            src="library/icons/sgv/ThreeP.svg"></img>
                                         <a class="text-primary mr-3 txt-footer-card" data-toggle="modal"
-                                        data-target="#modalTagueamento">
-                                            <object class="icon-footer mr-2 shakeIcon"
-                                                data="library/icons/sgv/Tag.svg"></object>
-                                            Tagueamento
+                                            data-target="#modalTagueamento">
+                                            <img class="icon-footer mr-2 shakeIcon"
+                                                src="library/icons/sgv/Tag.svg"></img>
+                                            <span>Tagueamento</span>
                                         </a>
                                         <a class="text-primary mr-3 txt-footer-card" data-toggle="modal"
                                             data-target="#chat" ng-click="loadDataChat(idx)">
-                                            <object class="icon-footer mr-2 shakeIcon"
-                                                data="library/icons/sgv/Reply.svg"></object>
-                                            Responder
+                                            <img class="icon-footer mr-2 shakeIcon"
+                                                src="library/icons/sgv/Reply.svg"></img>
+                                            <span>Responder</span>
                                         </a>
-                                        <a class="text-primary mr-2 txt-footer-card">
-                                            <object class="icon-footer mr-2 shakeIcon"
-                                                data="library/icons/sgv/Launch.svg"></object>
-                                            Atribuir
+                                        <a class="text-primary mr-2 txt-footer-card"  data-toggle="modal" data-target="#modalAtribuir"
+                                            ng-click="initModal(post.id_smpost)">
+                                            <img class="icon-footer mr-2 shakeIcon"
+                                                src="library/icons/sgv/Launch.svg"></img>
+                                            <span>Atribuir</span>
                                         </a>
                                     </center>
                                 </div>

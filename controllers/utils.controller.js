@@ -67,6 +67,6 @@ $(function () {
 });
 function getPostById(data,id){
   for(var i=0;i<data.length;i++){
-    if(data[i].id_smpost = id) return data[i]
+    if(data[i].id_smpost == id) return data[i]
   }
 }

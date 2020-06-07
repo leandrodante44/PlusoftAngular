@@ -103,6 +103,10 @@ a {
   background-color: #4976ff;
   font-weight: 400;
 }
+.badge-danger{
+  background: #FFD9A2;
+  color: rgba(22, 36, 65, 0.75);;
+}
 
 .timestamp-card {
   float: right;
@@ -142,12 +146,21 @@ body {
 }
 .txt-footer-card {
   font-weight: 500;
+  cursor: pointer;
 }
 .text-top-two-card {
   font-weight: 500;
   font-size: 18px;
 }
-
+.icon-footer{
+  min-width: 20px;
+  min-height: 20px;
+  max-height: 32px;
+  max-width: 32px;
+}
+.notch-card center object{
+  margin-top: 5px;
+}
 /* CHAT*/
 .PersonInfo {
   padding-bottom: 5px;
@@ -512,25 +525,21 @@ body {
 }
 
 .icon-success:hover {
-  margin: -6px;
   border: 6px solid rgba(18, 178, 133, 0.3);
   border-radius: 100%;
 }
 
 .icon-warning:hover {
-  margin: -6px;
   border: 6px solid rgba(236, 187, 67, 0.3);
   border-radius: 100%;
 }
 
 .icon-danger:hover {
-  margin: -6px;
   border: 6px solid rgba(255, 87, 125, 0.3);
   border-radius: 100%;
 }
 
 .icon-medium:hover {
-  margin: -6px;
   border: 6px solid rgba(255, 146, 30, 0.2);
   border-radius: 100%;
 }

@@ -25,6 +25,24 @@ function getData(){
           ds_typeicustomer: "Curiosidade",
         },
       ],
+      do_assignment: {
+        ds_status: {
+          ds_inprogress: "",
+          ds_assigned: "",
+          ds_concluded: "",
+        },
+        ds_input: {
+          ds_pleased: "",
+          ds_dissatisfied: "",
+          ds_indifferent: "",
+        },
+        ds_exit: {
+          ds_pleased: "",
+          ds_dissatisfied: "",
+          ds_indifferent: "",
+        },
+        ds_assignment: "1",
+      },
       do_chat: {
         dn_friends: "500M",
         dn_followers: "210M",
@@ -35,24 +53,7 @@ function getData(){
         ds_cphone: "+55879798877",
         ds_local: "Milão, Itália",
         ds_email: "cr7@gmail.com",
-        do_assignment: {
-          ds_status: {
-            ds_inprogress: "",
-            ds_assigned: "",
-            ds_concluded: "",
-          },
-          ds_input: {
-            ds_pleased: "",
-            ds_dissatisfied: "",
-            ds_indifferent: "",
-          },
-          ds_exit: {
-            ds_pleased: "",
-            ds_dissatisfied: "",
-            ds_indifferent: "",
-          },
-          ds_assignment: "1",
-        },
+        
         do_contact: [
           {
             dt_contact: "16/03/2020 15:40",
@@ -278,6 +279,24 @@ function getData(){
           ds_typeicustomer: "Corona",
         },
       ],
+      do_assignment: {
+        ds_status: {
+          ds_inprogress: "",
+          ds_assigned: "",
+          ds_concluded: "",
+        },
+        ds_input: {
+          ds_pleased: "",
+          ds_dissatisfied: "",
+          ds_indifferent: "",
+        },
+        ds_exit: {
+          ds_pleased: "",
+          ds_dissatisfied: "",
+          ds_indifferent: "",
+        },
+        ds_assignment: "1",
+      },
       do_chat: {
         dn_friends: "600M",
         dn_followers: "200M",
@@ -288,24 +307,6 @@ function getData(){
         ds_cphone: "+55879798877",
         ds_local: "Ninho do Urubu, Mengo",
         ds_email: "gabigol@gmail.com",
-        do_assignment: {
-          ds_status: {
-            ds_inprogress: "",
-            ds_assigned: "",
-            ds_concluded: "",
-          },
-          ds_input: {
-            ds_pleased: "",
-            ds_dissatisfied: "",
-            ds_indifferent: "",
-          },
-          ds_exit: {
-            ds_pleased: "",
-            ds_dissatisfied: "",
-            ds_indifferent: "",
-          },
-          ds_assignment: "1",
-        },
         do_contact: [
           {
             dt_contact: "16/03/2020 15:40",
@@ -536,6 +537,24 @@ function getData(){
           ds_typeicustomer: "Curiosidade",
         },
       ],
+      do_assignment: {
+        ds_status: {
+          ds_inprogress: "",
+          ds_assigned: "",
+          ds_concluded: "",
+        },
+        ds_input: {
+          ds_pleased: "",
+          ds_dissatisfied: "",
+          ds_indifferent: "",
+        },
+        ds_exit: {
+          ds_pleased: "",
+          ds_dissatisfied: "",
+          ds_indifferent: "",
+        },
+        ds_assignment: "1",
+      },
     },
     {
       id_smpost: 1237,
@@ -562,6 +581,24 @@ function getData(){
           ds_typeicustomer: "Curiosidade",
         },
       ],
+      do_assignment: {
+        ds_status: {
+          ds_inprogress: "",
+          ds_assigned: "",
+          ds_concluded: "",
+        },
+        ds_input: {
+          ds_pleased: "",
+          ds_dissatisfied: "",
+          ds_indifferent: "",
+        },
+        ds_exit: {
+          ds_pleased: "",
+          ds_dissatisfied: "",
+          ds_indifferent: "",
+        },
+        ds_assignment: "1",
+      },
     },
   ];
 }

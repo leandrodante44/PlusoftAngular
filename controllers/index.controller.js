@@ -45,8 +45,13 @@ app.controller("index.controller", function ($scope) {
   };
 
   /*MODALS METHODS OF MODAL DYNAMICS*/
-  $scope.initModal = function () {
-    $scope.bkp_modal = angular.copy($scope.selectedPost);
+  $scope.initModal = function (post) {
+    if (post) {
+      $scope.selectedPost = getPostById($scope.data, post);
+      $scope.bkp_modal = angular.copy(getPostById($scope.data, post));
+    } else {
+      $scope.bkp_modal = angular.copy($scope.selectedPost);
+    }
   };
   $scope.cancelModal = function () {
     debugger;
@@ -58,15 +63,42 @@ app.controller("index.controller", function ($scope) {
     if ($scope.input.post_check[idx]) {
       $scope.grouping.di_grouping.push(post);
     } else {
-      $scope.grouping.di_grouping = arrayRemove($scope.grouping.di_grouping, post);
+      $scope.grouping.di_grouping = arrayRemove(
+        $scope.grouping.di_grouping,
+        post
+      );
     }
   };
   $scope.applyGrouping = function () {
-    for(var j=0; j<$scope.grouping.di_grouping; j++){
-      if(!j){
-        var postParent = getPostById($scope.data,$scope.grouping.di_grouping[j])
+    var postParent, postChild, lstId;
+    for (var j = 0; j < $scope.grouping.di_grouping.length; j++) {
+      if (!j) {
+        postParent = getPostById($scope.data, $scope.grouping.di_grouping[j]);
+        lstId = postParent.post_types[postParent.post_types.length - 1].id;
+      } else {
+        postChild = getPostById($scope.data, $scope.grouping.di_grouping[j]);
+        var statuspost = "";
+        switch (true) {
+          case postChild.do_assignment.ds_status.ds_inprogress:
+            statuspost = "Em andamento";
+            break;
+          case postChild.do_assignment.ds_status.ds_assigned:
+            statuspost = "Atribuido";
+            break;
+          case postChild.do_assignment.ds_status.ds_concluded:
+            statuspost = "Concluido";
+            break;
+          default:
+            statuspost = "Aguardando";
+        }
+        var arrTag = {
+          id: lstId++,
+          Do_manual: "A",
+          ds_typeicustomer: "# " + postChild.id_smpost + " - " + statuspost,
+        };
+        postParent.post_types.push(arrTag);
       }
-    } 
+    }
     $scope.grouping.do_grouping.push(angular.copy($scope.grouping.di_grouping));
     $scope.grouping.di_grouping = [];
     for (var i = 0; i < $scope.input.post_check.length; i++) {
@@ -76,19 +108,19 @@ app.controller("index.controller", function ($scope) {
   $scope.verifyGrouping = function (post) {
     for (var i = 0; i < $scope.grouping.do_grouping.length; i++) {
       for (var j = 0; j < $scope.grouping.do_grouping[i].length; j++) {
-        if($scope.grouping.do_grouping[i][j] == post && j != 0 ) return false
+        if ($scope.grouping.do_grouping[i][j] == post && j != 0) return false;
       }
     }
     return true;
   };
-  $scope.isParentGrouping = function (post){
+  $scope.isParentGrouping = function (post) {
     for (var i = 0; i < $scope.grouping.do_grouping.length; i++) {
       for (var j = 0; j < $scope.grouping.do_grouping[i].length; j++) {
-        if($scope.grouping.do_grouping[i][j] == post && j == 0 ) return true
+        if ($scope.grouping.do_grouping[i][j] == post && j == 0) return true;
       }
     }
     return false;
-  }
+  };
 
   $scope.bkp_modal = {};
 
@@ -113,15 +145,13 @@ app.controller("index.controller", function ($scope) {
   $scope.data = getData();
 });
 
-$(document).ready(function(){
-  $('[data-toggle="popover"]').popover();   
-  
-  $('.popover-dismiss').popover({
-    trigger: 'focus'
-  })
+$(document).ready(function () {
+  $('[data-toggle="popover"]').popover();
+
+  $(".popover-dismiss").popover({
+    trigger: "focus",
+  });
 });
-
-
 
 //BTN ATRIBUIR
 //MODAL DE TAGUEAMENTO
