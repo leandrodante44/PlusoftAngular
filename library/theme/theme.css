@@ -552,57 +552,35 @@ body {
   width: 105px;
 }
 
-/* Modifying popover*/
-.custon-popover a{ 
+ .custon-dropdown a{ 
   color: rgba(61, 88, 121, 0.7);
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
 }
-.custon-popover a:hover{ 
+.custon-dropdown a:hover{ 
   border-left: 3px solid #4976EF;
   color: rgba(61, 88, 121, 0.7);
   background:rgba(73, 118, 239, 0.3);
+  border-radius: 0;
 }
 
-.custon-popover a:focus{ 
+.custon-dropdown a:focus{ 
   color: rgba(61, 88, 121, 0.7);
   border-left: 3px solid #4976EF;
-  background: rgba(73, 118, 239, 0.03);
+  background: rgba(73, 118, 239, 0.2);
+  border-radius: 0;
 }
-
-.custon-popover{ 
-  position: relative;
+.custon-dropdown{ 
   width: 248px;
-  right: 100px; 
   background: #fff;
 }
 
-.custon-popover .list-group-item{
-  border: 1px solid #CFD1DC;
-}
-
-.custon-popover .list-group-item:first-child {
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
-
-.custon-popover .list-group-item:last-child {
-  margin-bottom: 0;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
-}
-
-.popover-body {
-  padding: 0;
-  border: 0px;
+.custon-dropdown{
+  border: 1px solid rgb(179, 179, 179);
 }
 
 a.icon-top-menu, a.icon-top-menu:hover, a.icon-top-menu:focus {
   text-decoration: none;
-}
-.popover {
-  border: 0;
-  background-color: transparent;
 }

@@ -143,34 +143,67 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.data = getData();
-  $scope.menu = getFilters();
-
-  // $scope.topBarOrderBy = [{
-  //   displayName : "",
-  //   value : ""
-  // },{
-  //   displayName : "Mais antigos",
-  //   value : "dt_published"
-  // },{
-  //   displayName : "Mais seguidores",
-  //   value : "-dt_published"
-  // },{
-  //   displayName : "Mais curtidas",
-  //   value : "do_liked"
-  // },{
-  //   displayName : "Mais compartilhamentos",
-  //   value : "1"
-  // },{
-  //   displayName : "Mais comentários",
-  //   value : "1"
-  // },]
-
   $scope.orderOption = {
     value: "",
   };
-
+  $scope.data = getFilters();
   $scope.orderOption = function (opt) {
     $scope.orderOption.value = opt;
+  };
+  $scope.topBarMood = [
+    {
+      displayName: "Positivo",
+      value: "1",
+    },
+    {
+      displayName: "Negativo",
+      value: "2",
+    },
+    {
+      displayName: "Neutro",
+      value: "3",
+    },
+    {
+      displayName: "Híbrido",
+      value: "4",
+    },
+    {
+      displayName: "Inválido",
+      value: "5",
+    },
+  ];
+  $scope.topBarOrderBy = [
+    {
+      displayName: "Mais recentes",
+      value: "dt_published",
+    },
+    {
+      displayName: "Mais antigos",
+      value: "-dt_published",
+    },
+    {
+      displayName: "Mais amigos",
+      value: "",
+    },
+    {
+      displayName: "Mais seguidores",
+      value: "",
+    },
+    {
+      displayName: "Mais curtidas",
+      value: "do_liked",
+    },
+    {
+      displayName: "Mais compartilhamentos",
+      value: "",
+    },
+    {
+      displayName: "Mais comentários",
+      value: "",
+    },
+  ];
+  $scope.orderOption = {
+    value: "id_smpost",
   };
 });
 
@@ -189,7 +222,6 @@ $(document).ready(function () {
     trigger: "focus",
   });
 });
-
 //BTN ATRIBUIR
 //MODAL DE TAGUEAMENTO
 //POST PAI E FILHO

@@ -64,36 +64,24 @@
                                     <div class="p-3 border-right col-sm-2"><img class="icon-footer mr-3 shakeIcon"
                                             src="library/icons/sgv/sort_24px.svg"></img></div>
                                     <div class="p-3 ml-3">
-                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
-                                            href="#" data-toggle="popover" data-placement="auto" offset="30"
-                                            data-html="true" data-content='
-                                        <div class="list-group custon-popover">
-                                            <a href="#" class="list-group-item list-group-item-action"> 
-                                                <!-- <img class=" mr-2" src="library/icons/sgv/mood.svg"></img>  -->
-                                                Positivo
+                                        <!-- mood button -->
+                                        <div class="btn-group">
+                                            <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                                href="#" id="dropdownMenuMood" data-toggle="dropdown" offset="30">
+                                                <img class="icon-footer mr-1 shakeIcon"
+                                                    src="library/icons/sgv/mood.svg"></img>
+                                                <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                             </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <!-- <img class=" mr-2 text-danger"src="library/icons/sgv/mood.svg"></img> -->
-                                                Negativo
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <!-- <img class=" mr-2" src="library/icons/sgv/mood.svg"></img> -->
-                                                Neutro
-                                        </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <!-- <img class=" mr-2" src="library/icons/sgv/mood.svg"></img> -->
-                                                Híbrido
-                                        </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <!-- <img class=" mr-2" src="library/icons/sgv/mood.svg"></img> -->
-                                                Inválido
-                                            </a>
-                                          </div>
-                                        '>
-                                            <img class="icon-footer mr-1 shakeIcon"
-                                                src="library/icons/sgv/mood.svg"></img>
-                                            <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
-                                        </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuMood">
+                                                <div class="list-group custon-dropdown" ng-repeat="x in topBarMood">
+                                                    <a href="#" class="list-group-item"
+                                                        ng-click="">
+                                                        {{x.displayName}}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- ----- -->
                                         <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
                                             <img class="icon-footer mr-1 shakeIcon"
                                                 src="library/icons/sgv/move_to_inbox.svg"></img>
@@ -121,42 +109,46 @@
                                                 src="library/icons/sgv/today.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </span>
+                                        <!-- order button -->
+                                        <div class="btn-group">
+                                            <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                                href="#" id="dropdownMenuOrder" data-toggle="dropdown" offset="30">
 
-                                        <a popover
-                                            class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
-                                            href="#" data-toggle="popover" data-trigger="focus" data-placement="auto"
-                                            offset="30" data-html="true" data-popover-content="#a1">
-                                            <i class="zmdi zmdi-swap-vertical zmdi-hc-lg shakeIcon"
-                                                style="width: 24; text-align: center;"></i>
-                                            <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
-                                        </a><!-- Content for Popover #1 -->
-                                        <!-- teste da lista de opcoes -->
-                                        <!-- <br/>
-                                        <br/>
-                                        <div class="list-group custon-popover topBarOrder" ng-repeat="x in topBarOrderBy">
-                                            <a href="#" class="list-group-item list-group-item-action" ng-click="orderOption.value = x.value">
-                                                {{x.displayName}}
+                                                <i class="zmdi zmdi-swap-vertical zmdi-hc-lg shakeIcon"
+                                                    style="width: 24; text-align: center;"></i>
+                                                <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                             </a>
-                                        </div> -->
-
-
-
-                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
-                                            href="#" data-toggle="popover" data-trigger="focus" data-placement="auto"
-                                            offset="30" data-html="true" data-content='
-                                            <div class="list-group custon-popover">
-                                                <a href="#" class="list-group-item list-group-item-action"> 
-                                                    Manual
-                                                </a>
-                                                <a href="#" class="list-group-item list-group-item-action">
-                                                    Automática
-                                                </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuOrder">
+                                                <div class="list-group custon-dropdown" ng-repeat="x in topBarOrderBy">
+                                                    <a href="#" class="list-group-item"
+                                                        ng-click="orderOption.value = x.value">
+                                                        {{x.displayName}}
+                                                    </a>
+                                                </div>
                                             </div>
-                                            '>
-                                            <img class="icon-footer mr-1 shakeIcon"
-                                                src="library/icons/sgv/refresh.svg"></img>
-                                            <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
-                                        </a>
+                                        </div>
+                                        <!-- ----- -->
+                                         <!-- refresh button -->
+                                         <div class="btn-group">
+                                            <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                                href="#" id="dropdownMenuRefresh" data-toggle="dropdown" offset="30">
+                                                <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/refresh.svg"></img>
+                                                <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuRefresh">
+                                                <div class="list-group custon-dropdown">
+                                                    <a href="#" class="list-group-item"
+                                                        ng-click="">
+                                                        Manual
+                                                    </a>
+                                                    <a href="#" class="list-group-item"
+                                                        ng-click="">
+                                                        Automático
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- ----- -->
                                     </div>
                                 </div>
                                 
