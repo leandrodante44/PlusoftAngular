@@ -143,6 +143,8 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.data = getData();
+
+  $scope.menu = getFilters();
 });
 
 $(document).ready(function () {
