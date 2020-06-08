@@ -144,48 +144,35 @@ app.controller("index.controller", function ($scope) {
 
   $scope.data = getData();
 
-  $scope.topBarOrderBy = [{
-    displayName : "",
-    value : ""
-  },{
-    displayName : "Mais antigos",
-    value : "dt_published"
-  },{
-    displayName : "Mais seguidores",
-    value : "-dt_published"
-  },{
-    displayName : "Mais curtidas",
-    value : "do_liked"
-  },{
-    displayName : "Mais compartilhamentos",
-    value : "1"
-  },{
-    displayName : "Mais comentários",
-    value : "1"
-  },]
+  // $scope.topBarOrderBy = [{
+  //   displayName : "",
+  //   value : ""
+  // },{
+  //   displayName : "Mais antigos",
+  //   value : "dt_published"
+  // },{
+  //   displayName : "Mais seguidores",
+  //   value : "-dt_published"
+  // },{
+  //   displayName : "Mais curtidas",
+  //   value : "do_liked"
+  // },{
+  //   displayName : "Mais compartilhamentos",
+  //   value : "1"
+  // },{
+  //   displayName : "Mais comentários",
+  //   value : "1"
+  // },]
 
-  $scope.orderOption = {
-    value: ''
-  }
-
-}).directive('popover', function($compile, $timeout){
-  return {
-    restrict: 'A',
-    link:function(scope, el, attrs){
-      var content = attrs.content;
-      var elm = angular.element('<div />');
-      elm.append(attrs.content);
-      $compile(elm)(scope);
-      $timeout(function() {
-        el.removeAttr('popover').attr('data-content',elm.html());
-        el.popover();
-       });
+    $scope.orderOption = {
+      value: ''
     }
-  }
-  $scope.menu = getFilters();
+
+    $scope.orderOption = function(opt){
+      $scope.orderOption.value = opt;
+    }
+
 });
-
-
 
 
 $(document).ready(function () {
