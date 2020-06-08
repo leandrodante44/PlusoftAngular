@@ -158,50 +158,49 @@
                                                 src="library/icons/sgv/today.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </span>
-                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                     
+                                        <a popover class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
                                             href="#" data-toggle="popover" data-trigger="focus" data-placement="auto"
-                                            offset="30" data-html="true" data-content='
-                                        <div class="list-group custon-popover">
-                                            <a href="#" class="list-group-item list-group-item-action"> 
-                                                Mais recentes
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                Mais antigos
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                Mais seguidores
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                Mais curtidas
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                Mais compartilhamentos
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                Mais comentários
-                                            </a>
-                                          </div>
+                                            offset="30" data-html="true"  data-content='
+                                            <div  class="list-group custon-popover topBarOrder" ng-repeat="x in topBarOrderBy">
+                                                <a href="#" class="list-group-item list-group-item-action" ng-bind="x.displayName" ng-click="orderOption.value = x.value">
+                                                 
+                                                </a>
+                                            </div>
                                         '>
                                             <i class="zmdi zmdi-swap-vertical zmdi-hc-lg shakeIcon"
                                                 style="width: 24; text-align: center;"></i>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </a>
+
+                                        <!-- teste da lista de opcoes -->
+                                        <br/>
+                                        <br/>
+                                        <div class="list-group custon-popover topBarOrder" ng-repeat="x in topBarOrderBy">
+                                            <a href="#" class="list-group-item list-group-item-action" ng-click="orderOption.value = x.value">
+                                                {{x.displayName}}
+                                            </a>
+                                        </div>
+                                        
+
+
                                         <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
                                             href="#" data-toggle="popover" data-trigger="focus" data-placement="auto"
                                             offset="30" data-html="true" data-content='
-                                        <div class="list-group custon-popover">
-                                            <a href="#" class="list-group-item list-group-item-action"> 
-                                                Manual
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                Automática
-                                            </a>
-                                          </div>
-                                        '>
+                                            <div class="list-group custon-popover">
+                                                <a href="#" class="list-group-item list-group-item-action"> 
+                                                    Manual
+                                                </a>
+                                                <a href="#" class="list-group-item list-group-item-action">
+                                                    Automática
+                                                </a>
+                                            </div>
+                                            '>
                                             <img class="icon-footer mr-1 shakeIcon"
                                                 src="library/icons/sgv/refresh.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
-                                        </a></div>
+                                        </a>
+                                    </div>
                                 </div>
 
                             </div>
@@ -229,7 +228,7 @@
                         </div>
                     </div>
                     <!-- CARD POST -->
-                    <div ng-repeat="(idx,post) in data"
+                    <div ng-repeat="(idx,post) in data | orderBy : orderOption.value"
                         class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4"
                         ng-show="verifyGrouping(post.id_smpost)">
                         <div class="card-body">
