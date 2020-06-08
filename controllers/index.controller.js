@@ -143,6 +143,7 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.data = getData();
+  $scope.menu = getFilters();
 
   // $scope.topBarOrderBy = [{
   //   displayName : "",
@@ -164,20 +165,26 @@ app.controller("index.controller", function ($scope) {
   //   value : "1"
   // },]
 
-    $scope.orderOption = {
-      value: ''
-    }
+  $scope.orderOption = {
+    value: "",
+  };
 
-    $scope.orderOption = function(opt){
-      $scope.orderOption.value = opt;
-    }
-
+  $scope.orderOption = function (opt) {
+    $scope.orderOption.value = opt;
+  };
 });
 
-
 $(document).ready(function () {
-  $('[data-toggle="popover"]').popover();
-
+  // $("[data-toggle=popover]").popover({
+  //   html: true,
+  //   content: function () {
+  //     var content = $(this).attr("data-popover-content");
+  //     return $(content).children(".popover-body").html();
+  //   },
+  //   title: function(){
+  //     return '';
+  //   }
+  // });
   $(".popover-dismiss").popover({
     trigger: "focus",
   });
