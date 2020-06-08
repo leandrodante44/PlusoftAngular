@@ -199,6 +199,15 @@ app.controller("index.controller", function ($scope) {
     },
   ];
 
+  $scope.topBarRefresh = [
+    {
+      displayName: "Manual"
+    },
+    {
+      displayName: "Automático"
+    }
+  ];
+
   $scope.orderOption = {
     value: "id_smpost",
   };
