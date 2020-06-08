@@ -182,6 +182,7 @@ app.controller("index.controller", function ($scope) {
        });
     }
   }
+  $scope.menu = getFilters();
 });
 
 
