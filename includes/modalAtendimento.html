@@ -30,7 +30,7 @@
                                             <div class="form-group">
                                                 <label for="busRes">Busca nas Respostas</label>
                                                 <div class="iconInput form-control p-1">
-                                                    <input type="text" class="form-control border-0 w-100" ng-model="dataFilterSelected.ds_buscarespostas"
+                                                    <input type="text" class="form-control border-0 w-100"
                                                         id="busRes" />
                                                 </div>
                                             </div>
@@ -38,9 +38,10 @@
                                                 <label for="via">Via Bot</label>
                                                 <div class="iconInput form-control p-1">
                                                     <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                                    <select class="custon-select w-100" ng-model="dataFilterSelected.ds_viabot">
+                                                    <select class="custon-select w-100">
                                                         <option></option>
-                                                        <option ng-repeat="option in selectedFilter.do_inputs.di_viabot" value="{{option.value}}">{{option.label}}</option>
+                                                        <option>option1</option>
+                                                        <option>option2</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -50,9 +51,10 @@
                                                 <label for="res">Respondidos</label>
                                                 <div class="iconInput form-control p-1">
                                                     <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                                    <select class="custon-select w-100" ng-model="dataFilterSelected.ds_respondidos">
+                                                    <select class="custon-select w-100">
                                                         <option></option>
-                                                        <option ng-repeat="option in selectedFilter.do_inputs.di_respondidos" value="{{option.value}}">{{option.label}}</option>
+                                                        <option>option1</option>
+                                                        <option>option2</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -60,9 +62,10 @@
                                                 <label for="ver">Verificados</label>
                                                 <div class="iconInput form-control p-1">
                                                     <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                                    <select class="custon-select w-100" ng-model="dataFilterSelected.ds_verificados">
+                                                    <select class="custon-select w-100">
                                                         <option></option>
-                                                        <option ng-repeat="option in selectedFilter.do_inputs.di_verificados" value="{{option.value}}">{{option.label}}</option>
+                                                        <option>option1</option>
+                                                        <option>option2</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -74,7 +77,7 @@
                                             <div class="form-group">
                                                 <label for="ate">Atendentes</label>
                                                 <div class="iconInput form-control p-1">
-                                                    <i class="zmdi zmdi-search text-secondary"></i> <input type="search" ng-modal="dataFilterSelected.ds_atendentes"
+                                                    <i class="zmdi zmdi-search text-secondary"></i> <input type="search"
                                                         class="border-0 w-100 pl-3" placeholder="Buscar..." id="ate" />
                                                 </div>
                                             </div>
@@ -93,7 +96,7 @@
                 <div class="row mb-5"  style="width: 100%;">
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-end">
-                            <button class="btn btn-outline-primary" data-dismiss="modal" ng-click="cancelFilter()">Cancelar</button>
+                            <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
                     <div class="col">

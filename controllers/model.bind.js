@@ -1,3 +1,140 @@
+function getFilters() {
+  return [
+    {
+      id: 1,
+      name: "Atendimento",
+      icon: "library/icons/sgv/supervised_user_circle.svg",
+      modal: "#modalAtendimento",
+      content: "includes/modalAtendimento.html",
+      do_inputs:{
+        di_respondidos: [{ label: 'option 01', value: 1},{ label: 'option 02', value: 2}],
+        di_viabot: [{ label: 'option 01', value: 1},{ label: 'option 02', value: 2}],
+        di_verificados: [{ label: 'option 01', value: 1},{ label: 'option 02', value: 2}]
+      }
+    },
+    {
+      id: 2,
+      name: "Anexos",
+      icon: "library/icons/sgv/attach_file.svg",
+      modal: "#modalAnexos",
+      content: "includes/modalAnexos.html",
+      do_inputs:{
+        di_respondidos: [{ label: 'option 01', value: 1},{ label: 'option 02', value: 2}]
+      }
+    },
+    {
+      id: 3,
+      name: "Autor",
+      icon: "library/icons/sgv/account_circle.svg",
+      modal: "#modalAutor",
+      content: "includes/modalAutor.html",
+      do_inputs:{
+
+      }
+    },
+    {
+      id: 4,
+      name: "Canais",
+      icon: "library/icons/sgv/phonelink.svg",
+      modal: "#modalCanais",
+      content: "includes/modalCanais.html",
+      do_inputs:{
+
+      }
+    },
+    {
+      id: 5,
+      name: "Chamados",
+      icon: "library/icons/sgv/sim_card.svg",
+      modal: "#modalChamado",
+      content: "includes/modalChamado.html",
+      do_inputs: {
+        di_prioridade: [],
+        di_chamados: [],
+        di_favorito: [],
+        di_formularios: [],
+        di_favoravel: []
+      }
+    },
+    {
+      id: 6,
+      name: "Classificação",
+      icon: "library/icons/sgv/done_all.svg",
+      modal: "#modalClassificacao",
+      content: "includes/modalClassificacao.html",
+      do_inputs:{
+
+      }
+    },
+    {
+      id: 7,
+      name: "Favoritos",
+      icon: "library/icons/sgv/star_border.svg",
+      modal: "#modalFavoritos",
+      content: "includes/modalFavoritos.html",
+      do_inputs:{
+
+      }
+    },
+    {
+      id: 8,
+      name: "Paginação",
+      icon: "library/icons/sgv/settings_ethernet.svg",
+      modal: "#modalPaginacao",
+      content: "includes/modalPaginacao.html",
+      do_inputs:{
+
+      }
+    },
+    {
+      id: 9,
+      name: "Privados",
+      icon: "library/icons/sgv/forum.svg",
+      modal: "#modalPrivados",
+      content: "includes/modalPrivados.html",
+      do_inputs:{
+        di_resultados: [{label:'option 01',value: 1},{label:'option 02',value:2}]
+      }
+    },
+    {
+      id: 10,
+      name: "Posts",
+      icon: "library/icons/sgv/art_track.svg",
+      modal: "#modalPosts",
+      content: "includes/modalPosts.html",
+      do_inputs:{
+        di_idpost: [{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
+        di_idpostprincipal:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
+        di_idconversa:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
+        di_idpostcanal:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
+        di_qualquerid:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}]
+      }
+    },
+    {
+      id: 11,
+      name: "Tags",
+      icon: "library/icons/sgv/tag_filter.svg",
+      modal: "#modalTags",
+      content: "includes/modalTags.html",
+      do_inputs:{
+        di_tagueados: [{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
+        di_automatico:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
+        di_clientes:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}]
+      }
+    },
+    {
+      id: 12,
+      name: "Tipos",
+      icon: "library/icons/sgv/all_inbox.svg",
+      modal: "#modalTipos",
+      content: "includes/modalTipos.html",
+      do_inputs:{
+
+      }
+    },
+  ];
+}
+
 function getData() {
   return [
     {
