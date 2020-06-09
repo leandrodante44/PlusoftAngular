@@ -10,7 +10,7 @@
                     <div>
                         <center>
                             <!-- Picture person  -->
-                            <img class="picPerson mt-4" src="{{selectedPost.ds_urlavatarfrom}}" alt="">
+                            <img class="picPerson mt-4" ng-src="{{selectedPost.ds_urlavatarfrom}}" alt="">
 
                             <div class="PersonInfo text-primary mt-2">
                                 <span class="PersonInfoFont1">{{selectedPost.ds_authorfrom}}</span>
@@ -39,7 +39,7 @@
                         <label>───&nbsp;&nbsp; Ultimo atendente &nbsp;&nbsp;───</label>
                         <br>
                         <div class="mt-3">
-                            <img class="miniPicPerson" src="{{lastClerk.ds_urlavatarfrom}}" alt="">
+                            <img class="miniPicPerson" ng-src="{{lastClerk.ds_urlavatarfrom}}" alt="">
                             <span class="PersonInfoFont1 ml-1">{{lastClerk.ds_authorfrom}}</span>
                         </div>
                         <label class="PersonInfoFont2 mt-3">Último contato</label>
@@ -101,7 +101,7 @@
                         <div class="media m-4" ng-repeat="contact in selectedPost.do_chat.do_contact">
 
                             <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?true:false}}"
-                                src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
+                            ng-src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
                             <div class="media-body">
                                 <div class="bubble {{(contact.ds_side === 0)?'me':'you'}}">
                                     <span ng-bind-html="contact.ds_content" class="ballon-message">
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                             <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?false:true}}"
-                                src="{{(contact.ds_side === 0)?'':contact.ds_urlavatarfrom}}" alt="">
+                            ng-src="{{(contact.ds_side === 0)?'':contact.ds_urlavatarfrom}}" alt="">
                         </div>
 
                     </div>
@@ -127,7 +127,7 @@
 
                     <div class="historyCnt mt-4" ng-repeat="history in selectedPost.do_chat.do_history">
                         <div class="media historyMsn">
-                            <img src="{{history.ds_smicon}}"></img>
+                            <img ng-src="{{history.ds_smicon}}"></img>
                             <div class="media-body ml-2">
                                 <span><b>{{history.ds_title}}</b></span>
                                 <p class="text-right small">{{history.dt_published}}</p>
