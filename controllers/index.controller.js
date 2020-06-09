@@ -145,6 +145,14 @@ app.controller("index.controller", function ($scope) {
     post_check: [],
   };
 
+  $scope.request = {
+    filters: $scope.dataFilter,
+    period: {
+      dt_published_ini: '',
+      dt_published_end: '',
+    }
+  }
+
   $scope.data = getData();
   $scope.menu = getFilters();
 
