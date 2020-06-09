@@ -10,9 +10,7 @@ app.controller("index.controller", function ($scope) {
     $scope.getLastClerk();
     $(".alert-success").hide();
   };
-  $scope.loadDataFilter = function (id_filter) {
-    $scope.selectedFilter = $scope.menu[id_filter];
-  };
+
   $scope.getLastClerk = function () {
     try {
       $scope.lastClerk = $scope.selectedPost.do_chat.do_contact.reverse();
@@ -145,16 +143,39 @@ app.controller("index.controller", function ($scope) {
     post_check: [],
   };
 
-  $scope.request = {
-    filters: $scope.dataFilter,
-    period: {
-      dt_published_ini: '',
-      dt_published_end: '',
-    }
-  }
+  
 
   $scope.data = getData();
   $scope.menu = getFilters();
+
+  $scope.dataFilter = getFiltersData();
+  $scope.loadDataFilter = function (id_filter) {
+    $scope.selectedFilter = $scope.menu[id_filter];
+    $scope.dataFilterSelected = getFilterById(
+      $scope.dataFilter,
+      $scope.selectedFilter.id
+    );
+    $scope.initFilterModal();
+    debugger;
+  };
+
+  $scope.bkp_filter = {};
+  
+  $scope.initFilterModal = function () {
+    $scope.bkp_filter = angular.copy($scope.request.filters);
+  };
+
+  $scope.cancelFilter = function () {
+    $scope.request.filters = angular.copy($scope.bkp_filter);
+  };
+
+  $scope.request = {
+    filters: $scope.dataFilter,
+    period: {
+      dt_published_ini: "",
+      dt_published_end: "",
+    },
+  };
 
   $scope.topBarMood = [
     {
@@ -212,18 +233,17 @@ app.controller("index.controller", function ($scope) {
 
   $scope.topBarRefresh = [
     {
-      displayName: "Manual"
+      displayName: "Manual",
     },
     {
-      displayName: "Automático"
-    }
+      displayName: "Automático",
+    },
   ];
 
   $scope.orderOption = {
     value: "id_smpost",
   };
 });
-
 
 //BTN ATRIBUIR
 //MODAL DE TAGUEAMENTO
