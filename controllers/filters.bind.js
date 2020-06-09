@@ -205,77 +205,146 @@ function getFilters() {
   ];
 }
 
-function getFiltersData(){
-    return [
-        {
-          id: 1,
-          ds_buscarespostas: "",
-          ds_respondidos: "",
-          ds_viabot: "",
-          ds_verificados: "",
-          ds_atendentes: "",
-        },
-        {
-          id: 2,
-          ds_respondidos: "",
-        },
-        {
-          id: 3,
-          ds_nome: "",
-        },
-        {
-          id: 4,
-          da_canais: [],
-        },
-        {
-          id: 5,
-          ds_idchamado: "",
-          ds_idchamadocrm: "",
-          ds_prioridade: "",
-          ds_chamados: "",
-          ds_sentimentoentrada: "",
-          ds_sentimentosaida: "",
-          ds_favorito: "",
-          ds_formularios: "",
-          ds_favoravel: "",
-          ds_status: "",
-          ds_atendentes: "",
-        },
-        {
-          id: 6,
-          ds_sentimento: "",
-          ds_opcao: "",
-        },
-        {
-          id: 7,
-          da_favorito: [],
-        },
-        {
-          id: 8,
-          da_paginacao: [],
-        },
-        {
-          id: 9,
-          ds_resultadospagina: "",
-        },
-        {
-          id: 10,
-          ds_idpost: "",
-          ds_idpostprincipal: "",
-          ds_idconversa: "",
-          ds_idpostcanal: "",
-          ds_qualquerid: "",
-          ds_postmoderado: "",
-        },
-        {
-          id: 11,
-          ds_tagueados: "",
-          ds_automatico: "",
-          ds_clientes: "",
-        },
-        {
-          id: 12,
-          da_tipos: [],
-        },
-      ]
+function getFiltersData() {
+  return [
+    {
+      id: 1,
+      ds_buscarespostas: "",
+      ds_respondidos: "",
+      ds_viabot: "",
+      ds_verificados: "",
+      ds_atendentes: "",
+    },
+    {
+      id: 2,
+      ds_respondidos: "",
+    },
+    {
+      id: 3,
+      ds_nome: "",
+    },
+    {
+      id: 4,
+      da_canais: [],
+    },
+    {
+      id: 5,
+      ds_idchamado: "",
+      ds_idchamadocrm: "",
+      ds_prioridade: "",
+      ds_chamados: "",
+      ds_sentimentoentrada: "",
+      ds_sentimentosaida: "",
+      ds_favorito: "",
+      ds_formularios: "",
+      ds_favoravel: "",
+      ds_status: "",
+      ds_atendentes: "",
+    },
+    {
+      id: 6,
+      ds_sentimento: "",
+      ds_opcao: "",
+    },
+    {
+      id: 7,
+      da_favorito: [],
+    },
+    {
+      id: 8,
+      da_paginacao: [],
+    },
+    {
+      id: 9,
+      ds_resultadospagina: "",
+    },
+    {
+      id: 10,
+      ds_idpost: "",
+      ds_idpostprincipal: "",
+      ds_idconversa: "",
+      ds_idpostcanal: "",
+      ds_qualquerid: "",
+      ds_postmoderado: "",
+    },
+    {
+      id: 11,
+      ds_tagueados: "",
+      ds_automatico: "",
+      ds_clientes: "",
+    },
+    {
+      id: 12,
+      da_tipos: [],
+    },
+  ];
+}
+
+function gettopBarRefresh() {
+  return [
+    {
+      displayName: "Manual",
+    },
+    {
+      displayName: "Automático",
+    },
+  ];
+}
+
+function gettopBarOrderBy() {
+  return [
+    {
+      displayName: "Mais recentes",
+      value: "-dt_published",
+    },
+    {
+      displayName: "Mais antigos",
+      value: "dt_published",
+    },
+    {
+      displayName: "Mais amigos",
+      value: "",
+    },
+    {
+      displayName: "Mais seguidores",
+      value: "",
+    },
+    {
+      displayName: "Mais curtidas",
+      value: "-do_liked",
+    },
+    {
+      displayName: "Mais compartilhamentos",
+      value: "",
+    },
+    {
+      displayName: "Mais comentários",
+      value: "",
+    },
+  ];
+}
+
+function gettopBarMood() {
+  return [
+    {
+      displayName: "Positivo",
+      value: "1",
+    },
+    {
+      displayName: "Negativo",
+      value: "2",
+    },
+    {
+      displayName: "Neutro",
+      value: "3",
+    },
+    {
+      displayName: "Híbrido",
+      value: "4",
+    },
+    {
+      displayName: "Inválido",
+      value: "5",
+    },
+  ];
 }
