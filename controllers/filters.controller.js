@@ -2,70 +2,64 @@ app.controller("myCtrl", [
   "$scope",
   "$http",
   function ($scope, $http) {
-    $scope.dataFilter = getFiltersData();
-    $scope.bkp_filter = {};
-    ($scope.initFilterModal = (function () {
-      $scope.bkp_filter = angular.copy($scope.request.filters);
-    })(
-      ($scope.canais = [
-        {
-          name: "App Store",
-          icon: "library/icons/sgv/Apple.svg",
-        },
-        {
-          name: "Blog",
-          icon: "library/icons/sgv/RSS.svg",
-        },
-        {
-          name: "Chat",
-          icon: "library/icons/sgv/Wechat.svg",
-        },
-        {
-          name: "E-mail",
-          icon: "library/icons/sgv/Mail.svg",
-        },
-        {
-          name: "Facebook",
-          icon: "library/icons/sgv/Facebook.svg",
-        },
-        {
-          name: "Facebook App",
-          icon: "library/icons/sgv/FacebookApp.svg",
-        },
-        {
-          name: "Google Play",
-          icon: "library/icons/sgv/GooglePlay.svg",
-        },
-        {
-          name: "Instagram",
-          icon: "library/icons/sgv/Instagram.svg",
-        },
-        {
-          name: "Linkedin",
-          icon: "library/icons/sgv/Linkedin.svg",
-        },
-        {
-          name: "Reclame aqui",
-          icon: "library/icons/sgv/ReclameAqui.svg",
-        },
-        {
-          name: "Reclame aqui - E-mail",
-          icon: "library/icons/sgv/ReclameAqui.svg",
-        },
-        {
-          name: "Twitter",
-          icon: "library/icons/sgv/Twitter.svg",
-        },
-        {
-          name: "You Tube",
-          icon: "library/icons/sgv/YouTube.svg",
-        },
-        {
-          name: "Ic.Message",
-          icon: "library/icons/sgv/IcMessage.svg",
-        },
-      ])
-    )),
+    ($scope.canais = [
+      {
+        name: "App Store",
+        icon: "library/icons/sgv/Apple.svg",
+      },
+      {
+        name: "Blog",
+        icon: "library/icons/sgv/RSS.svg",
+      },
+      {
+        name: "Chat",
+        icon: "library/icons/sgv/Wechat.svg",
+      },
+      {
+        name: "E-mail",
+        icon: "library/icons/sgv/Mail.svg",
+      },
+      {
+        name: "Facebook",
+        icon: "library/icons/sgv/Facebook.svg",
+      },
+      {
+        name: "Facebook App",
+        icon: "library/icons/sgv/FacebookApp.svg",
+      },
+      {
+        name: "Google Play",
+        icon: "library/icons/sgv/GooglePlay.svg",
+      },
+      {
+        name: "Instagram",
+        icon: "library/icons/sgv/Instagram.svg",
+      },
+      {
+        name: "Linkedin",
+        icon: "library/icons/sgv/Linkedin.svg",
+      },
+      {
+        name: "Reclame aqui",
+        icon: "library/icons/sgv/ReclameAqui.svg",
+      },
+      {
+        name: "Reclame aqui - E-mail",
+        icon: "library/icons/sgv/ReclameAqui.svg",
+      },
+      {
+        name: "Twitter",
+        icon: "library/icons/sgv/Twitter.svg",
+      },
+      {
+        name: "You Tube",
+        icon: "library/icons/sgv/YouTube.svg",
+      },
+      {
+        name: "Ic.Message",
+        icon: "library/icons/sgv/IcMessage.svg",
+      },
+    ]),
       ($scope.tipos = [
         "Humano",
         "Bot",
