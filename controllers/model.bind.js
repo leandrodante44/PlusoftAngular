@@ -7,9 +7,9 @@ function getFilters() {
       modal: "#modalAtendimento",
       content: "includes/modalAtendimento.html",
       do_inputs:{
-        di_respondidos: [{ label: 'option 01', value: 1},{ label: 'option 02', value: 2}],
-        di_viabot: [{ label: 'option 01', value: 1},{ label: 'option 02', value: 2}],
-        di_verificados: [{ label: 'option 01', value: 1},{ label: 'option 02', value: 2}]
+        di_respondidos: [{ label: 'Sim', value: 1},{ label: 'Não', value: 2}],
+        di_viabot: [{ label: 'Sim', value: 1},{ label: 'Não', value: 2}],
+        di_verificados: [{ label: 'Verificado', value: 1},{ label: 'Não Verificado', value: 2}]
       }
     },
     {
@@ -19,7 +19,7 @@ function getFilters() {
       modal: "#modalAnexos",
       content: "includes/modalAnexos.html",
       do_inputs:{
-        di_respondidos: [{ label: 'option 01', value: 1},{ label: 'option 02', value: 2}]
+        di_respondidos: [{ label: 'Sim', value: 1},{ label: 'Não', value: 2}]
       }
     },
     {
@@ -49,11 +49,15 @@ function getFilters() {
       modal: "#modalChamado",
       content: "includes/modalChamado.html",
       do_inputs: {
-        di_prioridade: [],
-        di_chamados: [],
-        di_favorito: [],
-        di_formularios: [],
-        di_favoravel: []
+        di_prioridade: [{ label: 'Baixa', value: 1},{ label: 'Média', value: 2},{ label: 'Alta', value: 3}],
+        di_sentimentoentrada: [{ label: 'Satisfeito', value: 1},{ label: 'Insatisfeito', value: 2},{ label: 'Indiferente', value: 3}],
+        di_sentimentosaida: [{ label: 'Satisfeito', value: 1},{ label: 'Insatisfeito', value: 2},{ label: 'Indiferente', value: 3}],
+        di_chamados: [{ label: 'Chamado #1234', value: 1},{ label: 'Chamado #1234', value: 2},{ label: 'Chamado #1235', value: 2}],
+        di_favorito: [{ label: 'Favorito', value: 1},{ label: 'Não Favorito', value: 2}],
+        di_formularios: [{ label: 'Sim', value: 1},{ label: 'Não', value: 2}],
+        di_favoravel: [{ label: 'Sim', value: 1},{ label: 'Não', value: 2}],
+        di_status: [{ label: 'Aguardando', value: 1},{ label: 'Em andamento', value: 2},{ label: 'Atribuido', value: 3},{ label: 'Concluido', value: 4}],
+        di_atendentes: [{ label: 'Atendente 01', value: 1},{ label: 'Atendente 01', value: 2}]
       }
     },
     {
@@ -93,7 +97,7 @@ function getFilters() {
       modal: "#modalPrivados",
       content: "includes/modalPrivados.html",
       do_inputs:{
-        di_resultados: [{label:'option 01',value: 1},{label:'option 02',value:2}]
+        di_resultados: [{label:'10',value: 10},{label:'30',value:30},{label:'50',value:50},{label:'100',value:100}]
       }
     },
     {
@@ -103,11 +107,11 @@ function getFilters() {
       modal: "#modalPosts",
       content: "includes/modalPosts.html",
       do_inputs:{
-        di_idpost: [{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
-        di_idpostprincipal:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
-        di_idconversa:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
-        di_idpostcanal:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
-        di_qualquerid:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}]
+        di_idpost: [{ label: 'Post 01', value: 1}, { label: 'Post 02', value: 2}, { label: 'Post 03', value: 3}],
+        di_idpostprincipal:[{ label: 'Post 01', value: 1}, { label: 'Post 02', value: 2}, { label: 'Post 03', value: 3}],
+        di_idconversa:[{ label: 'Conversa 01', value: 1}, { label: 'Conversa 02', value: 2}, { label: 'Conversa 03', value: 3}],
+        di_idpostcanal:[{ label: 'Post 01', value: 1}, { label: 'Post 02', value: 2}, { label: 'Post 03', value: 3}],
+        di_qualquerid:[{ label: 'Sim', value: 1}, { label: 'Não', value: 2}]
       }
     },
     {
@@ -117,9 +121,9 @@ function getFilters() {
       modal: "#modalTags",
       content: "includes/modalTags.html",
       do_inputs:{
-        di_tagueados: [{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
-        di_automatico:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}],
-        di_clientes:[{ label: 'option 01', value: 1}, { label: 'option 02', value: 2}]
+        di_tagueados: [{ label: 'Sim', value: 1}, { label: 'Não', value: 2}],
+        di_automatico:[{ label: 'Sim', value: 1}, { label: 'Não', value: 2}],
+        di_clientes:[{ label: 'Cliente 01', value: 1}, { label: 'Cliente 02', value: 2}]
       }
     },
     {

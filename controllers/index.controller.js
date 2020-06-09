@@ -10,6 +10,9 @@ app.controller("index.controller", function ($scope) {
     $scope.getLastClerk();
     $(".alert-success").hide();
   };
+  $scope.loadDataFilter = function (id_filter) {
+    $scope.selectedFilter = $scope.menu[id_filter];
+  };
   $scope.getLastClerk = function () {
     try {
       $scope.lastClerk = $scope.selectedPost.do_chat.do_contact.reverse();
@@ -143,13 +146,16 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.data = getData();
+  $scope.menu = getFilters();
+
   $scope.orderOption = {
     value: "",
   };
-  $scope.data = getFilters();
+  
   $scope.orderOption = function (opt) {
     $scope.orderOption.value = opt;
   };
+
   $scope.topBarMood = [
     {
       displayName: "Positivo",
@@ -172,6 +178,7 @@ app.controller("index.controller", function ($scope) {
       value: "5",
     },
   ];
+
   $scope.topBarOrderBy = [
     {
       displayName: "Mais recentes",
@@ -202,26 +209,27 @@ app.controller("index.controller", function ($scope) {
       value: "",
     },
   ];
+
   $scope.orderOption = {
     value: "id_smpost",
   };
-});
-
-$(document).ready(function () {
-  // $("[data-toggle=popover]").popover({
-  //   html: true,
-  //   content: function () {
-  //     var content = $(this).attr("data-popover-content");
-  //     return $(content).children(".popover-body").html();
-  //   },
-  //   title: function(){
-  //     return '';
-  //   }
-  // });
-  $(".popover-dismiss").popover({
-    trigger: "focus",
+  $(document).ready(function () {
+    // $("[data-toggle=popover]").popover({
+    //   html: true,
+    //   content: function () {
+    //     var content = $(this).attr("data-popover-content");
+    //     return $(content).children(".popover-body").html();
+    //   },
+    //   title: function(){
+    //     return '';
+    //   }
+    // });
+    $(".popover-dismiss").popover({
+      trigger: "focus",
+    });
   });
 });
+
 //BTN ATRIBUIR
 //MODAL DE TAGUEAMENTO
 //POST PAI E FILHO

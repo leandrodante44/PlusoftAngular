@@ -34,8 +34,7 @@
                                                     <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
                                                     <select class="custon-select w-100">
                                                         <option></option>
-                                                        <option>option1</option>
-                                                        <option>option2</option>
+                                                        <option ng-repeat="option in selectedFilter.do_inputs.di_tagueados" value="{{option.value}}">{{option.label}}</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -47,8 +46,7 @@
                                                     <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
                                                     <select class="custon-select w-100">
                                                         <option></option>
-                                                        <option>option1</option>
-                                                        <option>option2</option>
+                                                        <option ng-repeat="option in selectedFilter.do_inputs.di_automatico" value="{{option.value}}">{{option.label}}</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -60,8 +58,7 @@
                                                     <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
                                                     <select class="custon-select w-100">
                                                         <option></option>
-                                                        <option>option1</option>
-                                                        <option>option2</option>
+                                                        <option ng-repeat="option in selectedFilter.do_inputs.di_clientes" value="{{option.value}}">{{option.label}}</option>
                                                     </select>
                                                 </div>
                                             </div>

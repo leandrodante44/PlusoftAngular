@@ -43,9 +43,9 @@
                         <div class="d-flex flex-column">
                             <div class="p-5 text-center"><img class="icon-filter mr-3 shakeIcon ml-3"
                                     src="library/icons/sgv/format_align_left.svg"></img> <b>Filtros</b></div>
-                            <div class="p-2 mt-2 pl-4 link-filter" ng-repeat="filter in menu" data-toggle="modal"
-                                data-target="{{filter.modal}}">
-                                <object class="icon-filter mr-3 shakeIcon ml-2 " data="{{filter.icon}}"
+                            <div class="p-2 mt-2 pl-4 link-filter" ng-repeat="(idx,filter) in menu" data-toggle="modal"
+                                data-target="{{filter.modal}}" ng-click="loadDataFilter(idx)">
+                                <object class="icon-filter mr-3 shakeIcon ml-2 " ng-attr-data="{{filter.icon}}"
                                     type="image/svg+xml"></object><span>{{filter.name}}</span>
                             </div>
                             <div class="p-5 text-center"><input type="button"
@@ -74,8 +74,7 @@
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuMood">
                                                 <div class="list-group custon-dropdown" ng-repeat="x in topBarMood">
-                                                    <a href="#" class="list-group-item"
-                                                        ng-click="">
+                                                    <a href="#" class="list-group-item" ng-click="">
                                                         {{x.displayName}}
                                                     </a>
                                                 </div>
@@ -128,21 +127,20 @@
                                             </div>
                                         </div>
                                         <!-- ----- -->
-                                         <!-- refresh button -->
-                                         <div class="btn-group">
+                                        <!-- refresh button -->
+                                        <div class="btn-group">
                                             <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
                                                 href="#" id="dropdownMenuRefresh" data-toggle="dropdown" offset="30">
-                                                <img class="icon-footer mr-1 shakeIcon" src="library/icons/sgv/refresh.svg"></img>
+                                                <img class="icon-footer mr-1 shakeIcon"
+                                                    src="library/icons/sgv/refresh.svg"></img>
                                                 <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuRefresh">
                                                 <div class="list-group custon-dropdown">
-                                                    <a href="#" class="list-group-item"
-                                                        ng-click="">
+                                                    <a href="#" class="list-group-item" ng-click="">
                                                         Manual
                                                     </a>
-                                                    <a href="#" class="list-group-item"
-                                                        ng-click="">
+                                                    <a href="#" class="list-group-item" ng-click="">
                                                         Automático
                                                     </a>
                                                 </div>
@@ -151,7 +149,7 @@
                                         <!-- ----- -->
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -177,7 +175,7 @@
                         </div>
                     </div>
                     <!-- CARD POST -->
-                    <div ng-repeat="(idx,post) in data | orderBy : orderOption.value"
+                    <div ng-repeat="(idx,post) in data"
                         class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4"
                         ng-show="verifyGrouping(post.id_smpost)">
                         <div class="card-body">
@@ -191,14 +189,14 @@
                                                 ng-change="addGroup(post.id_smpost,idx)">
                                             <span class="fill-control-indicator lg-check"></span>
                                             <span class="fill-control-description ml-4"><img class="mr-1 picPerson"
-                                                    src="{{post.ds_urlavatarfrom}}" alt=""></span>
+                                                    ng-src="{{post.ds_urlavatarfrom}}" alt=""></span>
                                         </label>
                                     </div>
 
                                     <!-- Icon social and Name person -->
                                     <div class="media-body">
                                         <h5 class="mt-0 border-primary notch-card rounded">
-                                            <img class="icon28 ml-2 m-1" src="{{post.ds_smicon}}"></img>
+                                            <img class="icon28 ml-2 m-1" ng-src="{{post.ds_smicon}}"></img>
                                             <span class="text-primary">{{post.ds_authorfrom}}</span>
                                             <span
                                                 class="influencer ml-3">{{(post.do_influencer === "Y") ? "Influencer - " : ""}}
