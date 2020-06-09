@@ -148,14 +148,6 @@ app.controller("index.controller", function ($scope) {
   $scope.data = getData();
   $scope.menu = getFilters();
 
-  $scope.orderOption = {
-    value: "",
-  };
-  
-  $scope.orderOption = function (opt) {
-    $scope.orderOption.value = opt;
-  };
-
   $scope.topBarMood = [
     {
       displayName: "Positivo",
@@ -182,11 +174,11 @@ app.controller("index.controller", function ($scope) {
   $scope.topBarOrderBy = [
     {
       displayName: "Mais recentes",
-      value: "dt_published",
+      value: "-dt_published",
     },
     {
       displayName: "Mais antigos",
-      value: "-dt_published",
+      value: "dt_published",
     },
     {
       displayName: "Mais amigos",
@@ -198,7 +190,7 @@ app.controller("index.controller", function ($scope) {
     },
     {
       displayName: "Mais curtidas",
-      value: "do_liked",
+      value: "-do_liked",
     },
     {
       displayName: "Mais compartilhamentos",
@@ -210,25 +202,20 @@ app.controller("index.controller", function ($scope) {
     },
   ];
 
+  $scope.topBarRefresh = [
+    {
+      displayName: "Manual"
+    },
+    {
+      displayName: "Automático"
+    }
+  ];
+
   $scope.orderOption = {
     value: "id_smpost",
   };
-  $(document).ready(function () {
-    // $("[data-toggle=popover]").popover({
-    //   html: true,
-    //   content: function () {
-    //     var content = $(this).attr("data-popover-content");
-    //     return $(content).children(".popover-body").html();
-    //   },
-    //   title: function(){
-    //     return '';
-    //   }
-    // });
-    $(".popover-dismiss").popover({
-      trigger: "focus",
-    });
-  });
 });
+
 
 //BTN ATRIBUIR
 //MODAL DE TAGUEAMENTO
