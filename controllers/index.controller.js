@@ -172,8 +172,8 @@ app.controller("index.controller", function ($scope) {
   $scope.request = {
     filters: $scope.dataFilter,
     period: {
-      dt_published_ini: "",
-      dt_published_end: "",
+      dt_published_ini: "16/03/2020 09:30",
+      dt_published_end: "17/03/2020 14:20",
     },
   };
 
@@ -186,6 +186,67 @@ app.controller("index.controller", function ($scope) {
   $scope.orderOption = {
     value: "id_smpost",
   };
+
+  $('input[name="daterange"]').daterangepicker({
+    timePicker: true,
+    timePicker24Hour: true,
+    "applyButtonClasses": "btn-success custom-apply", 
+    locale: {
+        format: "DD/MM/YYYY",
+        separator: " - ",
+        applyLabel: "Aplicar",
+        cancelLabel: "Cancelar",
+        fromLabel: "De",
+        toLabel: "Até",
+        customRangeLabel: "Custom",
+        showDropdowns : true,
+        weekLabel: "W",
+        daysOfWeek: [
+            "DOM",
+            "SEG",
+            "TER",
+            "QUA",
+            "QUI",
+            "SEX",
+            "SÁB"
+        ],
+        monthNames: [
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro"
+        ],
+        firstDay: 0
+      },
+        startDate: moment($scope.request.period.dt_published_ini, "DD/MM/YYYY hh:mm"),
+        endDate: moment($scope.request.period.dt_published_end, "DD/MM/YYYY hh:mm") //moment().startOf('hour').add(32, 'hour'),
+
+    }
+    // , function (start, end) {
+    //     console.log("debug");
+    // }
+    );
+
+
+  $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+    $scope.updateDateRange(picker.startDate.format('DD/MM/YYYY hh:mm'), picker.endDate.format('DD/MM/YYYY hh:mm'));
+  });
+
+  $scope.updateDateRange = function(ini, end) {
+    $scope.request.period = {
+      dt_published_ini: ini,
+      dt_published_end: end
+    }
+  };
+  
 });
 
 //BTN ATRIBUIR

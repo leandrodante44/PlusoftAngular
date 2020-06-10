@@ -127,3 +127,24 @@ app.controller("myCtrl", [
     };
   },
 ]);
+
+
+app.filter('dateRange', function() {
+// FILTER  | dateRange:request.period.dt_published_ini:request.period.dt_published_end
+
+  return function(items, startDate, endDate) {
+    //an undefined startDate is converted to the beginning of time
+    startDate = startDate || 0;
+
+    const granularity = null // can be 'days', ... see momentJS doc
+
+    var filter = items.filter( item => {
+      if(moment(item.dt_published, "DD/MM/YYYY hh:mm").isBetween( moment(startDate, "DD/MM/YYYY hh:mm"), moment(endDate, "DD/MM/YYYY hh:mm"), granularity, '[]'))
+      
+        {
+          return item;
+        }
+      });
+      return filter;
+  }
+});

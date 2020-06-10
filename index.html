@@ -107,29 +107,19 @@
                                                 src="library/icons/sgv/search.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </span>
+                                        <!-- Datepicker -->
                                         <span
                                             class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3 searchInputButton">
                                             <input class="searchInputTopMenu border-0" type="text" name="daterange"
-                                                placeholder="01/01/2018 - 01/15/2018" value="01/01/2018 - 01/15/2018">
+                                                placeholder="" value="">
                                             <img class="icon-footer mr-1 shakeIcon"
                                                 src="library/icons/sgv/today.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </span>
-
-                                        <script>
-                                            $(function () {
-                                                $('input[name="daterange"]').daterangepicker({
-                                                    opens: 'left'
-                                                }, function (start, end, label) {
-                                                    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-                                                });
-                                            });
-                                        </script>
                                         <!-- order button -->
                                         <div class="btn-group">
                                             <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
                                                 href="#" id="dropdownMenuOrder" data-toggle="dropdown" offset="30">
-
                                                 <i class="zmdi zmdi-swap-vertical zmdi-hc-lg shakeIcon"
                                                     style="width: 24; text-align: center;"></i>
                                                 <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
@@ -176,10 +166,10 @@
                                 <div class="d-flex w-100 justify-content-between text-top-two-card">
                                     <div class="p-3 border-right col-sm-2">Periodo</div>
                                     <div class="p-3 ml-0">
-                                        Inicio: 16/03/2020 00:00
+                                        Inicio: {{request.period.dt_published_ini}}
                                     </div>
                                     <div class="p-3 ">
-                                        Fim: 16/03/2020 23:59
+                                        Fim:  {{request.period.dt_published_end}}
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="p-3 mr-5">
@@ -192,7 +182,7 @@
                         </div>
                     </div>
                     <!-- CARD POST -->
-                    <div ng-repeat="(idx,post) in data | filter: searchTopMenu | orderBy : orderOption.value"
+                    <div ng-repeat="(idx,post) in data | filter: searchTopMenu | orderBy : orderOption.value | dateRange:request.period.dt_published_ini:request.period.dt_published_end"
                         class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4"
                         ng-show="verifyGrouping(post.id_smpost)">
                         <div class="card-body">
