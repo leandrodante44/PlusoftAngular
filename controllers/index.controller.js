@@ -167,7 +167,7 @@ app.controller("index.controller", function ($scope) {
       value: "5",
     },
   ];
-
+/*commemnterio*/
   $scope.topBarOrderBy = [
     {
       displayName: "Mais recentes",
