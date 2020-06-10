@@ -108,14 +108,16 @@
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
                                         </span>
                                         <!-- Datepicker -->
-                                        <span
-                                            class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3 searchInputButton">
-                                            <input class="searchInputTopMenu border-0" type="text" name="daterange"
-                                                placeholder="" value="" ng-model="input.datepicker" ng-change="atualizarData()">
-                                            <img class="icon-footer mr-1 shakeIcon"
+                                        <div class="btn-group">
+                                            <a name="daterangeButton"
+                                                class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3 searchInputButton">
+                                                <input class="border-0 daterange" type="text" name="daterange"
+                                                placeholder="" value="" ng-model="input.datepicker" ng-change="atualizarData()" autocomplete="off">
+                                                <img class="icon-footer mr-1 shakeIcon"
                                                 src="library/icons/sgv/today.svg"></img>
-                                            <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
-                                        </span>
+                                                <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
+                                            </a>
+                                        </div>
                                         <!-- order button -->
                                         <div class="btn-group">
                                             <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"

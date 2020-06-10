@@ -186,6 +186,11 @@ app.controller("index.controller", function ($scope) {
     value: "id_smpost",
   };
 
+
+  $(document).on('click', 'a[name="daterangeButton"]', function (event) {
+    document.getElementsByName('daterange')[0].focus();
+  });
+
   $('input[name="daterange"]').daterangepicker(
     {
       timePicker: true,
