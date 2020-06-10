@@ -141,9 +141,8 @@ app.controller("index.controller", function ($scope) {
       message: "",
     },
     post_check: [],
+    datepicker: "",
   };
-
-  
 
   $scope.data = getData();
   $scope.menu = getFilters();
@@ -160,7 +159,7 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.bkp_filter = {};
-  
+
   $scope.initFilterModal = function () {
     $scope.bkp_filter = angular.copy($scope.request.filters);
   };
@@ -187,66 +186,66 @@ app.controller("index.controller", function ($scope) {
     value: "id_smpost",
   };
 
-  $('input[name="daterange"]').daterangepicker({
-    timePicker: true,
-    timePicker24Hour: true,
-    "applyButtonClasses": "btn-success custom-apply", 
-    locale: {
-        format: "DD/MM/YYYY",
+  $('input[name="daterange"]').daterangepicker(
+    {
+      timePicker: true,
+      timePicker24Hour: true,
+      applyButtonClasses: "btn-success custom-apply",
+      locale: {
+        format: "DD/MM/YYYY hh:mm",
         separator: " - ",
         applyLabel: "Aplicar",
         cancelLabel: "Cancelar",
         fromLabel: "De",
         toLabel: "Até",
         customRangeLabel: "Custom",
-        showDropdowns : true,
+        showDropdowns: true,
         weekLabel: "W",
-        daysOfWeek: [
-            "DOM",
-            "SEG",
-            "TER",
-            "QUA",
-            "QUI",
-            "SEX",
-            "SÁB"
-        ],
+        daysOfWeek: ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SÁB"],
         monthNames: [
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro"
+          "Janeiro",
+          "Fevereiro",
+          "Março",
+          "Abril",
+          "Maio",
+          "junho",
+          "Julho",
+          "Agosto",
+          "Setembro",
+          "Outubro",
+          "Novembro",
+          "Dezembro",
         ],
-        firstDay: 0
+        firstDay: 0,
       },
-        startDate: moment($scope.request.period.dt_published_ini, "DD/MM/YYYY hh:mm"),
-        endDate: moment($scope.request.period.dt_published_end, "DD/MM/YYYY hh:mm") //moment().startOf('hour').add(32, 'hour'),
-
+      startDate: moment(
+        $scope.request.period.dt_published_ini,
+        "DD/MM/YYYY hh:mm"
+      ),
+      endDate: moment(
+        $scope.request.period.dt_published_end,
+        "DD/MM/YYYY hh:mm"
+      ), //moment().startOf('hour').add(32, 'hour'),
     }
     // , function (start, end) {
     //     console.log("debug");
     // }
-    );
+  );
 
-
-  $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
-    $scope.updateDateRange(picker.startDate.format('DD/MM/YYYY hh:mm'), picker.endDate.format('DD/MM/YYYY hh:mm'));
-  });
-
-  $scope.updateDateRange = function(ini, end) {
+  //$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+  //  $scope.updateDateRange(picker.startDate.format('DD/MM/YYYY hh:mm'), picker.endDate.format('DD/MM/YYYY hh:mm'));
+  //});
+  $scope.atualizarData = function () {
+    var startDate = $scope.input.datepicker.split("-")[0].trim();
+    var endDate = $scope.input.datepicker.split("-")[1].trim();
+    $scope.updateDateRange(startDate, endDate);
+  };
+  $scope.updateDateRange = function (ini, end) {
     $scope.request.period = {
       dt_published_ini: ini,
-      dt_published_end: end
-    }
+      dt_published_end: end,
+    };
   };
-  
 });
 
 //BTN ATRIBUIR

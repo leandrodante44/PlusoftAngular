@@ -111,7 +111,7 @@
                                         <span
                                             class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3 searchInputButton">
                                             <input class="searchInputTopMenu border-0" type="text" name="daterange"
-                                                placeholder="" value="">
+                                                placeholder="" value="" ng-model="input.datepicker" ng-change="atualizarData()">
                                             <img class="icon-footer mr-1 shakeIcon"
                                                 src="library/icons/sgv/today.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
@@ -165,11 +165,11 @@
                             <div class="row">
                                 <div class="d-flex w-100 justify-content-between text-top-two-card">
                                     <div class="p-3 border-right col-sm-2">Periodo</div>
-                                    <div class="p-3 ml-0">
-                                        Inicio: {{request.period.dt_published_ini}}
+                                    <div class="p-3 ml-0" ng-bind="request.period.dt_published_ini">
+                                        Inicio:
                                     </div>
-                                    <div class="p-3 ">
-                                        Fim:  {{request.period.dt_published_end}}
+                                    <div class="p-3 " ng-bind="request.period.dt_published_end"> 
+                                        Fim:  
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="p-3 mr-5">
