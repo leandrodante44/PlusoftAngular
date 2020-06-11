@@ -311,11 +311,11 @@ function gettopBarOrderBy() {
     },
     {
       displayName: "Mais amigos",
-      value: "",
+      value: "do_chat.dn_friends",
     },
     {
       displayName: "Mais seguidores",
-      value: "",
+      value: "do_chat.dn_followers",
     },
     {
       displayName: "Mais curtidas",
@@ -323,11 +323,11 @@ function gettopBarOrderBy() {
     },
     {
       displayName: "Mais compartilhamentos",
-      value: "",
+      value: "do_share",
     },
     {
       displayName: "Mais comentários",
-      value: "",
+      value: "do_comment",
     },
   ];
 }

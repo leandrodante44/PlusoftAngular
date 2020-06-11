@@ -168,7 +168,7 @@
                             <div class="row">
                                 <div class="d-flex w-100 justify-content-between text-top-two-card">
                                     <div class="p-3 border-right col-sm-2">Periodo</div>
-                                    <div class="p-3 ml-0" ng-bind="request.period.dt_published_ini">
+                                    <div class="p-3 ml-0" ng-bind=" .period.dt_published_ini">
                                         Inicio:
                                     </div>
                                     <div class="p-3 " ng-bind="request.period.dt_published_end">
@@ -221,10 +221,10 @@
                                                 <label class="primary small mr-1">{{post.do_liked}}</label>
                                                 <img class="icon-footer  shakeIcon mr-1"
                                                     src="library/icons/sgv/Rtt.svg"></img>
-                                                <label class="primary small mr-1">5</label>
+                                                <label class="primary small mr-1">{{post.do_share}}</label>
                                                 <img class="icon-footer shakeIcon mr-1"
                                                     src="library/icons/sgv/Comment.svg"></img>
-                                                <label class="primary small mr-1">2</label>
+                                                <label class="primary small mr-1">{{post.do_comments}}</label>
                                             </span>
                                         </h5>
                                         <p class="card-text">{{post.ds_title}}<a href="#"></a>
