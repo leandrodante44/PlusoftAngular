@@ -109,7 +109,7 @@
                                         </span>
                                         <!-- Datepicker -->
                                         <div class="btn-group">
-                                            <a name="daterangeButton"
+                                            <a ng-click="openDaterange()"
                                                 class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3 searchInputButton">
                                                 <input class="border-0 daterange" type="text" name="daterange"
                                                 placeholder="" value="" ng-model="input.datepicker" ng-change="atualizarData()" autocomplete="off">
@@ -235,7 +235,7 @@
                                             <span ng-repeat="tag in post.post_types"
                                                 class="badge btn {{(tag.Do_manual !='A')? 'badge-primary' : 'badge-danger'}} badge-card shadow-sm badge-pill mr-2">{{tag.ds_typeicustomer}}
                                                 <a ng-show="{{(tag.Do_manual !='A')?true:false}}"><i
-                                                        class="zmdi zmdi-close badge-close"></i></a>
+                                                      ng-click="removeTag(post, tag)"  class="zmdi zmdi-close badge-close"></i></a>
                                             </span></h4>
                                     </div>
                                 </div>

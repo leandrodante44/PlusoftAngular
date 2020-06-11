@@ -186,10 +186,9 @@ app.controller("index.controller", function ($scope) {
     value: "id_smpost",
   };
 
-
-  $(document).on('click', 'a[name="daterangeButton"]', function (event) {
+  $scope.openDaterange = function () {
     document.getElementsByName('daterange')[0].focus();
-  });
+  }
 
   $('input[name="daterange"]').daterangepicker(
     {
@@ -265,8 +264,11 @@ app.controller("index.controller", function ($scope) {
         }
       });
     return new_post_types;
-  }
-  
+  };
+
+  $scope.removeTag = function (post, tag) {
+    debugger
+  };
 });
 
 //BTN ATRIBUIR
