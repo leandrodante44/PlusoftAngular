@@ -32,14 +32,14 @@
                                 <div class="form-group ml-2">
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input" ng-model="dataFilterSelected.ds_10">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">10</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input" ng-model="dataFilterSelected.ds_50">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">50</span>
                                         </label>
@@ -50,14 +50,14 @@
                                 <div class="form-group">
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input" ng-model="dataFilterSelected.ds_30">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">30</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input" ng-model="dataFilterSelected.ds_100">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">100</span>
                                         </label>
@@ -73,7 +73,7 @@
                 <div class="row mb-5 container-fluid">
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-end">
-                            <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-outline-primary" data-dismiss="modal"  ng-click="cancelFilter()">Cancelar</button>
                         </div>
                     </div>
                     <div class="col">

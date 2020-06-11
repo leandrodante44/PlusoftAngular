@@ -23,14 +23,15 @@
                 <div class="modal-body">
                     <div class="container-fluid filter-elements">
                         <div class="row mt-5"></div>
-                            <div class="row mt-5">
+                        <div class="row mt-5">
                             <div class="col-md-2 text-left"></div>
                             <div class="col-md-5 text-left">
                                 <div class="form-group ">
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox ">
                                             <img class="mx-2" src="library/icons/sgv/Smile.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input"
+                                                ng-model="dataFilterSelected.ds_positivo">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">Positivo</span>
                                         </label>
@@ -38,7 +39,8 @@
                                     <div class="form-check mt-3">
                                         <label class="custom-control fill-checkbox">
                                             <img class="mx-2" src="library/icons/sgv/Idle.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input"
+                                                ng-model="dataFilterSelected.ds_neutro">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">Neutro</span>
                                         </label>
@@ -46,7 +48,8 @@
                                     <div class="form-check mt-3">
                                         <label class="custom-control fill-checkbox">
                                             <img class="mx-2" src="library/icons/sgv/Denied.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input"
+                                                ng-model="dataFilterSelected.ds_invalido">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">Inválido</span>
                                         </label>
@@ -58,7 +61,8 @@
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox">
                                             <img class="mx-2" src="library/icons/sgv/Angry.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input"
+                                                ng-model="dataFilterSelected.ds_negativo">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">Negativo</span>
                                         </label>
@@ -66,14 +70,15 @@
                                     <div class="form-check mt-3">
                                         <label class="custom-control fill-checkbox">
                                             <img class="mx-2" src="library/icons/sgv/Sick.svg"></img>
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input"
+                                                ng-model="dataFilterSelected.ds_hibrido">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">Hibrido</span>
                                         </label>
                                     </div>
                                     <div class="iconInput form-control p-1 mt-3 pl-2 w-75 mini-select">
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                        <select class="custon-select w-100">
+                                        <select class="custon-select w-100" ng-model="dataFilterSelected.ds_opcao">
                                             <option>Automático</option>
                                             <option>Manual</option>
                                         </select>
@@ -89,7 +94,8 @@
                 <div class="row mb-5 container-fluid">
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-end">
-                            <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-outline-primary" data-dismiss="modal"
+                                ng-click="cancelFilter()">Cancelar</button>
                         </div>
                     </div>
                     <div class="col">

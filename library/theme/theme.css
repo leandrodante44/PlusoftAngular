@@ -655,3 +655,7 @@ a.icon-top-menu:hover {
   .daterange {
     width: 0;
   }
+  .iconInput .zmdi-search{
+    font-size: 20px;
+    margin-top: -3px;
+  }

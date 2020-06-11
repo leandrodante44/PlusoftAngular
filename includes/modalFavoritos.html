@@ -30,7 +30,8 @@
                                 <div class="form-group ml-2">
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox ">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input"
+                                                ng-model="dataFilterSelected.ds_favorito">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">Favoritos</span>
                                         </label>
@@ -41,7 +42,8 @@
                                 <div class="form-group ml-3">
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input"
+                                                ng-model="dataFilterSelected.ds_naofavorito">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">Não favoritos</span>
                                         </label>
@@ -57,7 +59,8 @@
                 <div class="row mb-5 container-fluid">
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-end">
-                            <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-outline-primary" data-dismiss="modal"
+                                ng-click="cancelFilter()">Cancelar</button>
                         </div>
                     </div>
                     <div class="col">
