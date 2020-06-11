@@ -52,7 +52,7 @@
                                     type="image/svg+xml"></object><span>{{filter.name}}</span>
                             </div>
                             <div class="p-5 text-center"><input type="button"
-                                    class=" w-75 btn btn-outline-primary shadow full" value="Filtrar"></div>
+                                    class=" w-75 btn btn-outline-primary shadow full link-filter-submit" value="Filtrar"></div>
                         </div>
                     </div>
                 </div>
@@ -85,18 +85,21 @@
                                             </div>
                                         </div>
                                         <!-- ----- -->
-                                        <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
-                                            <img class="icon-footer mr-1 shakeIcon"
-                                                src="library/icons/sgv/move_to_inbox.svg"></img>
-                                            <i class="zmdi zmdi-chevron-down zmdi-hc-lg zmdi-hc-lg"></i>
-                                        </span>
-                                        <span class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
+                                        <div class="btn-group">
+                                            <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3">
+                                                <img class="icon-footer mr-1 shakeIcon"
+                                                    src="library/icons/sgv/move_to_inbox.svg"></img>
+                                                <i class="zmdi zmdi-chevron-down zmdi-hc-lg zmdi-hc-lg"></i>
+                                            </a>
+                                        </div>
+                                        <div class="btn-group">
+                                        <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
                                             data-toggle="modal" data-target="#modalTagueamento">
                                             <img class="icon-footer mr-1 shakeIcon"
                                                 src="library/icons/sgv/tagv2.svg"></img>
                                             <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
-                                        </span>
-
+                                        </a>
+                                        </div>
                                     </div>
                                     <div class="p-3 ml-auto mr-3">
                                         <span
@@ -185,7 +188,7 @@
                     </div>
                     <!-- CARD POST -->
                     <div ng-repeat="(idx,post) in data | filter: searchTopMenu | orderBy : orderOption.value | dateRange:request.period.dt_published_ini:request.period.dt_published_end"
-                        class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4"
+                        class="card grouped-posts border-primary rounded animate__animated animate__fadeIn card-home mt-4"
                         ng-show="verifyGrouping(post.id_smpost)">
                         <div class="card-body">
                             <div class="row">
@@ -245,7 +248,7 @@
                         <div class="card-body text-muted">
                             <div class="row">
                                 <div class=" notch-card rounded ml-3 mr-3 p-2 text-primary justify-content-between">
-                                    <center>
+                                    <center class="group-emojis">
                                         <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Book.svg"></img>
                                         <img class="icon-footer mr-3 shakeIcon"
                                             src="library/icons/sgv/Letter.svg"></img>
