@@ -28,7 +28,7 @@
                                     <label for="tag">ID do post</label>
                                     <div class="iconInput form-control p-1">
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                        <select class="custon-select w-100">
+                                        <select class="custon-select w-100" ng-model="dataFilterSelected.ds_idpost">
                                             <option></option>
                                             <option ng-repeat="option in selectedFilter.do_inputs.di_idpost" value="{{option.value}}">{{option.label}}</option>
                                         </select>
@@ -38,7 +38,7 @@
                                     <label for="tag">ID da conversa</label>
                                     <div class="iconInput form-control p-1">
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                        <select class="custon-select w-100">
+                                        <select class="custon-select w-100" ng-model="dataFilterSelected.ds_idconversa">
                                             <option></option>
                                             <option ng-repeat="option in selectedFilter.do_inputs.di_idconversa" value="{{option.value}}">{{option.label}}</option>
                                         </select>
@@ -48,7 +48,7 @@
                                     <label for="tag">Em qualquer ID</label>
                                     <div class="iconInput form-control p-1">
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                        <select class="custon-select w-100">
+                                        <select class="custon-select w-100" ng-model="dataFilterSelected.ds_qualquerid">
                                             <option></option>
                                             <option ng-repeat="option in selectedFilter.do_inputs.di_qualquerid" value="{{option.value}}">{{option.label}}</option>
                                         </select>
@@ -61,7 +61,7 @@
                                     <label for="tag">ID do post principal</label>
                                     <div class="iconInput form-control p-1">
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                        <select class="custon-select w-100">
+                                        <select class="custon-select w-100" ng-model="dataFilterSelected.ds_idpostprincipal">
                                             <option></option>
                                             <option ng-repeat="option in selectedFilter.do_inputs.di_idpostprincipal" value="{{option.value}}">{{option.label}}</option>
                                         </select>
@@ -71,7 +71,7 @@
                                     <label for="tag">ID do post no canal</label>
                                     <div class="iconInput form-control p-1">
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                        <select class="custon-select w-100">
+                                        <select class="custon-select w-100" ng-model="dataFilterSelected.ds_idpostcanal">
                                             <option></option>
                                             <option  ng-repeat="option in selectedFilter.do_inputs.di_idpostcanal" value="{{option.value}}">{{option.label}}</option>
                                         </select>
@@ -80,7 +80,7 @@
                                 <div class="form-group mt-5 pt-4">
                                     <div class="form-check">
                                         <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input">
+                                            <input type="checkbox" class="fill-control-input" ng-model="dataFilterSelected.ds_postmoderado">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">Post moderado</span>
                                         </label>
@@ -96,7 +96,7 @@
                 <div class="row mb-5 container-fluid">
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-end">
-                            <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-outline-primary" data-dismiss="modal"  ng-click="cancelFilter()">Cancelar</button>
                         </div>
                     </div>
                     <div class="col">

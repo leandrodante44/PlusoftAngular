@@ -693,3 +693,8 @@ border: 0;
 .custom-control{
   cursor: pointer;;
 }
+
+.iconInput .zmdi-search{
+  font-size: 20px;
+  margin-top: -3px;
+}

@@ -3926,6 +3926,7 @@ button.close {
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;
+  background-color: #00000090;
 }
 .modal-dialog {
   position: relative;
@@ -4004,7 +4005,7 @@ button.close {
 }
 @media (min-width: 992px) {
   .modal-lg {
-    max-width: 800px;
+    max-width: 900px;
   }
   .modal-xl {
     max-width: 1370px;

@@ -243,16 +243,24 @@ function getFiltersData() {
     },
     {
       id: 6,
-      ds_sentimento: "",
+      ds_positivo: "",
+      ds_neutro: "",
+      ds_negativo: "",
+      ds_invalido: "",
+      ds_hibrido: "",
       ds_opcao: "",
     },
     {
       id: 7,
-      da_favorito: [],
+      ds_favorito: "",
+      ds_naofavorito: "",
     },
     {
       id: 8,
-      da_paginacao: [],
+      ds_10: "",
+      ds_30: "",
+      ds_50: "",
+      ds_100: "",
     },
     {
       id: 9,
@@ -303,11 +311,11 @@ function gettopBarOrderBy() {
     },
     {
       displayName: "Mais amigos",
-      value: "",
+      value: "do_chat.dn_friends",
     },
     {
       displayName: "Mais seguidores",
-      value: "",
+      value: "do_chat.dn_followers",
     },
     {
       displayName: "Mais curtidas",
@@ -315,11 +323,11 @@ function gettopBarOrderBy() {
     },
     {
       displayName: "Mais compartilhamentos",
-      value: "",
+      value: "do_share",
     },
     {
       displayName: "Mais comentários",
-      value: "",
+      value: "do_comment",
     },
   ];
 }
@@ -350,36 +358,12 @@ function gettopBarMood() {
 }
 
 function getTags() {
-  return  {
-    manifestacao: [
-      "opção 1",
-      "opção 2",
-      "opção 3"
-    ],
-    produtos: [
-      "opção 1",
-      "opção 2",
-      "opção 3"
-    ],
-    campanhas: [
-      "opção 1",
-      "opção 2",
-      "opção 3"
-    ],
-    perfis: [
-      "opção 1",
-      "opção 2",
-      "opção 3"
-    ],
-    crises: [
-      "opção 1",
-      "opção 2",
-      "opção 3"
-    ],
-    prioridade: [
-      "opção 1",
-      "opção 2",
-      "opção 3"
-    ]
+  return {
+    manifestacao: ["opção 1", "opção 2", "opção 3"],
+    produtos: ["opção 1", "opção 2", "opção 3"],
+    campanhas: ["opção 1", "opção 2", "opção 3"],
+    perfis: ["opção 1", "opção 2", "opção 3"],
+    crises: ["opção 1", "opção 2", "opção 3"],
+    prioridade: ["opção 1", "opção 2", "opção 3"],
   };
 }

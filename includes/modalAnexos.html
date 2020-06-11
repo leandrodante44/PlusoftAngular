@@ -30,7 +30,7 @@
                                     <label for="ate">Respondidos</label>
                                     <div class="iconInput form-control p-1">
                                         <i class="zmdi zmdi-chevron-down zmdi-hc-2x text-secondary"></i>
-                                        <select class="custon-select w-100">
+                                        <select class="custon-select w-100" ng-model="dataFilterSelected.ds_respondidos">
                                             <option></option>
                                             <option ng-repeat="option in selectedFilter.do_inputs.di_respondidos" value="{{option.value}}">{{option.label}}</option>
                                         </select>
@@ -46,7 +46,7 @@
                 <div class="row mb-5 container-fluid">
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-end">
-                            <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-outline-primary" data-dismiss="modal"  ng-click="cancelFilter()">Cancelar</button>
                         </div>
                     </div>
                     <div class="col">

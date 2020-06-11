@@ -61,37 +61,37 @@ app.controller("myCtrl", [
       },
     ]),
       ($scope.tipos = [
-        "Humano",
-        "Bot",
-        "Álbum",
-        "Álbum - Foto",
-        "Impulsionado",
-        "Comentário",
-        "Comentário Filho",
-        "Vídeo",
-        "Dark Post",
-        "Avaliação",
-        "Evento",
-        "Fan Page",
-        "App do Facebook",
-        "Marcação de Amigo",
-        "Grupo",
-        "Link",
-        "Manual",
-        "Menção",
-        "Mensagem",
-        "Oficial",
-        "Foto",
-        "Perfil",
-        "Enquete",
-        "Review",
-        "Marca",
-        "Compartilhamento",
-        "Status",
-        "Flash",
-        "Termo",
+        { name: "Humano" },
+        { name: "Bot" },
+        { name: "Álbum" },
+        { name: "Álbum - Foto" },
+        { name: "Impulsionado" },
+        { name: "Comentário" },
+        { name: "Comentário Filho" },
+        { name: "Vídeo" },
+        { name: "Dark Post" },
+        { name: "Avaliação" },
+        { name: "Evento" },
+        { name: "Fan Page" },
+        { name: "App do Facebook" },
+        { name: "Marcação de Amigo" },
+        { name: "Grupo" },
+        { name: "Link" },
+        { name: "Manual" },
+        { name: "Menção" },
+        { name: "Mensagem" },
+        { name: "Oficial" },
+        { name: "Foto" },
+        { name: "Perfil" },
+        { name: "Enquete" },
+        { name: "Review" },
+        { name: "Marca" },
+        { name: "Compartilhamento" },
+        { name: "Status" },
+        { name: "Flash" },
+        { name: "Termo" },
       ]);
-
+    
     $scope.getDataSlice = function (data, division, part) {
       var amount = data.length / division;
       var rest = data.length % division;
@@ -117,34 +117,58 @@ app.controller("myCtrl", [
 
       return data.slice(indexStart, indexEnd);
     };
-
-    $scope.checkAll = function () {
+    $scope.checkAll = function (obj) {
+      debugger;
       $scope.checkall = true;
+      if (obj) {
+        for (var i = 0; i < obj.length; i++) {
+          obj[i].check = true;
+        }
+      }
     };
 
-    $scope.uncheckAll = function () {
+    $scope.uncheckAll = function (obj) {
       $scope.checkall = false;
+      if (obj) {
+        for (var i = 0; i < obj.length; i++) {
+          obj[i].check = false;
+        }
+      }
+    };
+    $scope.updateCanais = function () {
+      $scope.dataFilterSelected.da_canais = $scope.canais.filter(checkTrue);
+    };
+    $scope.updateTipos = function () {
+      $scope.dataFilterSelected.da_tipos = $scope.tipos.filter(checkTrue);
     };
   },
 ]);
 
+function checkTrue(obj) {
+  return obj.check;
+}
 
-app.filter('dateRange', function() {
-// FILTER  | dateRange:request.period.dt_published_ini:request.period.dt_published_end
+app.filter("dateRange", function () {
+  // FILTER  | dateRange:request.period.dt_published_ini:request.period.dt_published_end
 
-  return function(items, startDate, endDate) {
+  return function (items, startDate, endDate) {
     //an undefined startDate is converted to the beginning of time
     startDate = startDate || 0;
 
-    const granularity = null // can be 'days', ... see momentJS doc
+    const granularity = null; // can be 'days', ... see momentJS doc
 
-    var filter = items.filter( item => {
-      if(moment(item.dt_published, "DD/MM/YYYY hh:mm").isBetween( moment(startDate, "DD/MM/YYYY hh:mm"), moment(endDate, "DD/MM/YYYY hh:mm"), granularity, '[]'))
-      
-        {
-          return item;
-        }
-      });
-      return filter;
-  }
+    var filter = items.filter((item) => {
+      if (
+        moment(item.dt_published, "DD/MM/YYYY hh:mm").isBetween(
+          moment(startDate, "DD/MM/YYYY hh:mm"),
+          moment(endDate, "DD/MM/YYYY hh:mm"),
+          granularity,
+          "[]"
+        )
+      ) {
+        return item;
+      }
+    });
+    return filter;
+  };
 });

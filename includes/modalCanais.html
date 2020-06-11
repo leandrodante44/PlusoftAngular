@@ -1,5 +1,5 @@
 <!-- MODAL CANAIS -->
-<div class="modal fade" id="modalCanais" ng-controller="myCtrl">
+<div class="modal fade" id="modalCanais" ng-controller="myCtrl" ng-init="id_array=0">
     <div class="modal-dialog modal-lg border border-primary rounded">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -26,10 +26,11 @@
                             <div class="col-md-1 text-left"></div>
                             <div class="col-md-6 text-left">
                                 <div class="form-group">
-                                    <div class="form-check" ng-repeat="x in getDataSlice(canais, 2, 0)">
+                                    <div class="form-check" ng-repeat="(idx,x) in getDataSlice(canais, 2, 0)">
                                         <label class="custom-control  mt-3 fill-checkbox">
                                             <img class="icon28 mx-2" src={{x.icon}}></img>
-                                            <input type="checkbox" ng-checked="checkall" class="fill-control-input">
+                                            <input type="checkbox" ng-checked="checkall" class="fill-control-input"
+                                                ng-model="canais[idx].check" ng-change="updateCanais()">
                                             <span class="fill-control-indicator mt-1"></span>
                                             <span class="fill-control-description  mt-1">{{x.name}}</span>
                                         </label>
@@ -37,10 +38,12 @@
                                 </div>
                             </div>
                             <div class="col-md-5 px-0 text-left">
-                                <div class="form-check" ng-repeat="x in getDataSlice(canais, 2, 1)">
+                                <div class="form-check" ng-repeat="(idx,x) in getDataSlice(canais, 2, 1)">
                                     <label class="custom-control  mt-3 fill-checkbox">
                                         <img class="icon28 mx-2" src={{x.icon}}></img>
-                                        <input type="checkbox" ng-checked="checkall" class="fill-control-input">
+                                        <input type="checkbox" ng-checked="checkall" class="fill-control-input"
+                                            ng-model="canais[getDataSlice(canais, 2, 0).length+idx].check"
+                                            ng-change="updateCanais()">
                                         <span class="fill-control-indicator mt-1"></span>
                                         <span class="fill-control-description  mt-1">{{x.name}}</span>
                                     </label>
@@ -50,12 +53,14 @@
                         <div class="row mt-4">
                             <div class="col">
                                 <div class="d-flex mx-auto justify-content-end">
-                                    <button class="btn btn-outline-primary btn-sm mx-3" ng-click="checkAll()">Selecionar todos</button>
+                                    <button class="btn btn-outline-primary btn-sm mx-3"
+                                        ng-click="checkAll(canais)">Selecionar todos</button>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="d-flex mx-auto justify-content-start">
-                                    <button class="btn btn-outline-primary btn-sm mx-3" ng-click="uncheckAll()">Limpar seleção</button>
+                                    <button class="btn btn-outline-primary btn-sm mx-3"
+                                        ng-click="uncheckAll(canais)">Limpar seleção</button>
                                 </div>
                             </div>
                         </div>
@@ -67,16 +72,18 @@
                 <div class="row mb-2 container-fluid">
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-end">
-                            <button class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-outline-primary" data-dismiss="modal"
+                                ng-click="cancelFilter()">Cancelar</button>
                         </div>
                     </div>
                     <div class="col">
                         <div class="d-flex mx-auto justify-content-start">
-                            <button class="btn btn-success" data-dismiss="modal">Salvar</button>
+                            <button class="btn btn-success" data-dismiss="modal"
+                                ng-click="updateCanais()">Salvar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </div>

@@ -147,11 +147,10 @@ app.controller("index.controller", function ($scope) {
   $scope.data = getData();
   $scope.menu = getFilters();
 
-  $scope.dataFilter = getFiltersData();
   $scope.loadDataFilter = function (id_filter) {
     $scope.selectedFilter = $scope.menu[id_filter];
     $scope.dataFilterSelected = getFilterById(
-      $scope.dataFilter,
+      $scope.request.filters,
       $scope.selectedFilter.id
     );
     $scope.initFilterModal();
@@ -169,7 +168,7 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.request = {
-    filters: $scope.dataFilter,
+    filters: getFiltersData(),
     period: {
       dt_published_ini: "16/03/2020 09:30",
       dt_published_end: "17/03/2020 14:20",
