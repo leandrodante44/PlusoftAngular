@@ -230,12 +230,8 @@ app.controller("index.controller", function ($scope) {
       endDate: moment(
         $scope.request.period.dt_published_end,
         "DD/MM/YYYY hh:mm"
-      ), //moment().startOf('hour').add(32, 'hour'),
-    }
-    // , function (start, end) {
-    //     console.log("debug");
-    // }
-  );
+      )
+    });
 
   //$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
   //  $scope.updateDateRange(picker.startDate.format('DD/MM/YYYY hh:mm'), picker.endDate.format('DD/MM/YYYY hh:mm'));
@@ -251,6 +247,26 @@ app.controller("index.controller", function ($scope) {
       dt_published_end: end,
     };
   };
+
+  $scope.tags = getTags();
+  $scope.selectedTag = {};
+
+  $scope.getTags = function () {
+    debugger
+    var new_post_types = [];
+
+    Object.values($scope.selectedTag).forEach(tag => {
+      if(tag != null){
+        new_post_types.push( {
+            id: 1,
+            Do_manual: "Y",
+            ds_typeicustomer: tag
+          });
+        }
+      });
+    return new_post_types;
+  }
+  
 });
 
 //BTN ATRIBUIR

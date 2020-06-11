@@ -348,3 +348,38 @@ function gettopBarMood() {
     },
   ];
 }
+
+function getTags() {
+  return  {
+    manifestacao: [
+      "opção 1",
+      "opção 2",
+      "opção 3"
+    ],
+    produtos: [
+      "opção 1",
+      "opção 2",
+      "opção 3"
+    ],
+    campanhas: [
+      "opção 1",
+      "opção 2",
+      "opção 3"
+    ],
+    perfis: [
+      "opção 1",
+      "opção 2",
+      "opção 3"
+    ],
+    crises: [
+      "opção 1",
+      "opção 2",
+      "opção 3"
+    ],
+    prioridade: [
+      "opção 1",
+      "opção 2",
+      "opção 3"
+    ]
+  };
+}
