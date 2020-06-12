@@ -301,6 +301,9 @@ app.controller("index.controller", function ($scope) {
   };
 });
 
+$scope.isFeeling = (fell) => {
+};
+
 //BTN ATRIBUIR
 //MODAL DE TAGUEAMENTO
 //POST PAI E FILHO
