@@ -186,50 +186,46 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.openDaterange = function () {
-    document.getElementsByName('daterange')[0].focus();
-  }
+    document.getElementsByName("daterange")[0].focus();
+  };
 
-  $('input[name="daterange"]').daterangepicker(
-    {
-      timePicker: true,
-      timePicker24Hour: true,
-      applyButtonClasses: "btn-success custom-apply",
-      locale: {
-        format: "DD/MM/YYYY hh:mm",
-        separator: " - ",
-        applyLabel: "Aplicar",
-        cancelLabel: "Cancelar",
-        fromLabel: "De",
-        toLabel: "Até",
-        customRangeLabel: "Custom",
-        showDropdowns: true,
-        weekLabel: "W",
-        daysOfWeek: ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SÁB"],
-        monthNames: [
-          "Janeiro",
-          "Fevereiro",
-          "Março",
-          "Abril",
-          "Maio",
-          "junho",
-          "Julho",
-          "Agosto",
-          "Setembro",
-          "Outubro",
-          "Novembro",
-          "Dezembro",
-        ],
-        firstDay: 0,
-      },
-      startDate: moment(
-        $scope.request.period.dt_published_ini,
-        "DD/MM/YYYY hh:mm"
-      ),
-      endDate: moment(
-        $scope.request.period.dt_published_end,
-        "DD/MM/YYYY hh:mm"
-      )
-    });
+  $('input[name="daterange"]').daterangepicker({
+    timePicker: true,
+    timePicker24Hour: true,
+    applyButtonClasses: "btn-success custom-apply",
+    locale: {
+      format: "DD/MM/YYYY hh:mm",
+      separator: " - ",
+      applyLabel: "Aplicar",
+      cancelLabel: "Cancelar",
+      fromLabel: "De",
+      toLabel: "Até",
+      customRangeLabel: "Custom",
+      showDropdowns: true,
+      weekLabel: "W",
+      daysOfWeek: ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SÁB"],
+      monthNames: [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro",
+      ],
+      firstDay: 0,
+    },
+    startDate: moment(
+      $scope.request.period.dt_published_ini,
+      "DD/MM/YYYY hh:mm"
+    ),
+    endDate: moment($scope.request.period.dt_published_end, "DD/MM/YYYY hh:mm"),
+  });
 
   //$('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
   //  $scope.updateDateRange(picker.startDate.format('DD/MM/YYYY hh:mm'), picker.endDate.format('DD/MM/YYYY hh:mm'));
@@ -249,23 +245,58 @@ app.controller("index.controller", function ($scope) {
   $scope.tags = getTags();
   $scope.selectedTag = {};
 
-  $scope.getTags = function () {
-    debugger
+  $scope.getTags = () => {
+    debugger;
     var new_post_types = [];
 
-    Object.values($scope.selectedTag).forEach(tag => {
-      if(tag != null){
-        new_post_types.push( {
-            id: 1,
-            Do_manual: "Y",
-            ds_typeicustomer: tag
-          });
+    Object.values($scope.selectedTag).forEach((tag) => {
+      if (tag != null) {
+        new_post_types.push({
+          id: 1,
+          Do_manual: "Y",
+          ds_typeicustomer: tag,
+        });
+      }
+    });
+    //ADICIOINAR TAGS NO POST
+    for (var i = 0; i < $scope.grouping.di_grouping.length; i++) {
+      for (var j = 0; j < $scope.data.length; j++) {
+        if ($scope.data[j].id_smpost == $scope.grouping.di_grouping[i]) {
+          for (var k = 0; k < new_post_types.length; k++) {
+            $scope.data[j].post_types.push(new_post_types[k]);
+          }
         }
-      });
+      }
+    }
+    //LIMPAR CHERCKBOX
+    $scope.grouping.di_grouping = [];
+    for (var i = 0; i < $scope.input.post_check.length; i++) {
+      $scope.input.post_check[i] = false;
+    }
+    //LIMPAR SELEÇÕES NA MODAL
+    $scope.selectedTag = {};
     return new_post_types;
   };
 
   $scope.removeTag = function (post, tag) {
+    post.post_types = arrayRemove(post.post_types, tag);
+    debugger;
+  };
+
+  $scope.setMood = (valor) => {
+    //ADICIOINAR MOOD NO POST
+    for (var i = 0; i < $scope.grouping.di_grouping.length; i++) {
+      for (var j = 0; j < $scope.data.length; j++) {
+        if ($scope.data[j].id_smpost == $scope.grouping.di_grouping[i]) {
+          $scope.data[j].ds_feeling = valor;
+        }
+      }
+    }
+    //LIMPAR CHERCKBOX
+    $scope.grouping.di_grouping = [];
+    for (var i = 0; i < $scope.input.post_check.length; i++) {
+      $scope.input.post_check[i] = false;
+    }
     debugger
   };
 });

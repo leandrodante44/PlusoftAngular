@@ -336,34 +336,34 @@ function gettopBarMood() {
   return [
     {
       displayName: "Positivo",
-      value: "1",
+      value: "positive",
     },
     {
       displayName: "Negativo",
-      value: "2",
+      value: "negative",
     },
     {
       displayName: "Neutro",
-      value: "3",
+      value: "neutral",
     },
     {
       displayName: "Híbrido",
-      value: "4",
+      value: "hybrid",
     },
     {
       displayName: "Inválido",
-      value: "5",
+      value: "invalid",
     },
   ];
 }
 
 function getTags() {
   return {
-    manifestacao: ["opção 1", "opção 2", "opção 3"],
-    produtos: ["opção 1", "opção 2", "opção 3"],
-    campanhas: ["opção 1", "opção 2", "opção 3"],
-    perfis: ["opção 1", "opção 2", "opção 3"],
-    crises: ["opção 1", "opção 2", "opção 3"],
-    prioridade: ["opção 1", "opção 2", "opção 3"],
+    manifestacao: ["Manifestação 01", "Manifestação 02", "Manifestação 03"],
+    produtos: ["Produtos 01", "Produtos 02", "Produtos 03"],
+    campanhas: ["Campanhas 01", "Campanhas 02", "Campanhas 03"],
+    perfis: ["Perfis 01", "Perfis 02", "Perfis 03"],
+    crises: ["Crises 01", "Crises 02", "Crises 03"],
+    prioridade: ["Prioridade 01", "Prioridade 02", "Prioridade 03"],
   };
 }

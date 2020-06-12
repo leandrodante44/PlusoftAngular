@@ -15,6 +15,7 @@ function getData() {
         "https://1.bp.blogspot.com/-WtS8KWHVH6s/V6pBHdbDLWI/AAAAAAAAAIY/4kuelKka2XwAwHoFkHsEOwFH_NpY8wZuwCLcB/s640/rpHfrKQr.jpg",
       ds_title: "Especialista fala sobre o Corona Vírus: ",
       dt_published: "16/03/2020 15:40",
+      ds_feeling: "",
       post_types: [
         {
           id: 1,

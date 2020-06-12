@@ -119,6 +119,7 @@ a {
 .badge-card {
   background-color: #4976ff;
   font-weight: 400;
+  margin-top: 5px;
 }
 .badge-danger{
   background: #FFD9A2;
