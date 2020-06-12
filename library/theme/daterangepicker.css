@@ -16,7 +16,7 @@
   line-height: 1em;
 
 }
-
+/* 
 .daterangepicker:before, .daterangepicker:after {
   position: absolute;
   display: inline-block;
@@ -36,6 +36,21 @@
   border-right: 6px solid transparent;
   border-bottom: 6px solid #fff;
   border-left: 6px solid transparent;
+} */
+
+.left::after, .right::after {
+  
+
+font-family: Poppins;
+  position: absolute;
+  top: 45px;
+}
+
+.left::after {
+  content:'De';
+}
+.right::after {
+  content:'Até';
 }
 
 .daterangepicker.opensleft:before {
@@ -263,9 +278,13 @@
   outline: 0;
   font-size: 12px;
 }
-
+.daterangepicker .calendar-time::before {
+  font-family: Poppins;
+  margin-right: 10px;
+  content: "Hora";
+}
 .daterangepicker .calendar-time {
-  text-align: center;
+  text-align: right;
   margin: 4px auto 0 auto;
   line-height: 30px;
   position: relative;
@@ -345,8 +364,17 @@
   border-right: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  padding:20px;
+  padding-top: 40px;
 }
+
+.daterangepicker .drp-calendar.right::before{
+
+}
+
 .daterangepicker .drp-calendar.right{
+  padding:20px;
+  padding-top: 40px;
   border-left: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
