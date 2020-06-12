@@ -190,8 +190,9 @@
                     </div>
                     <!-- CARD POST -->
                     <div ng-repeat="(idx,post) in data | filter: searchTopMenu | orderBy : orderOption.value | dateRange:request.period.dt_published_ini:request.period.dt_published_end"
-                        class="card grouped-posts border-primary rounded animate__animated animate__fadeIn card-home mt-4"
+                        class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4"
                         ng-show="verifyGrouping(post.id_smpost)">
+                        <div class="grouped-posts" ng-click="opendGroupedPosts()"></div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="media mr-4  col-sm-12">
