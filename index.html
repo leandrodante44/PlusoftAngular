@@ -228,7 +228,7 @@
                                                     src="library/icons/sgv/Rtt.svg"></img>
                                                 <label class="primary small mr-1">{{post.do_share}}</label>
                                                 <img class="icon-footer shakeIcon mr-1"
-                                                    src="library/icons/sgv/Comment.svg"></img> 
+                                                    src="library/icons/sgv/Comment.svg"></img>
                                                 <label class="primary small mr-1">{{post.do_comments}}</label>
                                             </span>
                                         </h5>
@@ -257,18 +257,36 @@
                                         <img class="icon-footer mr-3 shakeIcon"
                                             src="library/icons/sgv/Letter.svg"></img>
                                         <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Star.svg"></img>|
-                                        <img class="icon-footer mr-3 shakeIcon ml-3 icon-success" ng-show="!isFeeling('positive',post)"
-                                            src="library/icons/sgv/SmileActive.svg"></img>
-                                        <img class="icon-footer mr-3 shakeIcon ml-3 icon-success" ng-show="isFeeling('positive')"
-                                            src="library/icons/sgv/SmileActive.svg"></img>
+                                        <img class="icon-footer mr-3 shakeIcon ml-3 icon-success"
+                                            ng-show="!isFeeling('positive',post)" src="library/icons/sgv/Smile.svg"
+                                            ng-click="setFeeling('positive',post)"></img>
+                                        <img class="icon-footer mr-3 shakeIcon ml-3 icon-success-active"
+                                            ng-show="isFeeling('positive',post)" src="library/icons/sgv/SmileActive.svg"
+                                            ng-click="setFeeling('',post)"></img>
                                         <img class="icon-footer mr-3 shakeIcon icon-warning"
-                                            src="library/icons/sgv/IdleActive.svg"></img>
-                                        <img class="icon-footer mr-3 shakeIcon icon-medium"
-                                            src="library/icons/sgv/AngryActive.svg"></img>
+                                            src="library/icons/sgv/Idle.svg" ng-show="!isFeeling('neutral',post)"
+                                            ng-click="setFeeling('neutral',post)"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-warning-active"
+                                            src="library/icons/sgv/IdleActive.svg" ng-show="isFeeling('neutral',post)"
+                                            ng-click="setFeeling('',post)"></img>
                                         <img class="icon-footer mr-3 shakeIcon icon-danger"
-                                            src="library/icons/sgv/SickActive.svg"></img>
+                                            src="library/icons/sgv/Angry.svg" ng-show="!isFeeling('negative',post)"
+                                            ng-click="setFeeling('negative',post)"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-danger-active"
+                                            src="library/icons/sgv/AngryActive.svg" ng-show="isFeeling('negative',post)"
+                                            ng-click="setFeeling('',post)"></img>
                                         <img class="icon-footer mr-3 shakeIcon icon-medium"
-                                            src="library/icons/sgv/Denied.svg"></img>
+                                            src="library/icons/sgv/Sick.svg" ng-show="!isFeeling('hybrid',post)"
+                                            ng-click="setFeeling('hybrid',post)"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-medium-active"
+                                            src="library/icons/sgv/SickActive.svg" ng-show="isFeeling('hybrid',post)"
+                                            ng-click="setFeeling('',post)"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-danger"
+                                            src="library/icons/sgv/Denied.svg" ng-show="!isFeeling('invalid',post)"
+                                            ng-click="setFeeling('invalid',post)"></img>
+                                        <img class="icon-footer mr-3 shakeIcon icon-danger-active"
+                                            src="library/icons/sgv/Denied.svg" ng-show="isFeeling('invalid',post)"
+                                            ng-click="setFeeling('',post)"></img>
                                         <img class="icon-footer mr-3 shakeIcon"
                                             src="library/icons/sgv/Ballon.svg"></img>|
                                         <img class="icon-footer mr-3 shakeIcon ml-3"

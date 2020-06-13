@@ -297,12 +297,18 @@ app.controller("index.controller", function ($scope) {
     for (var i = 0; i < $scope.input.post_check.length; i++) {
       $scope.input.post_check[i] = false;
     }
-    debugger
+    debugger;
+  };
+
+  $scope.isFeeling = (fell, post) => {
+    if (post.ds_feeling == fell) return true;
+    else return false;
+  };
+
+  $scope.setFeeling = (valor, post) => {
+    post.ds_feeling = valor;
   };
 });
-
-$scope.isFeeling = (fell) => {
-};
 
 //BTN ATRIBUIR
 //MODAL DE TAGUEAMENTO

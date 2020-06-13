@@ -572,7 +572,17 @@ body {
   border-radius: 100%;
 }
 
+.icon-success-active{
+  border: 6px solid rgba(18, 178, 133, 0.3);
+  border-radius: 100%;
+}
+
 .icon-warning:hover {
+  border: 6px solid rgba(236, 187, 67, 0.3);
+  border-radius: 100%;
+}
+
+.icon-warning-active{
   border: 6px solid rgba(236, 187, 67, 0.3);
   border-radius: 100%;
 }
@@ -582,7 +592,17 @@ body {
   border-radius: 100%;
 }
 
+.icon-danger-active{
+  border: 6px solid rgba(255, 87, 125, 0.3);
+  border-radius: 100%;
+}
+
 .icon-medium:hover {
+  border: 6px solid rgba(255, 146, 30, 0.2);
+  border-radius: 100%;
+}
+
+.icon-medium-active {
   border: 6px solid rgba(255, 146, 30, 0.2);
   border-radius: 100%;
 }
