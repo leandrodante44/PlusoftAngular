@@ -283,6 +283,7 @@ app.controller("index.controller", function ($scope) {
     debugger;
   };
 
+  //ADICIONAR/REMOVER EMOÇÕES POST
   $scope.setMood = (valor) => {
     //ADICIOINAR MOOD NO POST
     for (var i = 0; i < $scope.grouping.di_grouping.length; i++) {
@@ -307,6 +308,17 @@ app.controller("index.controller", function ($scope) {
 
   $scope.setFeeling = (valor, post) => {
     post.ds_feeling = valor;
+  };
+
+  //DINAMICA POST PAI/FILHO
+  $scope.opendGroupedPosts = (post, idx) => {
+    if (post.child_post) {
+      post.child_post.parent_post = angular.copy(post);
+      $scope.data[idx] = post.child_post;
+    } else {
+      post.parent_post.child_post = angular.copy(post);
+      $scope.data[idx] = post.parent_post;
+    }
   };
 });
 
