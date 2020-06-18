@@ -5,6 +5,10 @@ $(document).on("hidden.bs.modal", function (event) {
 });
 app.controller("index.controller", function ($scope) {
   /* ON CLICK IN "RESPONDER" IN CARD-POST*/
+  $scope.selectedPost = {
+    id_smpost: ""
+  }
+
   $scope.loadDataChat = function (id_smpost) {
     $scope.selectedPost = $scope.data[id_smpost];
     $scope.getLastClerk();
@@ -142,7 +146,7 @@ app.controller("index.controller", function ($scope) {
     post_check: [],
     datepicker: "",
     email: {
-      post: "",
+      post: $scope.selectedPost.id_smpost,
       de: "",
       para: "",
       mensagem: ""
