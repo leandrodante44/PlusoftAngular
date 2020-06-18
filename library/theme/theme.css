@@ -908,3 +908,10 @@ a.icon-top-menu:hover {
   white-space: initial;
 
 }
+
+.montserrat{
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 29px;
+}

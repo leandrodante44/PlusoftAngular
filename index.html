@@ -303,11 +303,12 @@
                                                 data-toggle="modal"
                                                 data-target="#modalAcoesPost"></img>
                                             </span>
-
-                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Letter.svg"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
-                                                data-placement="top" title="Enviar post por e mail"></img>
-
+                                            <span  data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Enviar post por e mail">
+                                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Letter.svg"
+                                                data-toggle="modal"
+                                                data-target="#modalEnviarPorEmail"
+                                                ></img>
+                                            </span>
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Star.svg"
                                                 data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
                                                 data-placement="top" title="Favoritar post"></img>|
@@ -493,6 +494,7 @@
         <div ng-include="'includes/modalAtribuir.html'"></div>
         <div ng-include="'includes/modalTagueamento.html'"></div>
         <div ng-include="'includes/modalAcoesPost.html'"></div>
+        <div ng-include="'includes/modalEnviarPorEmail.html'"></div>
         <!-- MODALS FILTER -->
         <div ng-repeat="includes in menu" ng-include="includes.content"></div>
         <script type="text/javascript" src="controllers/chat.controller.js"></script>

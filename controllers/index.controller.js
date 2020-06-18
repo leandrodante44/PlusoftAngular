@@ -134,6 +134,12 @@ app.controller("index.controller", function ($scope) {
     },
     post_check: [],
     datepicker: "",
+    email: {
+      post: "",
+      de: "",
+      para: "",
+      mensagem: ""
+    }
   };
 
   $scope.data = getData();
@@ -327,6 +333,16 @@ app.controller("index.controller", function ($scope) {
   $scope.setStatus = (status) => {
     $scope.selectedPost.ds_status = status;
   };
+
+  $scope.sendEmail = function(){
+    $.scope.email.push({
+      post: $scope.input.post,
+      de: $scope.input.de,
+      para: $scope.input.para,
+      mensagem: $scope.input.mensagem
+    })
+  }
+
 });
 
 //BTN ATRIBUIR
