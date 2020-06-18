@@ -6,13 +6,15 @@ $(document).on("hidden.bs.modal", function (event) {
 app.controller("index.controller", function ($scope) {
   /* ON CLICK IN "RESPONDER" IN CARD-POST*/
   $scope.selectedPost = {
-    id_smpost: ""
-  }
+    id_smpost: "",
+  };
 
   $scope.loadDataChat = function (id_smpost) {
     $scope.selectedPost = $scope.data[id_smpost];
     $scope.getLastClerk();
     $(".alert-success").hide();
+    //set email idpost
+    $scope.input.email.post = $scope.selectedPost.id_smpost;
   };
 
   $scope.getLastClerk = function () {
@@ -146,11 +148,11 @@ app.controller("index.controller", function ($scope) {
     post_check: [],
     datepicker: "",
     email: {
-      post: $scope.selectedPost.id_smpost,
+      post: "",
       de: "",
       para: "",
-      mensagem: ""
-    }
+      mensagem: "",
+    },
   };
 
   $scope.data = getData();
@@ -370,15 +372,16 @@ app.controller("index.controller", function ($scope) {
   $scope.setStatus = (status) => {
     $scope.selectedPost.ds_status = status;
   };
+  $scope.email = [];
 
-  $scope.sendEmail = function(){
-    $.scope.email.push({
+  $scope.sendEmail = function () {
+    $scope.email.push({
       post: $scope.input.post,
       de: $scope.input.de,
       para: $scope.input.para,
-      mensagem: $scope.input.mensagem
-    })
-  }
+      mensagem: $scope.input.mensagem,
+    });
+  };
 
   $scope.removeTrack = (post, track) => {
     post.post_track = arrayRemove(post.post_track, track);
