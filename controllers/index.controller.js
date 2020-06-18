@@ -170,8 +170,8 @@ app.controller("index.controller", function ($scope) {
   $scope.request = {
     filters: getFiltersData(),
     period: {
-      dt_published_ini: "16/03/2020 09:30",
-      dt_published_end: "17/03/2020 14:20",
+      dt_published_ini: "01/03/2020 09:30",
+      dt_published_end: "30/03/2020 14:20",
     },
   };
 
@@ -180,6 +180,8 @@ app.controller("index.controller", function ($scope) {
   $scope.topBarOrderBy = gettopBarOrderBy();
 
   $scope.topBarRefresh = gettopBarRefresh();
+
+  $scope.statusArray = getStatusArray();
 
   $scope.orderOption = {
     value: "id_smpost",

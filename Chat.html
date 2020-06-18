@@ -56,15 +56,23 @@
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                         </button>
                         <button class="btn btn-info dropButton mt-3 not-bold" type="button" aria-haspopup="true"
-                            aria-expanded="false" data-toggle="modal" data-target="#modalAtribuir" ng-click="initModal()">
+                            aria-expanded="false" data-toggle="modal" data-target="#modalAtribuir"
+                            ng-click="initModal()">
                             Atribuir Para
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                         </button>
-                        <button class="btn btn-info  dropButton mt-3 not-bold" type="button" aria-haspopup="true"
-                            aria-expanded="false">
+                        <button class="btn btn-info  dropButton mt-3 not-bold" type="button" id="dropdownStatus" data-toggle="dropdown" offset="30">
                             Status
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                         </button>
+                        <div class="dropdown-menu dropdown-status" aria-labelledby="dropdownStatus">
+                            <div class="list-group custon-dropdown" ng-repeat="x in statusArray"
+                                >
+                                <a href="#" class="list-group-item" ng-click="setStatus(x)">
+                                    {{x}}
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <br>
                 </div>
@@ -101,7 +109,7 @@
                         <div class="media m-4" ng-repeat="contact in selectedPost.do_chat.do_contact">
 
                             <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?true:false}}"
-                            ng-src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
+                                ng-src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
                             <div class="media-body">
                                 <div class="bubble {{(contact.ds_side === 0)?'me':'you'}}">
                                     <span ng-bind-html="contact.ds_content" class="ballon-message">
@@ -112,7 +120,7 @@
                                 </div>
                             </div>
                             <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?false:true}}"
-                            ng-src="{{(contact.ds_side === 0)?'':contact.ds_urlavatarfrom}}" alt="">
+                                ng-src="{{(contact.ds_side === 0)?'':contact.ds_urlavatarfrom}}" alt="">
                         </div>
 
                     </div>
