@@ -328,9 +328,20 @@
                                             
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Ballon.svg"
                                             data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Ver interações entre marca e consumidor"></img>|
-
-                                            <img class="icon-footer mr-3 shakeIcon ml-3" src="library/icons/sgv/ThreeP.svg"
-                                            data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Abre opções para verificar, curtir e marcar como patrocinado"></img>
+                                            
+                                            <span id="dropdownThreeP" data-toggle="dropdown">
+                                                <img class="icon-footer mr-3 shakeIcon ml-3" src="library/icons/sgv/ThreeP.svg"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Abre opções para verificar, curtir e marcar como patrocinado"></img>
+                                                
+                                                <div class="dropdown-menu" aria-labelledby="dropdownThreeP">
+                                                    <div class="custon-dropdown no-dinamic">
+                                                        <a href="#" class="list-group-item" ng-click="">Verificar</a>
+                                                        <a href="#" class="list-group-item" ng-click="" ng-show="{{(post.ds_smsocialmedia === 'Facebook')?true:false}}">Curtir</a>
+                                                        <a href="#" class="list-group-item" ng-click="" ng-show="{{(post.ds_smsocialmedia === 'Facebook')?true:false}}">Ocultar </a>
+                                                        <a href="#" class="list-group-item" ng-click="" ng-show="{{(post.ds_smsocialmedia === 'Facebook')?true:false}}">Marcar como post patrocinado</a>
+                                                    </div>
+                                                </div>
+                                            </span>
 
                                             <a class="text-primary mr-3 txt-footer-card" data-toggle="modal"
                                                 data-target="#modalTagueamento">
