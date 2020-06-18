@@ -367,3 +367,7 @@ function getTags() {
     prioridade: ["Prioridade 01", "Prioridade 02", "Prioridade 03"],
   };
 }
+
+function getStatusArray() {
+  return ["Pendente", "Atribuido", "Em Atendimento", "Concluido"];
+}

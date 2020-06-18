@@ -79,18 +79,10 @@ app.controller("index.controller", function ($scope) {
       } else {
         postChild = getPostById($scope.data, $scope.grouping.di_grouping[j]);
         var statuspost = "";
-        switch (true) {
-          case postChild.do_assignment.ds_status.ds_inprogress:
-            statuspost = "Em andamento";
-            break;
-          case postChild.do_assignment.ds_status.ds_assigned:
-            statuspost = "Atribuido";
-            break;
-          case postChild.do_assignment.ds_status.ds_concluded:
-            statuspost = "Concluido";
-            break;
-          default:
-            statuspost = "Aguardando";
+        if (postChild.ds_status) {
+          statuspost = postChild.ds_status;
+        } else {
+          statuspost = "Aguardando Dados";
         }
         var arrTag = {
           id: lstId++,
@@ -170,8 +162,8 @@ app.controller("index.controller", function ($scope) {
   $scope.request = {
     filters: getFiltersData(),
     period: {
-      dt_published_ini: "16/03/2020 09:30",
-      dt_published_end: "17/03/2020 14:20",
+      dt_published_ini: "01/03/2020 09:30",
+      dt_published_end: "30/03/2020 14:20",
     },
   };
 
@@ -180,6 +172,8 @@ app.controller("index.controller", function ($scope) {
   $scope.topBarOrderBy = gettopBarOrderBy();
 
   $scope.topBarRefresh = gettopBarRefresh();
+
+  $scope.statusArray = getStatusArray();
 
   $scope.orderOption = {
     value: "id_smpost",
@@ -320,12 +314,19 @@ app.controller("index.controller", function ($scope) {
       $scope.data[idx] = post.parent_post;
     }
   };
-  
+
+  //TOOLTIP DO ICONES E EMOJIS
   $('[data-toggle="tooltip"]').tooltip();
-  
-  setTimeout(function(){
+
+  setTimeout(function () {
     $('[data-toggle="tooltip"]').tooltip();
-  },2000);
+    initEditor();
+  }, 2000);
+
+  //SET STATUS
+  $scope.setStatus = (status) => {
+    $scope.selectedPost.ds_status = status;
+  };
 });
 
 //BTN ATRIBUIR

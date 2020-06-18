@@ -65,13 +65,13 @@ $(function () {
     initOpacityFiltersIcons();
   }, 1000);
 });
-function getPostById(data,id){
-  for(var i=0;i<data.length;i++){
-    if(data[i].id_smpost == id) return data[i]
+function getPostById(data, id) {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].id_smpost == id) return data[i];
   }
 }
-function getFilterById(data,id){
-  for(var i=0;i<data.length;i++){
-    if(data[i].id == id) return data[i]
+function getFilterById(data, id) {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].id == id) return data[i];
   }
 }

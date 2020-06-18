@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="library/theme/bootstrap3-wysihtml5.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="library/theme/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="library/theme/jquery.lsxemojipicker.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -33,6 +34,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
     <script type="text/javascript" src="library/scripts/moment.min.js"></script>
     <script type="text/javascript" src="library/scripts/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/twemoji.min.js"
+        integrity="sha256-Y3KC8juDUsBOzJ3XtOH/sj+BAlF9AQr6pEey+4ibaJ4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="library/scripts/jquery.lsxemojipicker.js"></script>
 </head>
 
 <body class="body-home">
@@ -71,7 +75,10 @@
                                         <!-- mood button -->
                                         <div class="btn-group" id="dropdownMenuMood" data-toggle="dropdown">
                                             <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
-                                                href="#" offset="30" data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Abre opções para classificação de sentimento de posts selecionados" data-trigger="hover">
+                                                href="#" offset="30" data-toggle="tooltip"
+                                                data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                title="Abre opções para classificação de sentimento de posts selecionados"
+                                                data-trigger="hover">
                                                 <img class="icon-footer mr-1 shakeIcon"
                                                     src="library/icons/sgv/mood.svg"></img>
                                                 <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
@@ -88,8 +95,9 @@
                                         <!-- ----- -->
                                         <div class="btn-group">
                                             <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
-                                                title="Exportação de relatório" data-trigger="hover">
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Exportação de relatório"
+                                                data-trigger="hover">
                                                 <img class="icon-footer mr-1 shakeIcon"
                                                     src="library/icons/sgv/move_to_inbox.svg"></img>
                                                 <i class="zmdi zmdi-chevron-down zmdi-hc-lg zmdi-hc-lg"></i>
@@ -97,7 +105,8 @@
                                         </div>
                                         <div class="btn-group" data-toggle="modal" data-target="#modalTagueamento">
                                             <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top"
                                                 title="Abre opções para tagueamento de posts selecionados"
                                                 data-trigger="hover">
                                                 <img class="icon-footer mr-1 shakeIcon"
@@ -130,7 +139,8 @@
                                         <!-- order button -->
                                         <div class="btn-group" id="dropdownMenuOrder" data-toggle="dropdown">
                                             <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
-                                                href="#" offset="30" data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'>
+                                                href="#" offset="30" data-toggle="tooltip"
+                                                data-delay='{ "show": 500, "hide": 100 }'>
                                                 <i class="zmdi zmdi-swap-vertical zmdi-hc-lg shakeIcon"
                                                     style="width: 24; text-align: center;"></i>
                                                 <i class="zmdi zmdi-chevron-down zmdi-hc-lg"></i>
@@ -147,7 +157,8 @@
                                         </div>
                                         <!-- ----- -->
                                         <!-- refresh button -->
-                                        <div class="btn-group" id="dropdownMenuRefresh" data-toggle="dropdown">
+                                        <!-- OCULTADO À PEDIDO DO ALESSANDRO 17/06 -->
+                                        <div class="btn-group" style="display: none;">
                                             <a class="icon-top-menu border border-primary rounded p-2 shadow-sm mr-3"
                                                 href="#" offset="30">
                                                 <img class="icon-footer mr-1 shakeIcon"
@@ -183,7 +194,8 @@
                                         Fim:
                                     </div>
                                     <div class="col-sm-1"></div>
-                                    <div class="p-3 mr-5 pointer">
+                                    <!-- OCULTADO À PEDIDO DO ALESSANDRO 17/06 -->
+                                    <div class="p-3 mr-5" style="display: none;">
                                         <img class="icon-footer mr-1 shakeIcon"
                                             src="library/icons/sgv/live_help.svg"></img>
                                     </div>
@@ -193,7 +205,8 @@
                         </div>
                     </div>
                     <!-- CARD POST -->
-                    <div class="row d-flex justify-content-center m-0 p-0" ng-repeat="(idx,post) in data | filter: searchTopMenu | orderBy : orderOption.value | dateRange:request.period.dt_published_ini:request.period.dt_published_end"
+                    <div class="row d-flex justify-content-center m-0 p-0"
+                        ng-repeat="(idx,post) in data | filter: searchTopMenu | orderBy : orderOption.value | dateRange:request.period.dt_published_ini:request.period.dt_published_end"
                         ng-show="verifyGrouping(post.id_smpost)">
                         <div class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4 w-100">
                             <div class="grouped-posts" ng-click="opendGroupedPosts(post,idx)"
@@ -227,20 +240,38 @@
                                                     ng-show="grouping.di_grouping[0] == post.id_smpost && grouping.di_grouping[1]">Agrupar</button>
                                                 <span class="icons-notch-header mt-2 mr-3 pointer">
                                                     <img class="icon-footer shakeIcon mr-1"
-                                                        src="library/icons/sgv/Like.svg" data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
-                                                        data-placement="top" title="Curtidas"
-                                                        data-trigger="hover"></img>
+                                                        src="library/icons/sgv/Like.svg" data-toggle="tooltip"
+                                                        data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                        title="Curtidas" data-trigger="hover"></img>
                                                     <label class="primary small mr-1">{{post.do_liked}}</label>
                                                     <img class="icon-footer  shakeIcon mr-1"
-                                                        src="library/icons/sgv/Rtt.svg" data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
-                                                        data-placement="top" title="Compartilhamentos"
-                                                        data-trigger="hover"></img>
-                                                    <label class="primary small mr-1">{{post.do_share}}</label>
+                                                        ng-show="post.ds_smsocialmedia != 'GooglePlay'"
+                                                        src="library/icons/sgv/Rtt.svg" data-toggle="tooltip"
+                                                        data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                        title="Compartilhamentos" data-trigger="hover"></img>
+                                                    <label class="primary small mr-1"
+                                                        ng-show="post.ds_smsocialmedia != 'GooglePlay'">{{post.do_share}}</label>
                                                     <img class="icon-footer shakeIcon mr-1"
-                                                        src="library/icons/sgv/Comment.svg" data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
-                                                        data-placement="top" title="Comentários"
-                                                        data-trigger="hover"></img>
-                                                    <label class="primary small mr-1">{{post.do_comments}}</label>
+                                                        ng-show="post.ds_smsocialmedia != 'GooglePlay'"
+                                                        src="library/icons/sgv/Comment.svg" data-toggle="tooltip"
+                                                        data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                        title="Comentários" data-trigger="hover"></img>
+                                                    <label class="primary small mr-1"
+                                                        ng-show="post.ds_smsocialmedia != 'GooglePlay'">{{post.do_comments}}</label>
+                                                    <img class="icon-footer  shakeIcon mr-1"
+                                                        ng-show="post.ds_smsocialmedia == 'GooglePlay'"
+                                                        src="library/icons/sgv/Star.svg" data-toggle="tooltip"
+                                                        data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                        title="Nota" data-trigger="hover"></img>
+                                                    <label class="primary small mr-1"
+                                                        ng-show="post.ds_smsocialmedia == 'GooglePlay'">{{post.do_stars}}</label>
+                                                    <img class="icon-footer  shakeIcon mr-1 img-vert"
+                                                        ng-show="post.ds_smsocialmedia == 'GooglePlay'"
+                                                        src="library/icons/sgv/Like.svg" data-toggle="tooltip"
+                                                        data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                        title="Não gostei" data-trigger="hover"></img>
+                                                    <label class="primary small mr-1"
+                                                        ng-show="post.ds_smsocialmedia == 'GooglePlay'">{{post.do_noliked}}</label>
                                                 </span>
                                             </h5>
                                             <p class="card-text">{{post.ds_title}}<a href="#"></a>
@@ -274,61 +305,72 @@
                                             </span>
 
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Letter.svg"
-                                            data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Enviar post por e mail"></img>
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Enviar post por e mail"></img>
 
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Star.svg"
-                                            data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Favoritar post"></img>|
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Favoritar post"></img>|
 
-                                            <img class="icon-footer mr-3 shakeIcon ml-3 icon-success"
+                                            <img class="icon-footer mr-3 shakeIcon ml-3"
                                                 ng-show="!isFeeling('positive',post)" src="library/icons/sgv/Smile.svg"
-                                                ng-click="setFeeling('positive',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como positivo"></img>
-                                                
-                                            <img class="icon-footer mr-3 shakeIcon ml-3 icon-success-active"
-                                                ng-show="isFeeling('positive',post)" src="library/icons/sgv/SmileActive.svg"
-                                                ng-click="setFeeling('',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como positivo"></img>
+                                                ng-click="setFeeling('positive',post)" data-toggle="tooltip"
+                                                data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                title="Classifica como positivo"></img>
 
-                                            <img class="icon-footer mr-3 shakeIcon icon-warning"
-                                                src="library/icons/sgv/Idle.svg" ng-show="!isFeeling('neutral',post)"
-                                                ng-click="setFeeling('neutral',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como neutro"></img>
+                                            <img class="icon-footer mr-3 shakeIcon ml-3 icon-success-active"
+                                                ng-show="isFeeling('positive',post)"
+                                                src="library/icons/sgv/SmileActive.svg" ng-click="setFeeling('',post)"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Classifica como positivo"></img>
+
+                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Idle.svg"
+                                                ng-show="!isFeeling('neutral',post)"
+                                                ng-click="setFeeling('neutral',post)" data-toggle="tooltip"
+                                                data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                title="Classifica como neutro"></img>
 
                                             <img class="icon-footer mr-3 shakeIcon icon-warning-active"
-                                                src="library/icons/sgv/IdleActive.svg" ng-show="isFeeling('neutral',post)"
-                                                ng-click="setFeeling('',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como neutro"></img>
+                                                src="library/icons/sgv/IdleActive.svg"
+                                                ng-show="isFeeling('neutral',post)" ng-click="setFeeling('',post)"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Classifica como neutro"></img>
 
-                                            <img class="icon-footer mr-3 shakeIcon icon-danger"
-                                                src="library/icons/sgv/Angry.svg" ng-show="!isFeeling('negative',post)"
-                                                ng-click="setFeeling('negative',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como negativo"></img>
+                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Angry.svg"
+                                                ng-show="!isFeeling('negative',post)"
+                                                ng-click="setFeeling('negative',post)" data-toggle="tooltip"
+                                                data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                title="Classifica como negativo"></img>
 
                                             <img class="icon-footer mr-3 shakeIcon icon-danger-active"
-                                                src="library/icons/sgv/AngryActive.svg" ng-show="isFeeling('negative',post)"
-                                                ng-click="setFeeling('',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como negativo"></img>
+                                                src="library/icons/sgv/AngryActive.svg"
+                                                ng-show="isFeeling('negative',post)" ng-click="setFeeling('',post)"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Classifica como negativo"></img>
 
-                                            <img class="icon-footer mr-3 shakeIcon icon-medium"
-                                                src="library/icons/sgv/Sick.svg" ng-show="!isFeeling('hybrid',post)"
-                                                ng-click="setFeeling('hybrid',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como híbrido"></img>
+                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Sick.svg"
+                                                ng-show="!isFeeling('hybrid',post)" ng-click="setFeeling('hybrid',post)"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Classifica como híbrido"></img>
 
                                             <img class="icon-footer mr-3 shakeIcon icon-medium-active"
-                                                src="library/icons/sgv/SickActive.svg" ng-show="isFeeling('hybrid',post)"
-                                                ng-click="setFeeling('',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como híbrido"></img>
+                                                src="library/icons/sgv/SickActive.svg"
+                                                ng-show="isFeeling('hybrid',post)" ng-click="setFeeling('',post)"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Classifica como híbrido"></img>
 
-                                            <img class="icon-footer mr-3 shakeIcon icon-danger"
-                                                src="library/icons/sgv/Denied.svg" ng-show="!isFeeling('invalid',post)"
-                                                ng-click="setFeeling('invalid',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como inválido"></img>
+                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Denied.svg"
+                                                ng-show="!isFeeling('invalid',post)"
+                                                ng-click="setFeeling('invalid',post)" data-toggle="tooltip"
+                                                data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                title="Classifica como inválido"></img>
 
                                             <img class="icon-footer mr-3 shakeIcon icon-danger-active"
                                                 src="library/icons/sgv/Denied.svg" ng-show="isFeeling('invalid',post)"
-                                                ng-click="setFeeling('',post)"
-                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Classifica como inválido"></img>
-                                            
+                                                ng-click="setFeeling('',post)" data-toggle="tooltip"
+                                                data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
+                                                title="Classifica como inválido"></img>
+
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Ballon.svg"
                                             data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Ver interações entre marca e consumidor"></img>|
                                             
@@ -348,23 +390,26 @@
 
                                             <a class="text-primary mr-3 txt-footer-card" data-toggle="modal"
                                                 data-target="#modalTagueamento">
-                                                <span data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Abre opções para taguear">
+                                                <span data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                    data-placement="top" title="Abre opções para taguear">
                                                     <img class="icon-footer mr-2 shakeIcon"
-                                                    src="library/icons/sgv/Tag.svg"></img>
+                                                        src="library/icons/sgv/Tag.svg"></img>
                                                     <span>Tagueamento</span>
                                                 </span>
                                             </a>
                                             <a class="text-primary mr-3 txt-footer-card" data-toggle="modal"
                                                 data-target="#chat" ng-click="loadDataChat(idx)">
-                                                <span  data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Abre opções para responder">
+                                                <span data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                    data-placement="top" title="Abre opções para responder">
                                                     <img class="icon-footer mr-2 shakeIcon"
-                                                    src="library/icons/sgv/Reply.svg"></img>
+                                                        src="library/icons/sgv/Reply.svg"></img>
                                                     <span>Responder</span>
                                                 </span>
                                             </a>
                                             <a class="text-primary mr-2 txt-footer-card" data-toggle="modal"
                                                 data-target="#modalAtribuir" ng-click="initModal(post.id_smpost)">
-                                                <span data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Abre opções para atribuir">
+                                                <span data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                    data-placement="top" title="Abre opções para atribuir">
                                                     <img class="icon-footer mr-2 shakeIcon"
                                                         src="library/icons/sgv/Launch.svg"></img>
                                                     <span>Atribuir</span>
@@ -377,10 +422,12 @@
                         </div>
 
                         <!-- History comments post -->
-                        <div class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4 w-75  bg-white">
-                            <div class="card-header text-center bg-white border-bottom border-primary title-18">Historico
-                                <button type="button" class="close pointer" style="margin-top:-5px;" data-dismiss="modal"
-                                    aria-label="Close">
+                        <div
+                            class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4 w-75  bg-white" ng-show="post.view_history">
+                            <div class="card-header text-center bg-white border-bottom border-primary title-18">
+                                Historico
+                                <button type="button" class="close pointer" style="margin-top:-5px;"
+                                    data-dismiss="modal" aria-label="Close" ng-click="post.view_history = false">
                                     <i class="zmdi zmdi-close  float-right"></i>
                                 </button>
                             </div>
@@ -397,19 +444,21 @@
                                                     <h4>
                                                         <span ng-repeat="tag in post.post_types"
                                                             class="badge btn {{(tag.Do_manual !='A')? 'badge-primary' : 'badge-danger'}} badge-card shadow-sm badge-pill mr-2">{{tag.ds_typeicustomer}}
-                                                            <a ng-show="{{(tag.Do_manual !='A')?true:false}}"><i ng-click="removeTag(post, tag)" class="zmdi zmdi-close badge-close"></i></a>
+                                                            <a ng-show="{{(tag.Do_manual !='A')?true:false}}"><i
+                                                                    ng-click="removeTag(post, tag)"
+                                                                    class="zmdi zmdi-close badge-close"></i></a>
                                                         </span>
                                                     </h4>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> 
-                                    
+                                    </div>
+
                                     <!-- Comments -->
 
                                     <!-- ainda em andamneto -->
                                     <!-- aqui aparecem os comentarios do post -->
-                                    <div class="media m-4" ng-repeat="contact in selectedPost.do_chat.do_contact">
+                                    <div class="media m-4" ng-repeat="contact in post.do_chat.do_contact | orderBy:'':true">
                                         <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?true:false}}"
                                             ng-src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
                                         <div class="media-body">
@@ -430,7 +479,7 @@
                             </div>
                             <div class="card-footer bg-white border-0 row d-flex justify-content-center m-0 p-0">
                                 <button type="button" class="close" aria-label="More">
-                                    <img  class="m-2 more-arrow pointer" src="library/icons/sgv/Chevron.svg"></img>
+                                    <img class="m-2 more-arrow pointer" src="library/icons/sgv/Chevron.svg"></img>
                                 </button>
                             </div>
                         </div>
@@ -446,6 +495,7 @@
         <div ng-include="'includes/modalAcoesPost.html'"></div>
         <!-- MODALS FILTER -->
         <div ng-repeat="includes in menu" ng-include="includes.content"></div>
+        <script type="text/javascript" src="controllers/chat.controller.js"></script>
     </div>
     <script>
         //$('.shakeIcon')

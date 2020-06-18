@@ -49,22 +49,31 @@
 
 
                     <div class="mt-3">
-                        <button class="btn btn-info  dropButton mt-2 not-bold" type="button" aria-haspopup="true"
+                        <!-- OCULTADO À PEDIDO DO ALESSANDRO 18/06 -->
+                        <button class="btn btn-info  dropButton mt-2 not-bold" type="button" style="display: none;" aria-haspopup="true"
                             aria-expanded="false">
                             Chamados
                             <span class="badge badge-pill ml-2 dropButtonCount ">3</span>
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                         </button>
                         <button class="btn btn-info dropButton mt-3 not-bold" type="button" aria-haspopup="true"
-                            aria-expanded="false" data-toggle="modal" data-target="#modalAtribuir" ng-click="initModal()">
+                            aria-expanded="false" data-toggle="modal" data-target="#modalAtribuir"
+                            ng-click="initModal()">
                             Atribuir Para
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                         </button>
-                        <button class="btn btn-info  dropButton mt-3 not-bold" type="button" aria-haspopup="true"
-                            aria-expanded="false">
+                        <button class="btn btn-info  dropButton mt-3 not-bold" type="button" id="dropdownStatus"
+                            data-toggle="dropdown" offset="30">
                             Status
                             <i class="zmdi zmdi-chevron-down zmdi-hc-2x float-right"></i>
                         </button>
+                        <div class="dropdown-menu dropdown-status" aria-labelledby="dropdownStatus">
+                            <div class="list-group custon-dropdown" ng-repeat="x in statusArray">
+                                <a href="#" class="list-group-item" ng-click="setStatus(x)">
+                                    {{x}}
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <br>
                 </div>
@@ -101,7 +110,7 @@
                         <div class="media m-4" ng-repeat="contact in selectedPost.do_chat.do_contact">
 
                             <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?true:false}}"
-                            ng-src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
+                                ng-src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
                             <div class="media-body">
                                 <div class="bubble {{(contact.ds_side === 0)?'me':'you'}}">
                                     <span ng-bind-html="contact.ds_content" class="ballon-message">
@@ -112,7 +121,7 @@
                                 </div>
                             </div>
                             <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?false:true}}"
-                            ng-src="{{(contact.ds_side === 0)?'':contact.ds_urlavatarfrom}}" alt="">
+                                ng-src="{{(contact.ds_side === 0)?'':contact.ds_urlavatarfrom}}" alt="">
                         </div>
 
                     </div>
@@ -146,14 +155,19 @@
                         <div class="col">
                             <!-- Toolbar -->
                             <div class="btn-toolbar justify-content-between" role="toolbar">
+                                <button type="button" class="btn btn-flat picker" id="emojiButton"><i
+                                        class="zmdi zmdi-mood zmdi-hc-lg text-primary"></i></button>
+                                <button type="button" class="btn btn-flat" onclick="insertUser()"><span
+                                        class="text-primary">@</span></button>
+                                <button type="button" class="btn btn-flat" onclick="$('.insert-image>span').click()"><i
+                                        class="zmdi zmdi-image zmdi-hc-lg text-primary"></i></button>
                                 <!---<div class="btn-group edit-text wysihtml5-toolbar" role="group">
                                     <button type="button" class="btn btn-flat"><i
                                             class="zmdi zmdi-format-size zmdi-hc-lg text-primary"></i></button>
                                     <a class="btn btn-default" data-wysihtml5-command="bold" title="CTRL+B"
                                         tabindex="-1" href="javascript:;" unselectable="on"><i
                                             class="zmdi zmdi-format-bold zmdi-hc-lg text-primary"></i></a>
-                                    <button type="button" class="btn btn-flat"><i
-                                            class="zmdi zmdi-format-italic zmdi-hc-lg text-primary"></i></button>
+                                    
                                     <button type="button" class="btn btn-flat"><i
                                             class="zmdi zmdi-format-underlined zmdi-hc-lg text-primary"></i></button>
                                     <button type="button" class="btn btn-flat"><i
@@ -181,7 +195,7 @@
                             <!-- Message input -->
                             <textarea class="form-control py-4 rounded" placeholder="Digite uma Mensagem"
                                 ng-model="input.chat.message" id="editorArea"></textarea>
-                            <script type="text/javascript" src="controllers/chat.controller.js"></script>
+
                             <style>
 
                             </style>
