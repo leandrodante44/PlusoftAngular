@@ -145,6 +145,22 @@ function getData() {
           ds_typeicustomer: "Curiosidade",
         },
       ],
+      post_track: [
+        {
+          date: "18/06/2020 12:00",
+          user: "paolaoliveira",
+          action: "Taguemento",
+          type: "Em Massa",
+          method: "Perfil - Cliente",
+        },
+        {
+          date: "18/06/2020 12:00",
+          user: "paolaoliveira",
+          action: "Taguemento",
+          type: "Indivudial",
+          method: "Perfil - Cliente",
+        },
+      ],
       do_assignment: {
         ds_status: {
           ds_inprogress: "",
@@ -400,6 +416,15 @@ function getData() {
           id: 1,
           Do_manual: "Y",
           ds_typeicustomer: "Corona",
+        },
+      ],
+      post_track: [
+        {
+          date: "18/06/2020 12:00",
+          user: "paolaoliveira",
+          action: "Taguemento",
+          type: "Individual",
+          method: "Perfil - Cliente",
         },
       ],
       do_assignment: {
@@ -663,6 +688,22 @@ function getData() {
           ds_typeicustomer: "Curiosidade",
         },
       ],
+      post_track: [
+        {
+          date: "18/06/2020 12:00",
+          user: "paolaoliveira",
+          action: "Taguemento",
+          type: "Em Massa",
+          method: "Perfil - Cliente",
+        },
+        {
+          date: "18/06/2020 12:00",
+          user: "paolaoliveira",
+          action: "Taguemento",
+          type: "Individual",
+          method: "Perfil - Cliente",
+        },
+      ],
       do_assignment: {
         ds_status: {
           ds_inprogress: "",
@@ -710,6 +751,22 @@ function getData() {
           id: 1,
           Do_manual: "Y",
           ds_typeicustomer: "Curiosidade",
+        },
+      ],
+      post_track: [
+        {
+          date: "18/06/2020 12:00",
+          user: "paolaoliveira",
+          action: "Taguemento",
+          type: "Em Massa",
+          method: "Perfil - Cliente",
+        },
+        {
+          date: "18/06/2020 12:00",
+          user: "paolaoliveira",
+          action: "Taguemento",
+          type: "Indivual",
+          method: "Perfil - Cliente",
         },
       ],
       do_assignment: {

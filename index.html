@@ -298,8 +298,8 @@
                                 <div class="row">
                                     <div class=" notch-card rounded ml-3 mr-3 p-2 text-primary justify-content-between">
                                         <center class="group-emojis">
-                                            <span data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Histórico de ações do post">
-                                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Book.svg"
+                                            <span data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Histórico de ações do post" >
+                                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Book.svg" ng-click="loadDataChat(idx)"
                                                 data-toggle="modal"
                                                 data-target="#modalAcoesPost"></img>
                                             </span>
@@ -372,7 +372,7 @@
                                                 title="Classifica como inválido"></img>
 
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Ballon.svg"
-                                            data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Ver interações entre marca e consumidor"></img>|
+                                            data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Ver interações entre marca e consumidor" ng-click="post.view_history =true"></img>|
                                             
                                             <span id="dropdownThreeP" data-toggle="dropdown">
                                                 <img class="icon-footer mr-3 shakeIcon ml-3" src="library/icons/sgv/ThreeP.svg"

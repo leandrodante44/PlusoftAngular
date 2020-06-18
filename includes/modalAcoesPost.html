@@ -23,24 +23,14 @@
             <div class="modal-body px-5">
                 <div class="modal-body px-5">
                     <div class="container-fluid">
-                        <div class="row mt-4 pY-3 border border-top-0 border border-left-0 border border-right-0 border-primary">
+                        <div class="row mt-4 pY-3 border border-top-0 border border-left-0 border border-right-0 border-primary" ng-repeat="track in selectedPost.post_track">
                             <div class="col-sm-2 d-flex justify-content-around pl-3 pr-0">
                                 <img src="library/icons/sgv/CheckMark.svg"></img>
-                                <img src="library/icons/sgv/x.svg"></img>
+                                <span ng-click="removeTrack(selectedPost,track)"><img src="library/icons/sgv/x.svg"></img></span>
                                 <img src="library/icons/sgv/Minus.svg"></img>
                             </div>
                             <div class="col-sm-10 text-left p-0 text-primary">
-                                <span>19/05/2020 17:08 | icbruno_ | Tagueamento | Em Massa | Perfil - Cliente</span>
-                            </div>
-                        </div>
-                        <div class="row mt-4 pY-3 border border-top-0 border border-left-0 border border-right-0 border-primary">
-                            <div class="col-sm-2 d-flex justify-content-around pl-3 pr-0">
-                                <img src="library/icons/sgv/CheckMark.svg"></img>
-                                <img src="library/icons/sgv/x.svg"></img>
-                                <img src="library/icons/sgv/Minus.svg"></img>
-                            </div>
-                            <div class="col-sm-10 text-left p-0 text-primary">
-                                <span>19/05/2020 17:08 | icbruno_ | Tagueamento | Em Massa | Perfil - Cliente</span>
+                                <span>{{track.date}} | {{track.user}} | {{track.action}} | {{track.type}} | {{track.method}}</span>
                             </div>
                         </div>
                     </div>

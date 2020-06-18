@@ -39,8 +39,14 @@ app.controller("index.controller", function ($scope) {
       ds_urlavatarfrom: $scope.clerk.ds_urlavatarfrom,
       ds_authorfrom: $scope.clerk.name,
     };
-    debugger;
     $scope.selectedPost.do_chat.do_contact.push(message);
+    $scope.selectedPost.post_track.push({
+      date: new Date().toLocaleString(),
+      user: $scope.clerk.user,
+      action: "Resposta Enviada",
+      type: "Individual",
+      method: "Perfil - Cliente",
+    });
     initEditor();
     $scope.getLastClerk();
   };
@@ -123,6 +129,7 @@ app.controller("index.controller", function ($scope) {
   };
 
   $scope.clerk = {
+    user: "manuzinha",
     name: "Manu Gavassi",
     ds_urlavatarfrom:
       "https://pbs.twimg.com/profile_images/1253524205578194946/OhPUF69-_400x400.jpg",
@@ -242,6 +249,7 @@ app.controller("index.controller", function ($scope) {
   $scope.getTags = () => {
     debugger;
     var new_post_types = [];
+    var new_post_track = [];
 
     Object.values($scope.selectedTag).forEach((tag) => {
       if (tag != null) {
@@ -249,6 +257,13 @@ app.controller("index.controller", function ($scope) {
           id: 1,
           Do_manual: "Y",
           ds_typeicustomer: tag,
+        });
+        new_post_track.push({
+          date: new Date().toLocaleString(),
+          user: $scope.clerk.user,
+          action: "Tagueamento",
+          type: "Em Massa",
+          method: "Perfil - Cliente",
         });
       }
     });
@@ -258,6 +273,7 @@ app.controller("index.controller", function ($scope) {
         if ($scope.data[j].id_smpost == $scope.grouping.di_grouping[i]) {
           for (var k = 0; k < new_post_types.length; k++) {
             $scope.data[j].post_types.push(new_post_types[k]);
+            $scope.data[j].post_track.push(new_post_track[k]);
           }
         }
       }
@@ -302,6 +318,23 @@ app.controller("index.controller", function ($scope) {
 
   $scope.setFeeling = (valor, post) => {
     post.ds_feeling = valor;
+    if (valor) {
+      post.post_track.push({
+        date: new Date().toLocaleString(),
+        user: $scope.clerk.user,
+        action: "Classificação:" + valor,
+        type: "Individual",
+        method: "Perfil - Cliente",
+      });
+    } else {
+      post.post_track.push({
+        date: new Date().toLocaleString(),
+        user: $scope.clerk.user,
+        action: "Remover Classificação",
+        type: "Individual",
+        method: "Perfil - Cliente",
+      });
+    }
   };
 
   //DINAMICA POST PAI/FILHO
@@ -326,6 +359,10 @@ app.controller("index.controller", function ($scope) {
   //SET STATUS
   $scope.setStatus = (status) => {
     $scope.selectedPost.ds_status = status;
+  };
+
+  $scope.removeTrack = (post, track) => {
+    post.post_track = arrayRemove(post.post_track, track);
   };
 });
 
