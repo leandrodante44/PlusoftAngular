@@ -79,18 +79,10 @@ app.controller("index.controller", function ($scope) {
       } else {
         postChild = getPostById($scope.data, $scope.grouping.di_grouping[j]);
         var statuspost = "";
-        switch (true) {
-          case postChild.do_assignment.ds_status.ds_inprogress:
-            statuspost = "Em andamento";
-            break;
-          case postChild.do_assignment.ds_status.ds_assigned:
-            statuspost = "Atribuido";
-            break;
-          case postChild.do_assignment.ds_status.ds_concluded:
-            statuspost = "Concluido";
-            break;
-          default:
-            statuspost = "Aguardando";
+        if(postChild.ds_status){
+          statuspost = postChild.ds_status
+        }else{
+          statuspost = "Aguardando Dados";
         }
         var arrTag = {
           id: lstId++,
@@ -323,11 +315,18 @@ app.controller("index.controller", function ($scope) {
     }
   };
   
+  //TOOLTIP DO ICONES E EMOJIS
   $('[data-toggle="tooltip"]').tooltip();
   
   setTimeout(function(){
     $('[data-toggle="tooltip"]').tooltip();
   },2000);
+
+
+  //SET STATUS
+  $scope.setStatus = (status) =>{
+    $scope.selectedPost.ds_status = status
+  }
 });
 
 //BTN ATRIBUIR

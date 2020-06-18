@@ -32,6 +32,7 @@ function getData() {
         ds_title: "Esse corona virús! Viu!",
         dt_published: "16/03/2020 15:40",
         ds_feeling: "",
+        ds_status: "",
         post_types: [
           {
             id: 1,
@@ -393,6 +394,7 @@ function getData() {
       ds_title:
         "Especialista fala sobre o Corona Vírus: https://t.co/8c8Yi5DtGm",
       dt_published: "16/03/2020 10:30",
+      ds_status: "",
       post_types: [
         {
           id: 1,
@@ -648,6 +650,7 @@ function getData() {
         "https://conteudo.cbf.com.br/cdn/201808/20180820124344_623.jpeg",
       ds_title: "Especialista fala sobre o Corona Vírus: ",
       dt_published: "15/03/2020 10:00",
+      ds_status: "",
       post_types: [
         {
           id: 1,
@@ -684,16 +687,19 @@ function getData() {
       do_influencer: "N",
       do_favorite: "",
       do_liked: "50",
-      do_comments: "15",
-      do_share: "15",
+      do_noliked: "20",
+      do_comments: "0",
+      do_share: "0",
+      do_stars: "5",
       do_loverhater: "L",
       ds_authorfrom: "Bruna Marquezine",
-      ds_smicon: "library/icons/sgv/Twitter.svg",
-      ds_smsocialmedia: "Twitter",
+      ds_smicon: "library/icons/sgv/GooglePlay.svg",
+      ds_smsocialmedia: "GooglePlay",
       ds_urlavatarfrom:
         "https://s2.glbimg.com/STCIMSu1Vvn-Bs6GiEfbeuOZ96w=/620x0/top/s.glbimg.com/jo/eg/f/original/2016/09/02/13827314_643041619198037_1536118892_n.jpg",
       ds_title: "Especialista fala sobre o Corona Vírus: ",
       dt_published: "15/03/2020 9:00",
+      ds_status: "",
       post_types: [
         {
           id: 1,
