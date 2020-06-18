@@ -129,7 +129,7 @@ function getData() {
                   ds_typeicustomer: "Curiosidade",
                 },
               ],
-            }
+            },
           ],
         },
       },

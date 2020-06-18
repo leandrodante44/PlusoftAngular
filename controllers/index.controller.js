@@ -79,9 +79,9 @@ app.controller("index.controller", function ($scope) {
       } else {
         postChild = getPostById($scope.data, $scope.grouping.di_grouping[j]);
         var statuspost = "";
-        if(postChild.ds_status){
-          statuspost = postChild.ds_status
-        }else{
+        if (postChild.ds_status) {
+          statuspost = postChild.ds_status;
+        } else {
           statuspost = "Aguardando Dados";
         }
         var arrTag = {
@@ -314,19 +314,18 @@ app.controller("index.controller", function ($scope) {
       $scope.data[idx] = post.parent_post;
     }
   };
-  
+
   //TOOLTIP DO ICONES E EMOJIS
   $('[data-toggle="tooltip"]').tooltip();
-  
-  setTimeout(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-  },2000);
 
+  setTimeout(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  }, 2000);
 
   //SET STATUS
-  $scope.setStatus = (status) =>{
-    $scope.selectedPost.ds_status = status
-  }
+  $scope.setStatus = (status) => {
+    $scope.selectedPost.ds_status = status;
+  };
 });
 
 //BTN ATRIBUIR

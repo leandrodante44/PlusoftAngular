@@ -91,7 +91,7 @@ app.controller("myCtrl", [
         { name: "Flash" },
         { name: "Termo" },
       ]);
-    
+
     $scope.getDataSlice = function (data, division, part) {
       var amount = data.length / division;
       var rest = data.length % division;
