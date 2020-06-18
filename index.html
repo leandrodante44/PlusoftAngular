@@ -371,7 +371,7 @@
 
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Ballon.svg"
                                                 data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
-                                                data-placement="top"
+                                                data-placement="top" ng-click="post.view_history = true"
                                                 title="Ver interações entre marca e consumidor"></img>|
 
                                             <img class="icon-footer mr-3 shakeIcon ml-3"
@@ -414,11 +414,11 @@
 
                         <!-- History comments post -->
                         <div
-                            class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4 w-75  bg-white">
+                            class="card border-primary rounded animate__animated animate__fadeIn card-home mt-4 w-75  bg-white" ng-show="post.view_history">
                             <div class="card-header text-center bg-white border-bottom border-primary title-18">
                                 Historico
                                 <button type="button" class="close pointer" style="margin-top:-5px;"
-                                    data-dismiss="modal" aria-label="Close">
+                                    data-dismiss="modal" aria-label="Close" ng-click="post.view_history = false">
                                     <i class="zmdi zmdi-close  float-right"></i>
                                 </button>
                             </div>
