@@ -320,6 +320,7 @@ app.controller("index.controller", function ($scope) {
 
   setTimeout(function () {
     $('[data-toggle="tooltip"]').tooltip();
+    initEditor();
   }, 2000);
 
   //SET STATUS

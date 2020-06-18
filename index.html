@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="library/theme/bootstrap3-wysihtml5.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="library/theme/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="library/theme/jquery.lsxemojipicker.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -33,6 +34,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
     <script type="text/javascript" src="library/scripts/moment.min.js"></script>
     <script type="text/javascript" src="library/scripts/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/twemoji.min.js"
+        integrity="sha256-Y3KC8juDUsBOzJ3XtOH/sj+BAlF9AQr6pEey+4ibaJ4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="library/scripts/jquery.lsxemojipicker.js"></script>
 </head>
 
 <body class="body-home">
@@ -318,8 +322,8 @@
                                                 data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
                                                 data-placement="top" title="Classifica como positivo"></img>
 
-                                            <img class="icon-footer mr-3 shakeIcon"
-                                                src="library/icons/sgv/Idle.svg" ng-show="!isFeeling('neutral',post)"
+                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Idle.svg"
+                                                ng-show="!isFeeling('neutral',post)"
                                                 ng-click="setFeeling('neutral',post)" data-toggle="tooltip"
                                                 data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
                                                 title="Classifica como neutro"></img>
@@ -330,8 +334,8 @@
                                                 data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
                                                 data-placement="top" title="Classifica como neutro"></img>
 
-                                            <img class="icon-footer mr-3 shakeIcon"
-                                                src="library/icons/sgv/Angry.svg" ng-show="!isFeeling('negative',post)"
+                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Angry.svg"
+                                                ng-show="!isFeeling('negative',post)"
                                                 ng-click="setFeeling('negative',post)" data-toggle="tooltip"
                                                 data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
                                                 title="Classifica como negativo"></img>
@@ -342,11 +346,10 @@
                                                 data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
                                                 data-placement="top" title="Classifica como negativo"></img>
 
-                                            <img class="icon-footer mr-3 shakeIcon"
-                                                src="library/icons/sgv/Sick.svg" ng-show="!isFeeling('hybrid',post)"
-                                                ng-click="setFeeling('hybrid',post)" data-toggle="tooltip"
-                                                data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
-                                                title="Classifica como híbrido"></img>
+                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Sick.svg"
+                                                ng-show="!isFeeling('hybrid',post)" ng-click="setFeeling('hybrid',post)"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
+                                                data-placement="top" title="Classifica como híbrido"></img>
 
                                             <img class="icon-footer mr-3 shakeIcon icon-medium-active"
                                                 src="library/icons/sgv/SickActive.svg"
@@ -354,8 +357,8 @@
                                                 data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }'
                                                 data-placement="top" title="Classifica como híbrido"></img>
 
-                                            <img class="icon-footer mr-3 shakeIcon"
-                                                src="library/icons/sgv/Denied.svg" ng-show="!isFeeling('invalid',post)"
+                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Denied.svg"
+                                                ng-show="!isFeeling('invalid',post)"
                                                 ng-click="setFeeling('invalid',post)" data-toggle="tooltip"
                                                 data-delay='{ "show": 500, "hide": 100 }' data-placement="top"
                                                 title="Classifica como inválido"></img>
@@ -446,7 +449,7 @@
 
                                     <!-- ainda em andamneto -->
                                     <!-- aqui aparecem os comentarios do post -->
-                                    <div class="media m-4" ng-repeat="contact in selectedPost.do_chat.do_contact">
+                                    <div class="media m-4" ng-repeat="contact in post.do_chat.do_contact | orderBy:'':true">
                                         <img class="mr-1 chatPerson" ng-show="{{(contact.ds_side === 0)?true:false}}"
                                             ng-src="{{(contact.ds_side === 0)?contact.ds_urlavatarfrom:''}}" alt="">
                                         <div class="media-body">
@@ -482,6 +485,7 @@
         <div ng-include="'includes/modalTagueamento.html'"></div>
         <!-- MODALS FILTER -->
         <div ng-repeat="includes in menu" ng-include="includes.content"></div>
+        <script type="text/javascript" src="controllers/chat.controller.js"></script>
     </div>
     <script>
         //$('.shakeIcon')

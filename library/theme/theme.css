@@ -862,3 +862,8 @@ a.icon-top-menu:hover {
   filter: FlipV;
   -ms-filter: "FlipV";
 }
+
+.lsx-emoji-tab{
+  white-space: initial;
+
+}
