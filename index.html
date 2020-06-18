@@ -267,8 +267,11 @@
                                 <div class="row">
                                     <div class=" notch-card rounded ml-3 mr-3 p-2 text-primary justify-content-between">
                                         <center class="group-emojis">
-                                            <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Book.svg"
-                                            data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Histórico de ações do post"></img>
+                                            <span data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Histórico de ações do post">
+                                                <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Book.svg"
+                                                data-toggle="modal"
+                                                data-target="#modalAcoesPost"></img>
+                                            </span>
 
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Letter.svg"
                                             data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Enviar post por e mail"></img>
@@ -440,6 +443,7 @@
         <div ng-include="'includes/modalPostAutor.html'"></div>
         <div ng-include="'includes/modalAtribuir.html'"></div>
         <div ng-include="'includes/modalTagueamento.html'"></div>
+        <div ng-include="'includes/modalAcoesPost.html'"></div>
         <!-- MODALS FILTER -->
         <div ng-repeat="includes in menu" ng-include="includes.content"></div>
     </div>
