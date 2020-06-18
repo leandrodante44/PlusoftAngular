@@ -376,16 +376,26 @@
                                             <img class="icon-footer mr-3 shakeIcon" src="library/icons/sgv/Ballon.svg"
                                             data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Ver interações entre marca e consumidor" ng-click="post.view_history =true"></img>|
                                             
-                                            <span id="dropdownThreeP" data-toggle="dropdown">
+
+                                            <span id="dropdownThreeP " data-toggle="dropdown"  ng-show="{{(post.ds_smsocialmedia === 'Facebook')?true:false}}">
                                                 <img class="icon-footer mr-3 shakeIcon ml-3" src="library/icons/sgv/ThreeP.svg"
                                                 data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Abre opções para verificar, curtir e marcar como patrocinado"></img>
-                                                
-                                                <div class="dropdown-menu" aria-labelledby="dropdownThreeP">
-                                                    <div class="custon-dropdown no-dinamic">
+                                                <div class="dropdown-menu dropdown-status dropup" aria-labelledby="dropdownThreeP">
+                                                    <div class="list-group custon-dropdown" >
+                                                        <a href="#" class="list-group-item" ng-click="">Marcar como post patrocinado</a>
+                                                        <a href="#" class="list-group-item" ng-click="">Ocultar </a>
+                                                        <a href="#" class="list-group-item" ng-click="">Curtir</a>
                                                         <a href="#" class="list-group-item" ng-click="">Verificar</a>
-                                                        <a href="#" class="list-group-item" ng-click="" ng-show="{{(post.ds_smsocialmedia === 'Facebook')?true:false}}">Curtir</a>
-                                                        <a href="#" class="list-group-item" ng-click="" ng-show="{{(post.ds_smsocialmedia === 'Facebook')?true:false}}">Ocultar </a>
-                                                        <a href="#" class="list-group-item" ng-click="" ng-show="{{(post.ds_smsocialmedia === 'Facebook')?true:false}}">Marcar como post patrocinado</a>
+                                                    </div>
+                                                </div>
+                                            </span>
+
+                                            <span id="dropdownThreeP2" data-toggle="dropdown" ng-show="{{(post.ds_smsocialmedia === 'Facebook')?false:true}}">
+                                                <img class="icon-footer mr-3 shakeIcon ml-3" src="library/icons/sgv/ThreeP.svg"
+                                                data-toggle="tooltip" data-delay='{ "show": 500, "hide": 100 }' data-placement="top" title="Abre opções para verificar, curtir e marcar como patrocinado"></img>
+                                                <div class="dropdown-menu dropdown-status dropup2" aria-labelledby="dropdownThreeP2">
+                                                    <div class="list-group custon-dropdown" >
+                                                        <a href="#" class="list-group-item" ng-click="">Verificar</a>
                                                     </div>
                                                 </div>
                                             </span>

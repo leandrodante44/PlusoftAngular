@@ -750,6 +750,16 @@ a.icon-top-menu:hover {
 .dropdown-status.show::before {
   border: none;
 }
+
+.dropdown-menu.dropdown-status.dropup {
+  transform: translate3d(340px, -36px, 0px) !important;
+}
+
+
+.dropdown-menu.dropdown-status.dropup2 {
+  transform: translate3d(340px, 120px, 0px) !important;
+}
+
 .first {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
