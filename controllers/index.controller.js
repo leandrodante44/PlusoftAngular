@@ -322,6 +322,12 @@ app.controller("index.controller", function ($scope) {
       $scope.data[idx] = post.parent_post;
     }
   };
+  
+  $('[data-toggle="tooltip"]').tooltip();
+  
+  setTimeout(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  },2000);
 });
 
 //BTN ATRIBUIR
