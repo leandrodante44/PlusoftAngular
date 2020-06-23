@@ -388,14 +388,15 @@
                                                 <div class="dropdown-menu dropdown-status {{(post.ds_smsocialmedia === 'Facebook')?'dropup':'dropup2'}}"
                                                     aria-labelledby="dropdownThreeP">
                                                     <div class="list-group custon-dropdown">
-                                                        <a href="#" class="list-group-item" ng-click="">Marcar como post
+                                                        <a href="#" class="list-group-item" ng-click=""
+                                                            ng-show="post.ds_smsocialmedia == 'Facebook'"> Marcar como
+                                                            post
                                                             patrocinado</a>
                                                         <a href="#" class="list-group-item" ng-click=""
                                                             ng-show="post.ds_smsocialmedia == 'Facebook'">Ocultar </a>
                                                         <a href="#" class="list-group-item" ng-click=""
                                                             ng-show="post.ds_smsocialmedia == 'Facebook'">Curtir</a>
-                                                        <a href="#" class="list-group-item" ng-click=""
-                                                            ng-show="post.ds_smsocialmedia == 'Facebook'">Verificar</a>
+                                                        <a href="#" class="list-group-item" ng-click="">Verificar</a>
                                                     </div>
                                                 </div>
                                             </span>
